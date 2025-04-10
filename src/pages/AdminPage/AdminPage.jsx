@@ -32,7 +32,6 @@ const AdminPage = () => {
                     <div className="p-6">
                         <p>Grid content goes here</p>
                         <MentorModal/>
-
                     </div>
                 );
             case "list":

@@ -16,12 +16,12 @@ const Filtr = () => {
     const [showModal, setShowModal] = useState(true);
 
     const handleCancel = () => {
-        setShowModal(false); // Закрыть модалку
+        setShowModal(false);
     };
 
     const handleDelete = () => {
-        console.log("Специальность удалена"); //  можно вызвать удаление
-        setShowModal(false); // И тоже закрыть
+        console.log("Специальность удалена");
+        setShowModal(false);
     };
 
     if (!showModal) return null;
