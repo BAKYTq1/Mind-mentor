@@ -1,13 +1,17 @@
-import React from 'react'
-import { RouterProvider } from 'react-router-dom'
-import { myRouter } from './router'
-import './App.css'
+import { Routes, Route } from 'react-router-dom';
+import Layout from "./Layout/Layout.jsx";
+import Home from "./pages/Home/Home.jsx";
+
 function App() {
-  return (
-    <div className='wrapper'>
-      <RouterProvider router={myRouter}/>
-    </div>
-  )
+    return (
+        <div>
+            <Routes>
+                <Route path="/" element={<Layout />}>
+                    <Route index element={<Home />} />
+                </Route>
+            </Routes>
+        </div>
+    );
 }
 
-export default App
+export default App;

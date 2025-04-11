@@ -6,14 +6,10 @@ import glaw3 from "../../assets/glaw3.svg";
 import glaw4 from "../../assets/glaw4.svg";
 import md from "../../assets/md.svg";
 import { Menu, X } from "lucide-react";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-
-
-
 
 export default function Header() {
     const [activeMenu, setActiveMenu] = useState("Главная");
@@ -57,31 +53,7 @@ export default function Header() {
                         </Link>
                     ))}
                 </nav>
-                <nav className="hidden lg:flex gap-12 font-semibold ml-10">
-                    {menuItems.map((item) => (
-                        <Link
-                            to={
-                                item === "Менторы"
-                                    ? "/mentors"
-                                    : item === "Главная"
-                                        ? "/"
-                                        : item === "Проекты"
-                                            ? "/projects"
-                                            : "/courses"
-                            }
-                            key={item}
-                        >
-                            <button
-                                onClick={() => setActiveMenu(item)}
-                                className={`px-4 py-1.5 rounded transition ${
-                                    activeMenu === item ? "bg-gray-800 text-white" : "text-black"
-                                }`}
-                            >
-                                {item}
-                            </button>
-                        </Link>
-                    ))}
-                </nav>
+
                 <div className="flex items-center gap-3">
                     <div className="bg-black rounded-full w-8 h-8 flex items-center justify-center">
                         <img src={glaw1} alt="calendar" className="w-[35px]" />
@@ -104,7 +76,7 @@ export default function Header() {
             >
                 <Swiper
                     spaceBetween={10}
-                    slidesPerView={3}
+                    slidesPerView={3.6}
                     className="swiper-container w-full"
                 >
                     {menuItems.map((item) => (
