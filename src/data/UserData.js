@@ -97,7 +97,28 @@ const DataUser = {
       },
       {
         image: course_icon,
+        title: "Личная консультация,проверка 2–3 проектов,советы по ошибкам и план развитие ваших навыков",
+        type: "Курс",
+        price: 3000,
+        date: "12.02.25",
+      },
+      {
+        image: course_icon,
         title: "Курс по UX/UI",
+        type: "Курс",
+        price: 3000,
+        date: "12.02.25",
+      },
+      {
+        image: course_icon,
+        title: "Личная консультация,проверка 2–3 проектов,советы по ошибкам и план развитие ваших навыков",
+        type: "Курс",
+        price: 3000,
+        date: "12.02.25",
+      },
+      {
+        image: course_icon,
+        title: "Личная консультация,проверка 2–3 проектов,советы по ошибкам и план развитие ваших навыков",
         type: "Курс",
         price: 3000,
         date: "12.02.25",
@@ -134,6 +155,34 @@ const DataUser = {
       },
     ],
     projects: [
+      {
+        image: "/icons/device.svg",
+        title: "Платформа для курс и менторов",
+        type: "Проект",
+        price: 3000,
+        date: "12.02.25",
+      },
+      {
+        image: "/icons/device.svg",
+        title: "Платформа для курс и менторов",
+        type: "Проект",
+        price: 3000,
+        date: "12.02.25",
+      },
+      {
+        image: "/icons/device.svg",
+        title: "Платформа для курс и менторов",
+        type: "Проект",
+        price: 3000,
+        date: "12.02.25",
+      },
+      {
+        image: "/icons/device.svg",
+        title: "Платформа для курс и менторов",
+        type: "Проект",
+        price: 3000,
+        date: "12.02.25",
+      },
       {
         image: "/icons/device.svg",
         title: "Платформа для курс и менторов",
