@@ -7,6 +7,7 @@ import Hero from '../../components/hero/Hero'
 import Reviews from '../../components/reviews/Reviews'
 import ContactForm from '../../components/contactForm/ContactForm'
 import Hero2 from '../../components/hero2/Hero2'
+import Dashboard from '../../components/User-dashboard/Dashboard.'
 
 function Home() {
   return (
@@ -19,6 +20,7 @@ function Home() {
       <Project/>
         <Reviews/>
         <ContactForm/>
+        <Dashboard/>
     </div>
   )
 }
