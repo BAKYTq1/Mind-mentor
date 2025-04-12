@@ -62,7 +62,7 @@ const AdminCourse = () => {
 
 
     return (
-        <div className="flex gap-[20px]">
+        <div className="container justify-between  flex gap-[20px]">
             <div className={"w-[412px] p-[20px]"}>
                 <div className={"flex justify-between mb-[12px] text-[16px] font-[500]"}>
                     <p>Все курсы</p>

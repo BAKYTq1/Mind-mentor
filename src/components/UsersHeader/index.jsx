@@ -7,7 +7,7 @@ import { RiSearch2Fill } from "react-icons/ri";
 function UsersHeader() {
     return (
         <div className=' container bg-[black]'>
-            <header className='  mx-auto w-[1200px] h-[102px] flex items-center justify-between'>
+            <header className='  mx-auto w-full h-[102px] flex items-center justify-between'>
                 <div>
                     <h1 className=' text-[64px] font-bold leading-[58px]  text-left text-[white]'>Пользователи</h1>
                     <select className='text-white mt-[12px] outline-none' name="" id="">
