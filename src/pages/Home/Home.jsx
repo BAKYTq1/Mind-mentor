@@ -18,12 +18,14 @@ function Home() {
     <div>
         <Hero/>
         <Card/>
+
         <Hero2/>
         <Courses1/>
         <Mentor/>
         <Project/>
         <Reviews/>
         <ContactForm/>
+
         <AdminPage/>
         <Mentory/>
         {/* <Dashboard/> */}

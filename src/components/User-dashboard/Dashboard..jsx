@@ -6,7 +6,11 @@ import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { BsThreeDotsVertical } from 'react-icons/bs';
 import './Dashboard.scss';
+
+
+
 import { Container } from '../Container/Container';
+
 
 const mockUsers = [
   { id: 1, name: 'Марина Соколова', lastActive: 'Сегодня 11:24', status: 'active', time: 32 },
@@ -208,8 +212,9 @@ const Dashboard = () => {
                     </button>
 
                     {activeMenu === user.id && (
-                      <ul className="user-actions-menu">
-                        <li onClick={() => handleUserAction(user.id, 'Активировать')}>Активировать</li>
+                      <ul className="user-actions-menu"> 
+                    
+                        <li onClick={() => handleUserAction(user.id, 'Активировать')}>Данные</li> 
                         <li onClick={() => handleUserAction(user.id, 'Редактировать')}>Изменить данные</li>
                         <li onClick={() => handleUserAction(user.id, 'Блокировка')}>Заблокировать</li>
                         <li className="delete-action" onClick={() => handleUserAction(user.id, 'Удаление')}>Удалить аккаунт</li>
