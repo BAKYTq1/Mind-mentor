@@ -6,7 +6,7 @@ import input from "../../assets/input.svg";
 function Hero() {
   return (
     <div className="container mx-auto px-4">
-      <div className="w-full max-w-[1180px] h-auto bg-[#D5F6ED] relative rounded-[24px] p-6 mt-[60px] mx-auto">
+      <div className="w-full  max-w-[1180px] h-auto bg-[#D5F6ED] relative rounded-[24px] p-6 mt-[60px] mx-auto">
         <h6 className="text-[24px] font-medium text-center text-[#333] mt-[60px]">
           Успехов тебе в начинаниях!🤗
         </h6>

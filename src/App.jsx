@@ -3,6 +3,7 @@
 // import Home from "./pages/Home/Home.jsx";
 import { RouterProvider } from 'react-router-dom';
 import { myRouter } from './router.jsx';
+import './App.css'
 
 function App() {
     return (
@@ -10,6 +11,7 @@ function App() {
           <RouterProvider router={myRouter}/>
         </div>
     );
+
 }
 
 export default App;
