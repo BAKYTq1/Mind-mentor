@@ -7,6 +7,7 @@ import ContactForm from '../../components/contactForm/ContactForm'
 import Hero2 from '../../components/hero2/Hero2'
 import Courses1 from "../../components/Corses1/Courses1.jsx";
 import AdminPage from "../AdminPage/AdminPage.jsx";
+import Mentory from '../../components/mentory/Mentory.jsx'
 
 function Home() {
   return (
@@ -20,6 +21,7 @@ function Home() {
         <Reviews/>
         <ContactForm/>
         <AdminPage/>
+        <Mentory/>
     </div>
   )
 }

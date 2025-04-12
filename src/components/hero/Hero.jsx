@@ -27,7 +27,7 @@ function Hero() {
             alt="Search Icon"
           />
 
-          <button className="w-full sm:w-[158px] h-[64px] bg-black text-white rounded-[24px] mt-6 flex items-center justify-center shadow-md hover:bg-[#333] transition duration-300  ml-[20px] z-1">
+          <button className="hero-btn w-full sm:w-[158px] h-[64px] bg-black text-white rounded-[24px] mt-6 flex items-center justify-center shadow-md transition duration-300  ml-[20px] z-1">
             Подобрать
           </button>
         </div>
