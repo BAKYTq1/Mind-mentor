@@ -6,9 +6,7 @@ import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { BsThreeDotsVertical } from 'react-icons/bs';
 import './Dashboard.scss';
-import UserData from '../UserData';
-import NewUser from '../NewUser';
-
+import { Container } from '../Container/Container';
 
 const mockUsers = [
   { id: 1, name: 'Марина Соколова', lastActive: 'Сегодня 11:24', status: 'active', time: 32 },
@@ -103,9 +101,10 @@ const Dashboard = () => {
   };
 
   return (
+    <Container>
     <div className="dashboard" onClick={handleClickOutside}>
       <main className="main-content">
-        <header className="header">
+        {/* <header className="header">
           <div className="header-title">
             <h1>Пользователи</h1>
             <p>11 июня – 12 августа 2024</p>
@@ -120,7 +119,7 @@ const Dashboard = () => {
             />
             <FaSearch className="search-icon" />
           </div>
-        </header>
+        </header> */}
 
         <div className="secctions">
         <div className="user-stats-card">
@@ -246,6 +245,7 @@ const Dashboard = () => {
         </div>
       </main>
     </div>
+    </Container>
   );
 };
 
