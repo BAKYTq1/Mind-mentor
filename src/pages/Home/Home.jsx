@@ -20,8 +20,8 @@ function Home() {
         <Project/>
         <Reviews/>
         <ContactForm/>
-        <Dashboard/>
-        <AdminPage/>
+        {/* <Dashboard/> */}
+        {/* <AdminPage/> */}
     </div>
   )
 }
