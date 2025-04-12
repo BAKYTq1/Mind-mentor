@@ -3,7 +3,6 @@
   background-color: #0d0d0d;
   color: #fff;
   font-family: 'Arial', sans-serif;
-
   .sidebar {
     width: 240px;
     padding: 20px;
@@ -64,7 +63,8 @@
 
       .header-title {
         h1 {
-          font-size: 28px;
+          font-size: 48px;
+          font-weight: 800;
           margin: 0;
         }
 
@@ -105,7 +105,6 @@
     .secctions {
       display: flex;
       gap: 20px;
-
       .summary-cards, .user-list-section {
         flex: 1;
       }

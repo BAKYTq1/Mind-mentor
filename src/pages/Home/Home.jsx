@@ -22,6 +22,8 @@ function Home() {
         <Project/>
         <Reviews/>
         <ContactForm/>
+        {/* <Dashboard/> */}
+        {/* <AdminPage/> */}
         <AdminCourse/>
         <Dashboard/>
         <AdminPage/>
