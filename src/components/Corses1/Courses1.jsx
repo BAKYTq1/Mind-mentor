@@ -12,10 +12,9 @@ import strel from "../../assets/strel.svg"
 import strel2 from "../../assets/strel2.svg"
 import strel3 from "../../assets/strel3.svg"
 
-const Courses = () => {
+const Courses1 = () => {
     const [windowWidth, setWindowWidth] = useState(typeof window !== "undefined" ? window.innerWidth : 0)
     const [showMore, setShowMore] = useState(false)
-
     const logAction = (action) => {
         console.log(`[${new Date().toISOString()}] User action: ${action}`)
     }
@@ -144,7 +143,6 @@ const Courses = () => {
     ]
 
     const visibleCourses = windowWidth < 768 ? (showMore ? courses : courses.slice(0, 3)) : courses
-
     return (
         <div className="mx-auto max-w-7xl px-4 py-8 bg-white">
             <div className="mb-12">
@@ -235,9 +233,6 @@ const renderCourseCard = (course, logAction) => (
                 <div className="absolute top-2 right-2 bg-white/80 rounded-md px-2 py-1">
                 </div>
                 <div className="absolute bottom-2 mb-3 mr-5 right-2 flex flex-col gap-2">
-
-                    <img src={courl2} alt=""/>
-                    <img src={courl3} alt=""/>
                     <img src={courl2} alt=""/>
                     <img src={courl3} alt=""/>
                 </div>
@@ -259,14 +254,13 @@ const renderCourseCard = (course, logAction) => (
                 <p className="text-sm mb-2">Для кого этот курс</p>
                 <div className="flex flex-wrap gap-2">
                     {course.tags.map((tag, index) => (
-
                         <span
                             key={index}
                             className={`text-xs px-3 pt-2 pr-5 pb-2 pl-5 rounded-full border ${tag === "Дизайнеры" ? 'border-black' : tag === "Frontend Разработчики" ? 'border-[rgba(255,208,44,1)]' : tag === "Backend Разработчики" ? 'border-[rgba(35,175,206,1)]' : 'border-gray-300'}`}
                             onClick={() => logAction(`Tag ${tag} clicked for course ${course.id}`)}
                         >
-    {tag}
-</span>
+                 {tag}
+                  </span>
                     ))}
                 </div>
             </div>
@@ -278,11 +272,9 @@ const renderCourseCard = (course, logAction) => (
                 >
                     Подробно
                 </button>
-
-    </div>
-           </div>
+            </div>
         </div>
+    </div>
+)
 
-        )
-
-export default Courses
+export default Courses1

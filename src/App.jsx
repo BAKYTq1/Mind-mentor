@@ -1,11 +1,11 @@
-import React from 'react'
+import './App.css'
 import { RouterProvider } from 'react-router-dom'
 import { myRouter } from './router'
-import './App.css'
-function App() {
+
+export  function App() {
   return (
     <div className='wrapper'>
-      <RouterProvider router={myRouter}/>
+     <RouterProvider router={myRouter}/>
     </div>
   )
 }
