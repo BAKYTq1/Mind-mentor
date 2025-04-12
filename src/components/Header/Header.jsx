@@ -66,7 +66,7 @@ export default function Header() {
                         <img src={glaw3} alt="calendar" className="w-[35px]" />
                         <span className="absolute top-1 right-1 bg-yellow-400 w-2 h-2 rounded-full" />
                     </div>
-                    <img src={glaw4} alt="avatar" className="w-8 h-8 rounded-full" />
+                   <Link to={'adminka'}><img src={glaw4} alt="avatar" className="w-8 h-8 rounded-full" /></Link> 
                 </div>
             </div>
 

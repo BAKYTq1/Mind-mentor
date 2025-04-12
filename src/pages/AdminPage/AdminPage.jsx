@@ -10,9 +10,10 @@ import adm8 from "../../assets/adm8.svg";
 import Filtr from "../Filtr/Filtr.jsx";
 import MentorModal from "../mentor-modal/Modal.jsx";
 import Mentor from "../../pages/Mentor.jsx"
+import Dashboard from "../../components/User-dashboard/Dashboard..jsx";
 
 const AdminPage = () => {
-    const [activeTab, setActiveTab] = useState("dashboard");
+    const [activeTab, setActiveTab] = useState("grid");
 
     const menuItems = [
         { id: "grid", img: adm1, title: "grid" },
@@ -29,17 +30,18 @@ const AdminPage = () => {
         switch (activeTab) {
             case "grid":
                 return (
-                    <div className="p-6">
+                    <div className="">
                         <p>Grid content goes here</p>
                         <MentorModal/>
                     </div>
                 );
             case "list":
                 return (
-                    <div className="p-6">
-                        <h1 className="text-2xl font-bold">List Page</h1>
-                        <p>List content goes here</p>
-                        <Mentor/>
+                    <div className="p-6 bg-black">
+                        {/* <h1 className="text-2xl font-bold">List Page</h1>
+                        <p>List content goes here</p> */}
+                        <Dashboard/>
+                        {/* <Mentor/> */}
                     </div>
                 );
             case "dashboard":
@@ -96,7 +98,7 @@ const AdminPage = () => {
 
     return (
         <div className="flex mx-auto max-w-7xl">
-            <div className="w-16 flex flex-col items-center py-4 space-y-6 bg-black h-[850px] shadow-md">
+            <div className="w-16 flex flex-col items-center justify-between pt-[60px] py-4 space-y-6 bg-black shadow-md pl-[30px] z-20">
                 {menuItems.map((item) => {
                     const buttonClass = item.id === "windows" ? "mt-[250px]" : "";
                     return (
