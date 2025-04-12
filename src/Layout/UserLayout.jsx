@@ -5,7 +5,7 @@ import AdminPage from '../pages/AdminPage/AdminPage'
 
 function UserLayout() {
   return (
-    <div>
+    <div className='adminka'>
         <UsersHeader/>
          <AdminPage/>
         <Outlet/>

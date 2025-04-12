@@ -6,6 +6,7 @@ import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { BsThreeDotsVertical } from 'react-icons/bs';
 import './Dashboard.scss';
+import { Container } from '../Container/Container';
 
 const mockUsers = [
   { id: 1, name: 'Марина Соколова', lastActive: 'Сегодня 11:24', status: 'active', time: 32 },
@@ -100,6 +101,7 @@ const Dashboard = () => {
   };
 
   return (
+    <Container>
     <div className="dashboard" onClick={handleClickOutside}>
       <main className="main-content">
         {/* <header className="header">
@@ -242,6 +244,7 @@ const Dashboard = () => {
         </div>
       </main>
     </div>
+    </Container>
   );
 };
 

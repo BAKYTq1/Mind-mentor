@@ -10,6 +10,8 @@ import Dashboard from '../../components/User-dashboard/Dashboard.'
 import Courses1 from "../../components/Corses1/Courses1.jsx";
 import AdminPage from "../AdminPage/AdminPage.jsx";
 import UserData from '../../components/UserData/index.jsx'
+import { Container } from 'lucide-react'
+import Mentory from '../../components/mentory/Mentory.jsx'
 
 function Home() {
   return (
@@ -22,12 +24,13 @@ function Home() {
         <Project/>
         <Reviews/>
         <ContactForm/>
+        <AdminPage/>
+        <Mentory/>
         {/* <Dashboard/> */}
         {/* <AdminPage/> */}
         <AdminCourse/>
-        <Dashboard/>
-        <AdminPage/>
-        <UserData/>
+        {/* <AdminPage/> */}
+        {/* <UserData/> */}
     </div>
   )
 }
