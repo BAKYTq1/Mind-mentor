@@ -6,7 +6,13 @@ import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { BsThreeDotsVertical } from 'react-icons/bs';
 import './Dashboard.scss';
+
 import { Container } from '../Container/Container';
+
+
+
+import { Container } from '../Container/Container';
+
 
 const mockUsers = [
   { id: 1, name: 'Марина Соколова', lastActive: 'Сегодня 11:24', status: 'active', time: 32 },
