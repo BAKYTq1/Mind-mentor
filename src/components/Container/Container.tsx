@@ -1,7 +1,12 @@
 import React from "react";
+import styles from "./Container.module.scss";
 
-export const Container: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  return <div className="w-[95%] max-w-[1300px] sm:w-[90%] md:w-[90%] lg:w-[99%] xl:w-[100%] mx-auto ">{children}</div>;
+interface Props {
+  children: React.ReactNode;
+}
+
+const Container = ({ children }: Props) => {
+  return <div className={styles.container}>{children}</div>;
 };
 
-// export default Container;
+export default Container;

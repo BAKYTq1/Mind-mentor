@@ -36,7 +36,7 @@ const Mentor = () => {
   };
 
   return (
-    <div className='Mentor'>
+    <div className='container Mentor'>
       <div className='item-mentor'>
         <h1>Менторы</h1>
         <div className="mentor-controls">

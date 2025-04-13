@@ -26,11 +26,12 @@ function Home() {
         <Reviews/>
         <ContactForm/>
 
-        <AdminPage/>
+        {/* <AdminPage/> */}
         <Mentory/>
-        {/* <Dashboard/> */}
+        <Dashboard/>
         {/* <AdminPage/> */}
         <AdminCourse/>
+        <Mentory/>
         {/* <AdminPage/> */}
         {/* <UserData/> */}
     </div>
