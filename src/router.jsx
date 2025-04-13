@@ -7,6 +7,7 @@ import UserLayout from "./Layout/UserLayout";
 
 
 
+
  export const myRouter = createBrowserRouter([
       {
         path: '/',
@@ -20,6 +21,7 @@ import UserLayout from "./Layout/UserLayout";
                path: 'about',
                element: <About/>
             },
+           
            
 
         ]
