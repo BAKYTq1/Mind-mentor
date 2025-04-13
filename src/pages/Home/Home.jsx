@@ -27,11 +27,11 @@ function Home() {
         <ContactForm/>
 
         {/* <AdminPage/> */}
-        <Mentory/>
-        <Dashboard/>
+        {/* <Mentory/>
+        <Dashboard/> */}
         {/* <AdminPage/> */}
-        <AdminCourse/>
-        <Mentory/>
+        {/* <AdminCourse/>
+        <Mentory/> */}
         {/* <AdminPage/> */}
         {/* <UserData/> */}
     </div>

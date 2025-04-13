@@ -20,9 +20,6 @@ import UserLayout from "./Layout/UserLayout";
                path: 'about',
                element: <About/>
             }
-            },
-           
-
         ]
       },
       {
