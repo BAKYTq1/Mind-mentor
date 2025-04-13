@@ -34,6 +34,12 @@ const Reviews = () => {
                 spaceBetween={30}
                 centeredSlides={true}
                 loop={true}
+                // breakpoints={{
+                //     200: { slidesPerView: 1 },
+                //     480: { slidesPerView: 1 },
+                //     760: { slidesPerView: 2 },
+                //     1024: { slidesPerView: 3 },
+                //   }}
                 pagination={{clickable: true}}
                 // modules={[Pagination]}
                 className="mySwiper"
