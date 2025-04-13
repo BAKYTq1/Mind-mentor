@@ -8,6 +8,11 @@ import { BsThreeDotsVertical } from 'react-icons/bs';
 import './Dashboard.scss';
 
 
+
+
+import { Container } from '../Container/Container';
+
+
 const mockUsers = [
   { id: 1, name: 'Марина Соколова', lastActive: 'Сегодня 11:24', status: 'active', time: 32 },
   { id: 5, name: 'Марина Соколова', lastActive: 'Сегодня 11:24', status: 'deleted', time: 32 },
