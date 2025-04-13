@@ -144,7 +144,7 @@ const Courses1 = () => {
 
     const visibleCourses = windowWidth < 768 ? (showMore ? courses : courses.slice(0, 3)) : courses
     return (
-        <div className="mx-auto max-w-7xl px-4 py-8 bg-white">
+        <div className="container w-full px-4 py-8 bg-white">
             <div className="mb-12">
                 <div className="flex justify-between items-center mb-6">
                     <h2 className="text-2xl font-bold">Курсы</h2>
@@ -160,7 +160,7 @@ const Courses1 = () => {
                         {windowWidth >= 768 && (
                             <div className="flex">
                                 <button
-                                    className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center mr-2 swiper-button-prev-courses"
+                                    className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center mr-2\ swiper-button-prev-courses"
                                     onClick={() => logAction("Previous slide button clicked")}
                                 >
                                     <img src={strel2} alt=""/>
@@ -185,7 +185,7 @@ const Courses1 = () => {
                             prevEl: ".swiper-button-prev-courses",
                             nextEl: ".swiper-button-next-courses",
                         }}
-                        className="courses-swiper"
+                        className="courses-swiper w-full"
                         onSlideChange={() => logAction("Slide changed")}
                     >
                         {courses.map((course) => (

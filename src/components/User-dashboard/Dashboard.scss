@@ -448,7 +448,26 @@ letter-spacing: 0px;
   div{
     display: flex;
     gap: 30px;
+    button {
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      border-radius: 50%;
+    
+    }
+    
+    button.active {
+      background-color: #007bff;
+      color: white;
+    }
+    
+    button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
   }
+}
+
 
   button {
     width: 40px;
@@ -464,7 +483,4 @@ button.active {
   color: white;
 }
 
-button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
+

@@ -106,7 +106,7 @@ const Dashboard = () => {
   };
 
   return (
-    <Container>
+    <div className='container'>
     <div className="dashboard" onClick={handleClickOutside}>
       <main className="main-content">
         {/* <header className="header">
@@ -250,7 +250,7 @@ const Dashboard = () => {
         </div>
       </main>
     </div>
-    </Container>
+    </div>
   );
 };
 
