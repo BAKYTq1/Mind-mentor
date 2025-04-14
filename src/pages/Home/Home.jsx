@@ -12,20 +12,19 @@ import AdminPage from "../AdminPage/AdminPage.jsx";
 import UserData from '../../components/UserData/index.jsx'
 import { Container } from 'lucide-react'
 import Mentory from '../../components/mentory/Mentory.jsx'
+import DeleteUsers from '../../components/Delete-users/index.jsx'
 
 function Home() {
   return (
     <div>
         <Hero/>
         <Card/>
-
         <Hero2/>
         <Courses1/>
         <Mentor/>
         <Project/>
         <Reviews/>
         <ContactForm/>
-
         {/* <AdminPage/> */}
         {/* <Mentory/>
         <Dashboard/> */}

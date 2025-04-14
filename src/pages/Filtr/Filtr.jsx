@@ -25,8 +25,6 @@ const Filtr = () => {
     };
 
     if (!showModal) return null;
-
-
     const toggleCheckbox = (category, value) => {
         setFilters((prev) => {
             const updated = prev[category].includes(value)
@@ -197,7 +195,7 @@ const Filtr = () => {
                         </div>
                     </div>
                 </div>
-
+{/* 
                 <div className="flex justify-center items-center">
                     <div
                         style={{fontFamily: 'Montserrat, sans-serif'}}
@@ -240,7 +238,7 @@ const Filtr = () => {
                             </button>
                         </div>
                     </div>
-                </div>
+                </div> */}
 
                 <div className="flex justify-center items-center">
                     <div
