@@ -49,7 +49,7 @@ const CourseDataModal = ({ course, onClose }) => {
                 <p className={"text-[#6F6D73] text-[14px] font-[500] mb-[16px]"}>Автор курса</p>
 
                 <div className={"flex gap-[12px] items-center"}>
-                    <img className={"w-[45px] h-[45px] bg-[#00000080] rounded-[50%]"} src="" alt="img" />
+                    <img className={"w-[45px] h-[45px] bg-[#00000080] rounded-[50%]"} src="" alt="Avatar" />
                     <div>
                         <h3 className={"text-[16px] font-[600] text-[#000000]"}>Марина Сополова</h3>
                         <div className={"flex gap-[5px] text-[#6F6D73] text-[15px] font-[500]"}>
@@ -70,7 +70,7 @@ const CourseDataModal = ({ course, onClose }) => {
                     {currentItems.map((item, index) => (
                         <div className={"flex mb-[17px] justify-between items-center"} key={item.id}>
                             <div className={"flex items-center gap-[12px]"}>
-                                <img className={"w-[36px] h-[35px] rounded-[50%] bg-[#00000080]"} src="" alt="img" />
+                                <img className={"w-[36px] h-[35px] rounded-[50%] bg-[#00000080]"} src="" alt="Avatar" />
                                 <p className={"text-[15px] font-[500]"}>{item.name}</p>
                             </div>
                             <p className={"text-[14px] font-[450] text-[#6F6D73]"}>{item.date}</p>
