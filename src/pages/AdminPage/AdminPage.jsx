@@ -32,7 +32,7 @@ const AdminPage = () => {
         switch (activeTab) {
             case "grid":
                 return (
-                    <div className="bg-black">
+                    <div className="w-full h-full bg-black">
                          <Mentory/>
                         {/* <MentorModal/> */}
                     </div>
@@ -126,7 +126,7 @@ const AdminPage = () => {
                     );
                 })}
             </div>
-            <div className="w-[1132px] flex-1 bg-white">{renderContent()}</div>
+            <div className="w-[1132px] h-[810px] flex-1 bg-white">{renderContent()}</div>
         </div>
     );
 

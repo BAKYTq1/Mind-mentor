@@ -14,7 +14,7 @@ function Hero() {
           Mind mentor — место, где вы можете найти ментора и курсы, а также нужные проекты
         </h2>
 
-        <div className="relative mt-[32px] flex justify-center flex-wrap">
+        <div className=" mt-[32px] flex justify-center flex-wrap">
           <input
             className="w-full sm:w-[450px] md:w-[580px] h-[64px] rounded-[20px] pl-12 pr-4 bg-white text-black mt-6"
             type="text"
@@ -22,7 +22,7 @@ function Hero() {
           />
           
           <img
-            className="absolute left-[720px] mt-[10px] top-1/2 transform -translate-y-1/2 w-[24px] h-[24px]"
+            className="relative left-[-40px] mt-[10px] top-[45px] transform -translate-y-1/2 w-[24px] h-[24px]"
             src={input}
             alt="Search Icon"
           />
