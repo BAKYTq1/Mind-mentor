@@ -2,8 +2,9 @@
   display: flex;
   background-color: #0d0d0d;
   color: #fff;
+  max-width: 100% !important;
+  height: 100% !important;
   font-family: 'Arial', sans-serif;
-
   .sidebar {
     width: 240px;
     padding: 20px;
@@ -54,7 +55,6 @@
 
   .main-content {
     flex: 1;
-    padding: 20px;
 
     .header {
       display: flex;
@@ -64,7 +64,8 @@
 
       .header-title {
         h1 {
-          font-size: 28px;
+          font-size: 48px;
+          font-weight: 800;
           margin: 0;
         }
 
@@ -105,7 +106,6 @@
     .secctions {
       display: flex;
       gap: 20px;
-
       .summary-cards, .user-list-section {
         flex: 1;
       }
@@ -113,8 +113,8 @@
         // width: 412px;
       }
       .user-list-section{
-        height: 808px;
-        width: 700px;
+        // height: 808px;
+        // width: 700px;
       }
       .summary-card {
         display: flex;
@@ -448,23 +448,25 @@ letter-spacing: 0px;
   div{
     display: flex;
     gap: 30px;
+    button {
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      border-radius: 50%;
+    
+    }
+    
+    button.active {
+      background-color: #007bff;
+      color: white;
+    }
+    
+    button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
   }
 }
 
-button {
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-  border-radius: 50%;
 
-}
 
-button.active {
-  background-color: #007bff;
-  color: white;
-}
-
-button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}

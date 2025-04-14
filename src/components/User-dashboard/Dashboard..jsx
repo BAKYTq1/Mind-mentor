@@ -7,6 +7,11 @@ import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { BsThreeDotsVertical } from 'react-icons/bs';
 import './Dashboard.scss';
 
+
+
+
+
+
 const mockUsers = [
   { id: 1, name: 'Марина Соколова', lastActive: 'Сегодня 11:24', status: 'active', time: 32 },
   { id: 5, name: 'Марина Соколова', lastActive: 'Сегодня 11:24', status: 'deleted', time: 32 },
@@ -100,9 +105,10 @@ const Dashboard = () => {
   };
 
   return (
+    <div className='container'>
     <div className="dashboard" onClick={handleClickOutside}>
       <main className="main-content">
-        <header className="header">
+        {/* <header className="header">
           <div className="header-title">
             <h1>Пользователи</h1>
             <p>11 июня – 12 августа 2024</p>
@@ -117,7 +123,7 @@ const Dashboard = () => {
             />
             <FaSearch className="search-icon" />
           </div>
-        </header>
+        </header> */}
 
         <div className="secctions">
         <div className="user-stats-card">
@@ -206,8 +212,9 @@ const Dashboard = () => {
                     </button>
 
                     {activeMenu === user.id && (
-                      <ul className="user-actions-menu">
-                        <li onClick={() => handleUserAction(user.id, 'Активировать')}>Активировать</li>
+                      <ul className="user-actions-menu"> 
+                    
+                        <li onClick={() => handleUserAction(user.id, 'Активировать')}>Данные</li> 
                         <li onClick={() => handleUserAction(user.id, 'Редактировать')}>Изменить данные</li>
                         <li onClick={() => handleUserAction(user.id, 'Блокировка')}>Заблокировать</li>
                         <li className="delete-action" onClick={() => handleUserAction(user.id, 'Удаление')}>Удалить аккаунт</li>
@@ -241,6 +248,7 @@ const Dashboard = () => {
           </section>
         </div>
       </main>
+    </div>
     </div>
   );
 };

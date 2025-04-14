@@ -7,7 +7,7 @@ import face4 from "../../assets/face4.svg";
 const Footer = () => {
     return (
         <footer className="w-full bg-white py-6 border-t border-gray-200">
-            <div className="hidden md:block max-w-7xl mx-auto px-4">
+            <div className="hidden container md:block w-full  mx-auto ">
                 <div className="rounded-lg">
                     <div className="flex justify-between items-start">
                         <div>
