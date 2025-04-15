@@ -1,10 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
 .mentor-cart{
+    margin-left: 10px !important;
+    margin-right: 10px !important;
     max-width: 900px !important;
     height: 642px;
     margin: 0 auto;
+    z-index: 120;
     overflow: hidden;
-    box-shadow: 10px 10px 10px 10px rgb(236, 232, 232);
+     box-shadow: 0 5px 14px rgba(118, 117, 117, 0.5);
     border-radius: 24px;
     z-index: 100;
     .mentor-logo{
@@ -123,7 +126,7 @@ text-align: left;
             font-family: Jost;
             font-size: 14px;
             font-weight: 500;
-            line-height: 22px;
+            line-height: 25px;
             letter-spacing: 0px;
             text-align: left;  
         }
@@ -134,9 +137,9 @@ text-align: left;
             gap: 6px;
           div{
             background-color: #D5F6ED;
-            border-radius: 16px;
+            border-radius: 22px;
             border: 1px solid #222;
-            padding: 5px 10px;
+            padding: 8px 20px;
             cursor: pointer;
           }
           div:hover{
@@ -198,8 +201,8 @@ text-align: center;
             width: 100%;
             display: flex;
         border: 1px solid #222;
-        border-radius: 16px;
-        padding: 5px 10px;
+        border-radius: 22px;
+        padding: 8px 20px;
         cursor: pointer;
         }
         .spec:hover{

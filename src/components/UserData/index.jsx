@@ -75,7 +75,7 @@ export default function UserData() {
               }}
               className={`flex-1 px-4 py-2 rounded-[14px] text-sm font-medium border ${
                 activeTab === tab
-                  ? "bg-black text-white border-black"
+                  ? "bg-[rgb(35,175,206)] text-white border-black"
                   : "bg-white text-black border-[#d9d9d9]"
               }`}
             >
@@ -123,7 +123,7 @@ export default function UserData() {
               onClick={() => changePage(page)}
               className={`w-8 h-8 rounded-[10px] text-sm font-medium border transition ${
                 currentPage === page
-                  ? "bg-black text-white border-black"
+                  ? "bg-[rgb(35,175,206)] text-white border-black"
                   : "text-gray-700 bg-white border-[#d9d9d9] hover:bg-gray-100"
               }`}
             >
