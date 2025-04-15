@@ -42,7 +42,7 @@ const Mentory = () => {
   });
 
   return (
-    <div className="w-full h-full flex gap-6 justify-center">
+    <div className="w-full h-full flex gap-[20px] justify-center">
       {/* Левая часть */}
       <div className="flex gap-[20px]">
         <div className="w-[412px] bg-[#F5F6FB] p-6 rounded-xl shadow-lg">
@@ -128,7 +128,7 @@ const Mentory = () => {
       </div>
 
       {/* Блок с менторами */}
-      <div className="bg-[#F5F6FB] mt-[200px] ml-[-720px] w-[700px] h-[618px] p-4 rounded-[24px]">
+      <div className="bg-[#F5F6FB] mt-[192px] ml-[-720px] w-[700px] h-[618px] p-4 rounded-[24px]">
         <h1 className="font-medium text-[20px]">Менторы</h1>
 
         <div className="flex justify-between items-center mt-[20px]">

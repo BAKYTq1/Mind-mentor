@@ -77,6 +77,9 @@ const AdminCourse = () => {
         <div className="flex gap-[20px] border justify-center pt-[24px] pb-[24px] bg-black">
             <div className="w-[412px] p-[20px] border rounded-[24px] bg-white">
                 <div className="flex justify-between mb-[12px] text-[16px] font-[500]">
+        <div className=" justify-between flex gap-[20px]">
+            <div className={"w-[405px] pr-[30px] rounded-[20px]"}>
+                <div className={"flex justify-between mb-[12px] text-[16px] font-[500]"}>
                     <p>Все курсы</p>
                     <p>Популярные курсы</p>
                 </div>
@@ -100,8 +103,8 @@ const AdminCourse = () => {
                         </div>))}
                 </div>
             </div>
-
             <div className="w-[700px] h-[810px] gap-[20px] p-[20px] border rounded-[24px] bg-white">
+            <div className="w-[700px] h-[810px] gap-[20px] rounded-[20px] pr-[20px]">
                 <div>
                     <h3 className="text-[20px] font-[500]">Курсы</h3>
                     <div className="flex justify-between mt-[12px] mb-[12px]">
@@ -208,7 +211,11 @@ const AdminCourse = () => {
                 onClose={() => setModalType(null)}
                 onConfirm={(id) => handleDeleteCourse(id)} // Курс өчүрүлөт
             />)}
-        </div>);
+        </div>
+        </div>
+        </div>
+        </div>
+        );
 };
 
 export default AdminCourse;
