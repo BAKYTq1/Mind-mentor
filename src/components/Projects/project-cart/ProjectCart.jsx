@@ -24,7 +24,7 @@ const ProjectCart = ({ project }) => {
             <span key={idx} className="tag">{tag}</span>
           ))}
           {project.specialists.length > 3 && (
-            <span className="tag tag-more">+{project.specialists.length - 3}</span>
+            <span className="tag tag-more">+{project.specialists.length - 0}</span>
           )}
         </div>
         </div>

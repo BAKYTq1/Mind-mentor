@@ -5,8 +5,8 @@
   }
   .Mentor {
     margin: 0 auto;
-    width: 100%;
-    // height: 808px;
+    max-width: 1280px;
+    height: 808px;
     padding-bottom: 30px;
     .item-mentor{
         margin: 0 auto;
@@ -72,15 +72,20 @@ h4{
     }
   }
   .Mentors {
+    position: relative;
+    right: -18px;
+    bottom: 0px;
     margin: 0 auto;
-    width: 100%;
+    max-width: 1240px;
+    height: 100%;
     padding-bottom: 10px;
  
-  }
+      // overflow: visible !important;
  .swiper{
     gap: 20px !important;
     margin-top: 20px;
     padding-bottom: 30px !important;
+    
  } 
 .Mentors {
     // gap: 8px;
@@ -227,3 +232,12 @@ h4{
       display: none;
     }
   }
+  .mentor-slide {
+  transition: transform 0.3s ease;
+}
+
+.small-card {
+  transform: scale(0.85) translateX(20px); // кичине жана оңго жылып турат
+  opacity: 0.6;
+  z-index: 0; // картанын артында болгондой кылат
+}
