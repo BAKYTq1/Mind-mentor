@@ -4,7 +4,7 @@ import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import UserLayout from "./Layout/UserLayout";
 import Notfound from "./components/Notfound/Notfound";
-// import UserData from "./components/UserData";
+import UserData from "./components/UserData";
 
 
 
@@ -25,6 +25,11 @@ import Notfound from "./components/Notfound/Notfound";
                path: '*',
                element: <Notfound/>
             },
+            {
+               path: 'user-data',
+               element: <UserData/>
+            },
+
         ]
       },
       {
