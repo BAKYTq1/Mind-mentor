@@ -5,10 +5,10 @@ import React from 'react';
 
 const Hero2 = () => {
   return (
-    <div className="container mx-auto px-4 mt-[60px]">
-      <h2 className="text-[32px] font-bold mb-[40px] text-[#333] mt-[60px] ml-[30px]">О наших сервисах</h2>
+    <div className="container  mt-[60px]">
+      <h2 className="text-[32px] font-bold mb-[40px] text-[#333] mt-[60px]">О наших сервисах</h2>
 
-      <div className="flex gap-[40px] flex-wrap justify-center ml-[15px] mt-[30px]">
+      <div className="flex gap-[40px] justify-center  mt-[30px]">
      
         <div className="w-[380px] bg-[#FAFAFA] rounded-[30px] shadow-md p-6">
           <h1 className="font-bold text-[64px] text-[#6F6D73]">01</h1>

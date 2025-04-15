@@ -45,7 +45,7 @@ export default function Header() {
                             <button
                                 onClick={() => setActiveMenu(item)}
                                 className={`px-4 py-1.5 rounded transition ${
-                                    activeMenu === item ? "bg-gray-800 text-white" : "text-black"
+                                    activeMenu === item ? "bg-gray-800 text-black" : "text-black"
                                 }`}
                             >
                                 {item}
