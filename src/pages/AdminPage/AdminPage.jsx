@@ -33,7 +33,6 @@ const AdminPage = () => {
             case "grid":
                 return (
                     <div className="w-full h-full bg-black">
-                         <Mentory/>
                         {/* <MentorModal/> */}
                     </div>
                 );
@@ -48,17 +47,16 @@ const AdminPage = () => {
                 );
             case "dashboard":
                 return (
-                    <div className="">
-                        <AdminCourse/>
-                        <Filtr/>
-                        <MentorModal/>
+                    <div className="bg-black">
+                                <Mentory/>
+                        {/* <Filtr/>
+                        <MentorModal/> */}
                     </div>
                 );
             case "videos":
                 return (
-                    <div className="p-6">
-                        <h1 className="text-2xl font-bold">Videos Page</h1>
-                        <p>Videos content goes here</p>
+                    <div className="">
+                         <AdminCourse/>
                     </div>
                 );
             case "favorites":
