@@ -77,9 +77,6 @@ const AdminCourse = () => {
         <div className="flex gap-[20px] border justify-center pt-[24px] pb-[24px] bg-black">
             <div className="w-[412px] p-[20px] border rounded-[24px] bg-white">
                 <div className="flex justify-between mb-[12px] text-[16px] font-[500]">
-        <div className=" justify-between flex gap-[20px]">
-            <div className={"w-[405px] p-[20px]"}>
-                <div className={"flex justify-between mb-[12px] text-[16px] font-[500]"}>
                     <p>Все курсы</p>
                     <p>Популярные курсы</p>
                 </div>
