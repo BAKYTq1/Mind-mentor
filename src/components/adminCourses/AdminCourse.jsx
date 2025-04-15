@@ -211,7 +211,11 @@ const AdminCourse = () => {
                 onClose={() => setModalType(null)}
                 onConfirm={(id) => handleDeleteCourse(id)} // Курс өчүрүлөт
             />)}
-        </div>);
+        </div>
+        </div>
+        </div>
+        </div>
+        );
 };
 
 export default AdminCourse;
