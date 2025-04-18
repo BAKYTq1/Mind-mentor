@@ -32,11 +32,11 @@ const Project = () => {
   };
 
   return (
-    <div className='projects'>
+    <div className='container projects'>
       <div className='projects-header'>
         <h1>Проекты</h1>
         <div className="projects-controls">
-          <h4 className='mt-[20px]'>Посмотреть все <IoPlayOutline /></h4>
+          <h4 className=''>Посмотреть все <IoPlayOutline /></h4>
           {isMobile && (
             <>
               <button onClick={handlePrev} aria-label="Previous slide">

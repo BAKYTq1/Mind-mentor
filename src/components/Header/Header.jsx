@@ -17,7 +17,7 @@ export default function Header() {
     const menuItems = ["Главная", "Курсы", "Менторы", "Проекты"];
     return (
         <header className="w-full bg-white px-4 py-3 shadow-md relative">
-            <div className="max-w-[1200px] mx-auto flex items-center justify-between">
+            <div className="container mx-auto flex items-center justify-between">
                 <div className="flex items-center gap-2">
                     <button
                         className="lg:hidden block mr-2"
@@ -45,7 +45,7 @@ export default function Header() {
                             <button
                                 onClick={() => setActiveMenu(item)}
                                 className={`px-4 py-1.5 rounded transition ${
-                                    activeMenu === item ? "bg-gray-800 text-white" : "text-black"
+                                    activeMenu === item ? "bg-gray-800 text-black" : "text-black"
                                 }`}
                             >
                                 {item}
@@ -66,7 +66,7 @@ export default function Header() {
                         <img src={glaw3} alt="calendar" className="w-[35px]" />
                         <span className="absolute top-1 right-1 bg-yellow-400 w-2 h-2 rounded-full" />
                     </div>
-                    <img src={glaw4} alt="avatar" className="w-8 h-8 rounded-full" />
+                   <Link to={'adminka'}><img src={glaw4} alt="avatar" className="w-8 h-8 rounded-full" /></Link> 
                 </div>
             </div>
 
