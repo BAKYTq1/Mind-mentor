@@ -28,3 +28,14 @@
 // .cards-6::-webkit-scrollbar{
 //     width: 0px;
 // }
+.cards-6{
+    overflow-x: scroll;
+    .cards-6-item{
+        gap: 20px;
+        width: 1300px;
+        display: flex;
+    }
+}
+.cards-6::-webkit-scrollbar{
+    width: 0px;
+}

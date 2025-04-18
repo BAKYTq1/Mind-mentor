@@ -79,6 +79,7 @@ const AdminCourse = () => {
                 <div className="flex justify-between mb-[12px] text-[16px] font-[500]">
         <div className=" justify-between flex gap-[20px]">
             <div className={"w-[405px] p-[20px]"}>
+            <div className={"w-[405px] pr-[30px] rounded-[20px]"}>
                 <div className={"flex justify-between mb-[12px] text-[16px] font-[500]"}>
                     <p>Все курсы</p>
                     <p>Популярные курсы</p>
@@ -105,6 +106,7 @@ const AdminCourse = () => {
             </div>
 
             <div className="w-[700px] h-[810px] gap-[20px] p-[20px]">
+            <div className="w-[700px] h-[810px] gap-[20px] rounded-[20px] pr-[20px]">
                 <div>
                     <h3 className="text-[20px] font-[500]">Курсы</h3>
                     <div className="flex justify-between mt-[12px] mb-[12px]">

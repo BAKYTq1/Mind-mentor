@@ -9,6 +9,7 @@ const Hero2 = () => {
       <h2 className="text-[32px] font-bold mb-[40px] text-[#333] mt-[60px]">О наших сервисах</h2>
 
       <div className="flex gap-[20px] justify-center  mt-[30px]">
+      <div className="flex gap-[40px] justify-center  mt-[30px]">
      
         <div className="w-[380px] bg-[#FAFAFA] rounded-[30px]  p-6 font-jost">
           <h1 className="font-bold text-[64px] text-[#6F6D73]">01</h1>

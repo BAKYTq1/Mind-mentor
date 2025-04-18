@@ -34,6 +34,8 @@ const Project = () => {
   return (
     <div className='container projects'>
       <div className='projects-header'>
+    <div className='projects'>
+      <div className='container projects-header'>
         <h1>Проекты</h1>
         <div className="projects-controls">
           <h4 className=''>Посмотреть все <IoPlayOutline /></h4>
@@ -55,8 +57,8 @@ const Project = () => {
           <Swiper
             // modules={[Pagination]}
             onSwiper={(swiper) => (swiperRef.current = swiper)}
-            spaceBetween={30}
-            slidesPerView={3}
+            spaceBetween={10}
+            slidesPerView={3.120}
             slidesPerGroup={1}
             pagination={{ 
               clickable: true,
@@ -66,8 +68,8 @@ const Project = () => {
             breakpoints={{
               200: { slidesPerView: 1 },
               480: { slidesPerView: 1 },
-              760: { slidesPerView: 2 },
-              1024: { slidesPerView: 3 },
+              760: { slidesPerView: 2.120 },
+              1024: { slidesPerView: 3.120},
             }}
           >
             {projects.map((project) => (

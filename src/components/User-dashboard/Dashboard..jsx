@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import Vector1 from '../../assets/Vector (34).svg'
 import Vector2 from '../../assets/Vector (35).svg'
 import { FaSearch } from 'react-icons/fa';
+import  { useState } from 'react';
+import Vector1 from '../../assets/Vector (34).svg'
+import Vector2 from '../../assets/Vector (35).svg'
+// import { FaSearch } from 'react-icons/fa';
 import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { BsThreeDotsVertical } from 'react-icons/bs';
@@ -9,7 +13,6 @@ import './Dashboard.scss';
 import ava1 from "../../assets/ava1.svg"
 import star1 from "../../assets/star1.svg"
 import star2 from "../../assets/star2.svg"
-
 
 
 
@@ -43,7 +46,7 @@ const mockUsers = [
 ];
 
 
-const USERS_PER_PAGE = 5;
+const USERS_PER_PAGE = 7;
 
 const Dashboard = () => {
   const [filter, setFilter] = useState('all');
@@ -55,6 +58,7 @@ const Dashboard = () => {
   const [openZablock, setOpenzablock] = useState(false);
   const [clicked, setClicked] = useState(false);
 
+  const [mentor, setMentor] = useState(false);
   
       // const handleCancel = () => {
       //     showModal(false);
@@ -171,6 +175,7 @@ const Dashboard = () => {
           <section className="user-list-section">
             <div className="summary-card">
               <h1>статистика</h1>
+              <h1>Статистика</h1>
               <div>
                 <h3>Новые пользователи</h3>
                 <p className="count">200 <span>чел</span></p>
@@ -193,6 +198,7 @@ const Dashboard = () => {
             <div className="section-header">
               <h3>Все пользователи</h3>
               <div>
+              <div className='w-[50px] mr-[20px] flex justify-between'>
               <button><img src={Vector1} alt="" /></button>
               <button><img src={Vector2} alt="" /></button>
               </div>
@@ -231,6 +237,7 @@ const Dashboard = () => {
                     
                         <li onClick={() => handleUserAction(user.id, 'Активировать')}>Данные</li> 
                         <li onClick={() => handleUserAction(user.id, 'Редактировать')}>Изменить данные</li>
+                        <li onClick={() => setMentor(true)}>Изменить данные</li>
                         <li onClick={() => {
     setOpenzablock(true);
     setClicked(prev => !prev)
@@ -243,7 +250,6 @@ const Dashboard = () => {
 }}>
   Удалить аккаунт
 </li>
-
                       </ul>
                     )}
                   </div>
@@ -366,6 +372,87 @@ const Dashboard = () => {
                           </div>
                       </div>
                   </div>
+)}
+{mentor && (
+  <div className='modal-overlay'>
+   <div
+   className=" bg-white p-6 rounded-2xl max-w-[382px] w-full shadow-lg relative"
+>
+
+
+   <h1 className="text-[22px] font-bold text-center mb-5">Пользователь</h1>
+
+   <form className="space-y-3 text-sm">
+       <div>
+           <label className="font-semibold">Имя:</label>
+           <input
+               style={{backgroundColor: "rgba(240, 240, 243, 1)"}}
+               placeholder="Ваша имя"
+               className="w-full px-4 py-2 rounded-[10px] bg-white text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-400 shadow-sm"
+           />
+       </div>
+       <div>
+           <label className="font-semibold">Фамилия:</label>
+           <input
+               style={{backgroundColor: "rgba(240, 240, 243, 1)"}}
+               placeholder="Ваша фамилия"
+               className="w-full px-4 py-2 rounded-[10px] bg-white text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-400 shadow-sm"
+           />
+       </div>
+       <div>
+           <label className="font-semibold">Email:</label>
+           <input
+             type="email"
+               style={{backgroundColor: "rgba(240, 240, 243, 1)"}}
+               placeholder="Ваша почта"
+               className="w-full px-4 py-2 rounded-[10px] bg-white text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-400 shadow-sm"
+           />
+       </div>
+
+
+       <div className="flex gap-2">
+           <div className="w-full">
+               <label className="font-semibold">Телефон:</label>
+               <input
+                   type="text"
+                   placeholder="0 *** *** ***"
+                   style={{backgroundColor: "rgba(240, 240, 243, 1)"}}
+                   className="w-full px-4 py-2 rounded-[10px] bg-white text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-400 shadow-sm"
+               />
+           </div>
+       </div>
+
+       <div>
+           <label className="font-semibold">Пароль:</label>
+           <input
+               type="password"
+               style={{backgroundColor: "rgba(240, 240, 243, 1)"}}
+               placeholder="Новый пароль"
+               className="w-full px-4 py-2 rounded-[10px] bg-white text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-400 shadow-sm"
+           />
+       </div>
+
+       <div className="flex gap-3 mt-4">
+           <button
+               type="button"
+
+               className="flex-1 !bg-black text-white rounded-lg py-2"
+           >
+               Отмена
+           </button>
+           <button
+           onClick={() => setMentor(false)}
+               type="submit"
+               style={{backgroundColor: "rgba(35, 175, 206, 1)"}}
+
+               className="  flex-1 bg-cyan-500 text-white rounded-lg py-2"
+           >
+               Сохранить
+           </button>
+       </div>
+   </form>
+</div>
+</div>
 )}
 
     </div>

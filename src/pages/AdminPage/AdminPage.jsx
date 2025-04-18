@@ -13,6 +13,7 @@ import Mentor from "../../pages/Mentor.jsx"
 import Dashboard from "../../components/User-dashboard/Dashboard..jsx";
 import Mentory from "../../components/mentory/Mentory.jsx";
 import AdminCourse from "../../components/adminCourses/AdminCourse.jsx";
+import DeleteUsers from "../../components/Delete-users/index.jsx";
 
 const AdminPage = () => {
     const [activeTab, setActiveTab] = useState("grid");
@@ -50,15 +51,17 @@ const AdminPage = () => {
                 return (
                     <div className="">
                         <AdminCourse/>
+                    <div className="bg-black">
+                                <Mentory/>
                         <Filtr/>
                         <MentorModal/>
+                        {/* <DeleteUsers/> */}
                     </div>
                 );
             case "videos":
                 return (
-                    <div className="p-6">
-                        <h1 className="text-2xl font-bold">Videos Page</h1>
-                        <p>Videos content goes here</p>
+                    <div className="">
+                         <AdminCourse/>
                     </div>
                 );
             case "favorites":
