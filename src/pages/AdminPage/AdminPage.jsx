@@ -10,9 +10,13 @@ import adm8 from "../../assets/adm8.svg";
 import Filtr from "../Filtr/Filtr.jsx";
 import MentorModal from "../mentor-modal/Modal.jsx";
 import Mentor from "../../pages/Mentor.jsx"
+import Dashboard from "../../components/User-dashboard/Dashboard..jsx";
+import Mentory from "../../components/mentory/Mentory.jsx";
+import AdminCourse from "../../components/adminCourses/AdminCourse.jsx";
+import DeleteUsers from "../../components/Delete-users/index.jsx";
 
 const AdminPage = () => {
-    const [activeTab, setActiveTab] = useState("dashboard");
+    const [activeTab, setActiveTab] = useState("grid");
 
     const menuItems = [
         { id: "grid", img: adm1, title: "grid" },
@@ -29,31 +33,32 @@ const AdminPage = () => {
         switch (activeTab) {
             case "grid":
                 return (
-                    <div className="p-6">
-                        <p>Grid content goes here</p>
-                        <MentorModal/>
+                    <div className="w-full h-full bg-black">
+                        {/* <MentorModal/> */}
                     </div>
                 );
             case "list":
                 return (
-                    <div className="p-6">
-                        <h1 className="text-2xl font-bold">List Page</h1>
-                        <p>List content goes here</p>
-                        <Mentor/>
+                    <div className="bg-black">
+                        {/* <h1 className="text-2xl font-bold">List Page</h1>
+                        <p>List content goes here</p> */}
+                        <Dashboard/>
+                        {/* <Mentor/> */}
                     </div>
                 );
             case "dashboard":
                 return (
-                    <div className="p-6">
+                    <div className="bg-black">
+                                <Mentory/>
                         <Filtr/>
                         <MentorModal/>
+                        {/* <DeleteUsers/> */}
                     </div>
                 );
             case "videos":
                 return (
-                    <div className="p-6">
-                        <h1 className="text-2xl font-bold">Videos Page</h1>
-                        <p>Videos content goes here</p>
+                    <div className="">
+                         <AdminCourse/>
                     </div>
                 );
             case "favorites":
@@ -79,7 +84,7 @@ const AdminPage = () => {
                 );
             case "windows":
                 return (
-                    <div className="p-6">
+                    <div className=" p-6">
                         <h1 className="text-2xl font-bold">Windows Page</h1>
                         <p>Windows content goes here</p>
                     </div>
@@ -95,8 +100,8 @@ const AdminPage = () => {
     };
 
     return (
-        <div className="flex mx-auto max-w-7xl">
-            <div className="w-16 flex flex-col items-center py-4 space-y-6 bg-black h-[850px] shadow-md">
+        <div className="w-[1200px] flex h-[810px] mx-auto">
+            <div className="w-16 flex flex-col h-full items-center justify-between pt-[60px] py-4 space-y-6 bg-black shadow-md z-20">
                 {menuItems.map((item) => {
                     const buttonClass = item.id === "windows" ? "mt-[250px]" : "";
                     return (
@@ -121,7 +126,7 @@ const AdminPage = () => {
                     );
                 })}
             </div>
-            <div className="flex-1 bg-white">{renderContent()}</div>
+            <div className="w-[1132px] h-[810px] flex-1 bg-white">{renderContent()}</div>
         </div>
     );
 

@@ -16,13 +16,30 @@ export default function Header() {
     const [isOpen, setIsOpen] = useState(false);
     const menuItems = ["Главная", "Курсы", "Менторы", "Проекты"];
 
-    return (
         <header className="w-full px-4 py-3 mt-[15px] relative">
+    const getPath = (item) => {
+        switch (item) {
+            case "Главная":
+                return "/";
+            case "Курсы":
+                return "/courses";
+            case "Менторы":
+                return "/mentors";
+            case "Проекты":
+                return "/projects";
+            default:
+                return "/";
+        }
+    };
+
+    return (
+        <header className="w-full bg-white px-4 py-3 relative">
             <div className="container mx-auto flex items-center justify-between">
                 <div className="flex items-center gap-2">
                     <button
                         className="lg:hidden block mr-2"
                         onClick={() => setIsOpen(!isOpen)}
+                        aria-label="Toggle menu"
                     >
                         {isOpen ? <X size={24} /> : <Menu size={24} />}
                     </button>
@@ -41,6 +58,18 @@ export default function Header() {
                         >
                             {item}
                         </button>
+                        <Link to={getPath(item)} key={item}>
+                            <button
+                                onClick={() => setActiveMenu(item)}
+                                className={`px-4 py-1.5 rounded transition ${
+                                    activeMenu === item
+                                        ? "bg-black text-white"
+                                        : "bg-white text-black hover:bg-gray-100"
+                                }`}
+                            >
+                                {item}
+                            </button>
+                        </Link>
                     ))}
                 </nav>
 
@@ -58,6 +87,12 @@ export default function Header() {
                     </div>
                     <Link to={'adminka'}>
                         <img src={glaw4} alt="avatar" className=" w-10 h-10  rounded-full" />
+                    <div className="relative bg-black rounded-full w-8 h-8 flex items-center justify-center">
+                        <img src={glaw3} alt="chat" className="w-[35px]" />
+                        <span className="absolute top-1 right-1 bg-yellow-400 w-2 h-2 rounded-full" />
+                    </div>
+                    <Link to="/adminka">
+                        <img src={glaw4} alt="avatar" className="w-8 h-8 rounded-full" />
                     </Link>
                 </div>
             </div>
@@ -83,6 +118,21 @@ export default function Header() {
                             >
                                 {item}
                             </button>
+                            <Link to={getPath(item)}>
+                                <button
+                                    onClick={() => {
+                                        setActiveMenu(item);
+                                        setIsOpen(false); // optionally close menu on selection
+                                    }}
+                                    className={`whitespace-nowrap px-4 py-2 rounded font-semibold transition ${
+                                        activeMenu === item
+                                            ? "bg-black text-white"
+                                            : "bg-white text-black hover:bg-gray-100"
+                                    }`}
+                                >
+                                    {item}
+                                </button>
+                            </Link>
                         </SwiperSlide>
                     ))}
                 </Swiper>
@@ -90,3 +140,4 @@ export default function Header() {
         </header>
     );
 }
+

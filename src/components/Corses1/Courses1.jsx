@@ -163,6 +163,7 @@ const Courses1 = () => {
                             <div className="flex">
                                 <button
                                     className="w-13 h-13 rounded-full border border-gray-300 flex items-center justify-center mr-2 swiper-button-prev-courses"
+                                    className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center mr-2\ swiper-button-prev-courses"
                                     onClick={() => logAction("Previous slide button clicked")}
                                 >
                                     <img src={strel2} alt="" />
