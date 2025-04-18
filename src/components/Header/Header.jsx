@@ -62,6 +62,7 @@ export default function Header() {
                             <button
                                 onClick={() => setActiveMenu(item)}
                                 className={`px-4 py-1.5 rounded transition ${
+                                    activeMenu === item ? "bg-gray-800 text-black" : "text-black"
                                     activeMenu === item
                                         ? "bg-black text-white"
                                         : "bg-white text-black hover:bg-gray-100"
@@ -85,6 +86,7 @@ export default function Header() {
                         <img src={glaw3} alt="calendar" className="w-[35px]" />
                         <span className="absolute top-1 right-1 bg-yellow-400 w-2 h-2 rounded-full" />
                     </div>
+                   <Link to={'adminka'}><img src={glaw4} alt="avatar" className="w-8 h-8 rounded-full" /></Link> 
                     <Link to={'adminka'}>
                         <img src={glaw4} alt="avatar" className=" w-10 h-10  rounded-full" />
                     <div className="relative bg-black rounded-full w-8 h-8 flex items-center justify-center">
