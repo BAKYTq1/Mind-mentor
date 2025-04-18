@@ -11,22 +11,22 @@ const MentorCart = ({ mentor }) => {
         <button className='mentor-rating'>
           4.5 <img src={smile} alt="Рейтинг" className="pt-[1px]"/>
         </button>
-        
+
         <div className="images-container">
-          <img 
-            src={mentor.img} 
-            alt={`Ментор ${mentor.name}`} 
-            className="mentor-img" 
-            loading="lazy"
+          <img
+              src={mentor.img}
+              alt={`Ментор ${mentor.name}`}
+              className="mentor-img"
+              loading="lazy"
           />
         </div>
 
         <div className="mentor-btn">
           <button aria-label="Просмотреть">
-            <SlControlPlay />
+            <SlControlPlay/>
           </button>
           <button aria-label="Добавить в избранное">
-            <IoHeartSharp />
+            <IoHeartSharp/>
           </button>
         </div>
       </div>
