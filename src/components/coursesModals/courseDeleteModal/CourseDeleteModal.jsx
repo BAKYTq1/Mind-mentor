@@ -18,6 +18,7 @@ const CourseDeleteModal = ({course, onClose, onConfirm}) => {
 
                 <button style={{
                     width: "100%",
+                    height: "46px",
                     backgroundColor: "#23AFCE",
                     color: "#fff",
                     fontSize: "18px",
@@ -31,6 +32,7 @@ const CourseDeleteModal = ({course, onClose, onConfirm}) => {
                 </button>
                 <button style={{
                     width: "100%",
+                    height: "46px",
                     backgroundColor: "#09080D",
                     color: "#fff",
                     fontSize: "18px",

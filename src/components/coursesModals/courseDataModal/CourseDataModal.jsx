@@ -3,6 +3,8 @@ import CloseIcon from "../../..//assets/icons/close-icon.svg"
 import CourseInfo1 from "../../../assets/icons/courseInfo-icon.svg";
 import CourseInfo2 from "../../../assets/icons/courseInfo-icon2.svg";
 import { FaAnglesLeft, FaAnglesRight } from "react-icons/fa6";
+import Ava1 from "../../../assets/ava1.svg";
+import Mentor2 from "../../../assets/Mentor2.svg";
 
 const CourseDataModal = ({ course, onClose }) => {
     const [currentPage, setCurrentPage] = useState(1);
@@ -49,7 +51,7 @@ const CourseDataModal = ({ course, onClose }) => {
                 <p className={"text-[#6F6D73] text-[14px] font-[500] mb-[16px]"}>Автор курса</p>
 
                 <div className={"flex gap-[12px] items-center"}>
-                    <img className={"w-[45px] h-[45px] bg-[#00000080] rounded-[50%]"} src="" alt="Avatar" />
+                    <img className={"w-[45px] h-[45px] bg-[#00000080] rounded-[50%]"} src={Ava1} alt="Avatar" />
                     <div>
                         <h3 className={"text-[16px] font-[600] text-[#000000]"}>Марина Сополова</h3>
                         <div className={"flex gap-[5px] text-[#6F6D73] text-[15px] font-[500]"}>
@@ -70,7 +72,7 @@ const CourseDataModal = ({ course, onClose }) => {
                     {currentItems.map((item, index) => (
                         <div className={"flex mb-[17px] justify-between items-center"} key={item.id}>
                             <div className={"flex items-center gap-[12px]"}>
-                                <img className={"w-[36px] h-[35px] rounded-[50%] bg-[#00000080]"} src="" alt="Avatar" />
+                                <img className={"w-[36px] h-[35px] rounded-[50%] bg-[#00000080]"} src={Mentor2} alt="Avatar" />
                                 <p className={"text-[15px] font-[500]"}>{item.name}</p>
                             </div>
                             <p className={"text-[14px] font-[450] text-[#6F6D73]"}>{item.date}</p>

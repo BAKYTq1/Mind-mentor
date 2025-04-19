@@ -14,6 +14,8 @@ import ava1 from "../../assets/ava1.svg"
 import star1 from "../../assets/star1.svg"
 import star2 from "../../assets/star2.svg"
 
+import { Container } from '../Container/Container';
+
 
 
 
