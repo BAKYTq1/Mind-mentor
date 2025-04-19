@@ -36,8 +36,10 @@ const Mentor = () => {
   };
 
   return (
-    <div className='Mentor'>
+    <div className='container Mentor'>
       <div className='item-mentor'>
+    <div className='Mentor'>
+      <div className='container item-mentor'>
         <h1>Менторы</h1>
         <div className="mentor-controls">
           <h4>Посмотреть все <IoPlayOutline /></h4>
@@ -56,39 +58,39 @@ const Mentor = () => {
 
       <div className="Mentors">
         {isMobile ? (
-          <Swiper
-            // modules={[Pagination]}
-            onSwiper={(swiper) => (swiperRef.current = swiper)}
-            spaceBetween={30}
-            slidesPerView={3}
-            slidesPerGroup={1}
-            pagination={{ 
-              clickable: true,
-              dynamicBullets: true
-            }}
-            loop={true}
-            breakpoints={{
-              200: {
-                slidesPerView: 1,
-              },
-              480: {
-                slidesPerView: 1,
-              },
-              770: {
-                slidesPerView: 2,
-              },
-              1024: {
-                slidesPerView: 3,
-              },
-            }}
-            
-          >
-            {mentors.map((mentor) => (
-              <SwiperSlide key={mentor.id}>
-                <MentorCart mentor={mentor} />
-              </SwiperSlide>
-            ))}
-          </Swiper>
+      <Swiper
+      onSwiper={(swiper) => (swiperRef.current = swiper)}
+      spaceBetween={1}
+      slidesPerView={3.1} 
+      slidesPerGroup={1}
+      centeredSlides={false} 
+      loop={true}
+      pagination={{ 
+        clickable: true,
+        dynamicBullets: true
+      }}
+      breakpoints={{
+        200: {
+          slidesPerView: 1,
+        },
+        480: {
+          slidesPerView: 1,
+        },
+        770: {
+          slidesPerView: 2.1,
+        },
+        1024: {
+          slidesPerView: 3.1, 
+        },
+      }}
+    >
+      {mentors.map((mentor, index) => (
+        <SwiperSlide key={mentor.id}>
+          <MentorCart mentor={mentor} />
+        </SwiperSlide>
+      ))}
+    </Swiper>
+    
         ) : (
           <div className="mentor-grid">
             {mentors.map((mentor) => (

@@ -5,12 +5,13 @@ import React from 'react';
 
 const Hero2 = () => {
   return (
-    <div className="container mx-auto px-4 mt-[60px]">
-      <h2 className="text-[32px] font-bold mb-[40px] text-[#333] mt-[60px] ml-[30px]">О наших сервисах</h2>
+    <div className="container  mt-[60px]">
+      <h2 className="text-[32px] font-bold mb-[40px] text-[#333] mt-[60px]">О наших сервисах</h2>
 
-      <div className="flex gap-[40px] flex-wrap justify-center ml-[15px] mt-[30px]">
+      <div className="flex gap-[20px] justify-center  mt-[30px]">
+      <div className="flex gap-[40px] justify-center  mt-[30px]">
      
-        <div className="w-[380px] bg-[#FAFAFA] rounded-[30px] shadow-md p-6">
+        <div className="w-[380px] bg-[#FAFAFA] rounded-[30px]  p-6 font-jost">
           <h1 className="font-bold text-[64px] text-[#6F6D73]">01</h1>
           <h2 className="font-bold text-[24px] mt-[10px] text-[#333]">Менторы</h2>
           <p className="text-[#23AFCE] font-semibold text-[16px] mt-[25px]">Что вы получите:</p>
@@ -22,7 +23,7 @@ const Hero2 = () => {
         </div>
 
        
-        <div className="w-[380px] bg-[#FAFAFA] rounded-[30px] shadow-md p-6">
+        <div className="w-[380px] bg-[#FAFAFA] rounded-[30px] font-jost  p-6">
           <h1 className="font-bold text-[64px] text-[#6F6D73]">02</h1>
           <h2 className="font-bold text-[24px] mt-[10px] text-[#333]">Проекты</h2>
           <p className="text-[#23AFCE] font-semibold text-[16px] mt-[25px]">Что вы получите:</p>
@@ -35,7 +36,7 @@ const Hero2 = () => {
         </div>
 
        
-        <div className="w-[380px] bg-[#FAFAFA] rounded-[30px] shadow-md p-6">
+        <div className="w-[380px] bg-[#FAFAFA] rounded-[30px]  font-jost p-6">
           <h1 className="font-bold text-[64px] text-[#6F6D73]">03</h1>
           <h2 className="font-bold text-[24px] mt-[10px] text-[#333]">Курсы</h2>
           <p className="text-[#23AFCE] font-semibold text-[16px] mt-[25px]">Что вы получите:</p>

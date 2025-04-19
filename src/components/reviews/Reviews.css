@@ -2,7 +2,7 @@
 .reviews-header {
     /*border: 1px solid red;*/
     display: flex;
-    width: 1180px;
+    max-width: 1180px;
     height: 56px;
     justify-content: space-between;
     align-items: center;
@@ -34,7 +34,7 @@
 }
 
 .reviews-container {
-    width: 1280px;
+    max-width: 1280px;
     /*padding: 40px 50px;*/
     /*border: 1px solid red;*/
     margin: 0 auto;
