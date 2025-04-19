@@ -3,7 +3,8 @@ import {Swiper, SwiperSlide} from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import './Reviews.css';
-
+import { IoPlayOutline } from "react-icons/io5";
+import { RiPlayReverseLargeLine } from "react-icons/ri";
 const Reviews = () => {
     const swiperRef = useRef(null);
 
@@ -17,13 +18,13 @@ const Reviews = () => {
                         className="custom-button-prev"
                         onClick={() => swiperRef.current.swiper.slidePrev()}
                     >
-
+ <RiPlayReverseLargeLine />
                     </div>
                     <div
                         className="custom-button-next"
                         onClick={() => swiperRef.current.swiper.slideNext()}
                     >
-
+ <IoPlayOutline />
                     </div>
                 </div>
             </div>
