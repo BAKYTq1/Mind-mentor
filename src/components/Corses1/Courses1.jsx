@@ -13,6 +13,20 @@ import strel2 from "../../assets/strel2.svg";
 import strel3 from "../../assets/strel3.svg";
 import smile from "../../assets/img/Smile_rating.svg"
 
+"use client"
+import { useEffect, useState } from "react"
+import { Swiper, SwiperSlide } from "swiper/react"
+import { Navigation } from "swiper/modules"
+import "swiper/css"
+import "swiper/css/navigation"
+import avi from  "../../assets/avi.svg"
+import courl2 from "../../assets/courl2.svg"
+import courl3 from "../../assets/courl3.svg"
+import img from "../../assets/img.png"
+import strel from "../../assets/strel.svg"
+import strel2 from "../../assets/strel2.svg"
+import strel3 from "../../assets/strel3.svg"
+import smile from '../../assets/img/Smile_rating.svg'
 const Courses1 = () => {
     const [windowWidth, setWindowWidth] = useState(typeof window !== "undefined" ? window.innerWidth : 0);
     const [showMore, setShowMore] = useState(false);
@@ -42,6 +56,7 @@ const Courses1 = () => {
             return 2;
         } else {
             return 3.13;
+            return 3.18
         }
     };
 
@@ -150,6 +165,9 @@ const Courses1 = () => {
         <div className="container w-full px-4 py-8 bg-white">
             <div className="mb-12">
                 <div className="flex justify-between items-center mb-6">
+        <div className="max-w-[1280px] m-auto px-4 py-8 bg-white">
+            <div className="mb-12 ml-[30px] mr-[-16px]">
+                <div className=" max-w-[1180px] flex justify-between items-center mb-6">
                     <h2 className="text-3xl font-bold">Курсы</h2>
                     <div className="flex items-center">
                         <button
@@ -160,16 +178,18 @@ const Courses1 = () => {
                             <img className={"ml-5 mt-1"} src={strel3} alt="" />
                         </button>
                         {windowWidth >= 768 && (
-                            <div className="flex">
+                            <div className="flex gap-[15px]">
                                 <button
                                     className="w-13 h-13 rounded-full border border-gray-300 flex items-center justify-center mr-2 swiper-button-prev-courses"
                                     className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center mr-2\ swiper-button-prev-courses"
+                                    className="w-[56px] h-[56px] rounded-full border border-gray-300 flex items-center justify-center mr-2\ swiper-button-prev-courses"
                                     onClick={() => logAction("Previous slide button clicked")}
                                 >
                                     <img src={strel2} alt="" />
                                 </button>
                                 <button
                                     className="w-13 h-13 rounded-full border border-gray-300 flex items-center justify-center swiper-button-next-courses"
+                                    className="w-[56px]h-[56px] rounded-full border border-gray-300 flex items-center justify-center swiper-button-next-courses"
                                     onClick={() => logAction("Next slide button clicked")}
                                 >
                                     <img src={strel} alt="" />
@@ -183,7 +203,7 @@ const Courses1 = () => {
                 {windowWidth >= 768 ? (
                     <Swiper
                         modules={[Navigation]}
-                        spaceBetween={20}
+                        spaceBetween={40}
                         slidesPerView={getSlidesPerView()}
                         navigation={{
                             prevEl: ".swiper-button-prev-courses",
@@ -235,6 +255,7 @@ const renderCourseCard = (course, logAction) => {
     return (
         <div
             className="bg-white w-[387px] rounded-[25px] border rounded-4xl border-gray-100 h-[580px] shadow-lg"
+            className="bg-white w-[381px] rounded-[25px] border rounded-4xl border-gray-100 h-[580px] shadow-lg"
             style={{boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)"}}
         >
                 <div className="relative">
@@ -292,7 +313,7 @@ const renderCourseCard = (course, logAction) => {
                             ))}
                         </div>
                     </div>
-
+                    
                     <div className="flex justify-between items-center mt-4">
                         <span className="font-bold text-2xl ml-2">{course.price}</span>
                         <button
@@ -308,3 +329,6 @@ const renderCourseCard = (course, logAction) => {
 };
 
             export default Courses1;
+)
+}
+export default Courses1

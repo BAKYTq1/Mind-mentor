@@ -238,24 +238,26 @@ const Hero = () => {
           Mind mentor — место, где вы можете найти ментора и курсы, а также нужные проекты
         </h2>
 
-        <div className=" mt-[32px] flex justify-center flex-wrap">
-          <input
-            className="w-full sm:w-[450px] md:w-[580px] h-[64px] rounded-[20px] pl-12 pr-4 bg-white text-black mt-6"
-            type="text"
-            placeholder="Поиск, например курс для дизайнера"
-          />
-          
-          <img
-            className="relative left-[-40px] mt-[10px] top-[45px] transform -translate-y-1/2 w-[24px] h-[24px]"
-            src={input}
-            alt="Search Icon"
-          />
+              <div className="mt-[32px] flex justify-center flex-wrap">
+                <input
+                  className=" w-[580px] h-[64px] rounded-[20px] pl-[25px] text-[20px] font-jost bg-white font-medium text-[#6F6D73] "
+                  type="text"
+                  placeholder="Поиск, например курс для дизайнера"
+                />
+                <img
+                  className="relative left-[-50px] mt-[10px] top-[25px] transform -translate-y-1/2 w-[24px] h-[24px]"
+                  src={input}
+                  alt="Search Icon"
+                />
 
-          <button className="hero-btn w-full sm:w-[158px] h-[64px] bg-black text-white rounded-[24px] mt-6 flex items-center justify-center shadow-md transition duration-300  ml-[20px] z-1">
-            Подобрать
-          </button>
-        </div>
-      </div>
+                <button className="  w-[158px] h-[64px]  hero-btn    text-white rounded-[24px]  flex items-center justify-center  transition duration-300 ml-[20px] z-1">
+                  Подобрать
+                </button>
+              </div>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
   );
 };

@@ -22,6 +22,7 @@ const tags = [
 const Card = () => {
   return (
     <div className="container mx-auto px-4 mt-[60px]">
+    <div className="container px-4 pt-[40px] mt-[60px]">
       <Swiper
         modules={[Autoplay]}
         spaceBetween={80}
@@ -70,6 +71,22 @@ const Card = () => {
         </button>
       </div>
     </div>
+          // delay: 2000,
+          // disableOnInteraction: false,
+        }}
+      >
+        {tags.map((tag, index) => (
+         <SwiperSlide key={index} className="overflow-visible">
+         <div
+           className={`relative z-10 w-[220px] h-[104px] border-2 font-bold text-[20px] rounded-[30px] shadow-lg transition hover:scale-105 origin-top border-${tag.color} mb-4 flex items-center justify-center`}
+           style={{ borderColor: tag.color }}
+         >
+           {tag.text}
+         </div>
+       </SwiperSlide>
+       
+        ))}
+      </Swiper>
     </div>
   );
 };

@@ -1,6 +1,3 @@
-
-
-
 import React from 'react';
 
 const Hero2 = () => {
@@ -10,7 +7,6 @@ const Hero2 = () => {
 
       <div className="flex gap-[20px] justify-center  mt-[30px]">
       <div className="flex gap-[40px] justify-center  mt-[30px]">
-     
         <div className="w-[380px] bg-[#FAFAFA] rounded-[30px]  p-6 font-jost">
           <h1 className="font-bold text-[64px] text-[#6F6D73]">01</h1>
           <h2 className="font-bold text-[24px] mt-[10px] text-[#333]">Менторы</h2>
