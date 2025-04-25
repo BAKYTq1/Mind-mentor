@@ -26,6 +26,9 @@ function Home() {
         <Project/>
         <Reviews/>
         <ContactForm/>
+        <AdminPage/>
+        <Mentory/>
+        {/* <Dashboard/> */}
         {/* <DeleteUsers/> */}
         {/* <BlockUser/> */}
         {/* <AdminPage/> */}

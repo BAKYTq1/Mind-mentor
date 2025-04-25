@@ -34,6 +34,7 @@ const AdminPage = () => {
             case "grid":
                 return (
                     <div className="w-full h-full bg-black">
+                         <Mentory/>
                         {/* <MentorModal/> */}
                     </div>
                 );
@@ -48,6 +49,8 @@ const AdminPage = () => {
                 );
             case "dashboard":
                 return (
+                    <div className="">
+                        <AdminCourse/>
                     <div className="bg-black">
                                 <Mentory/>
                         <Filtr/>

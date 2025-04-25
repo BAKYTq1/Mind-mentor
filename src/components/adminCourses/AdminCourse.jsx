@@ -74,6 +74,48 @@ const AdminCourse = () => {
     };
 
     return (
+        <div className="flex gap-[20px] border justify-center pt-[24px] pb-[24px] bg-black">
+            <div className="w-[412px] p-[20px] border rounded-[24px] bg-white">
+                <div className="flex justify-between mb-[12px] text-[16px] font-[500]">
+        <div className=" justify-between flex gap-[20px]">
+            <div className={"w-[405px] p-[20px]"}>
+            <div className={"w-[405px] pr-[30px] rounded-[20px]"}>
+                <div className={"flex justify-between mb-[12px] text-[16px] font-[500]"}>
+                    <p>Все курсы</p>
+                    <p>Популярные курсы</p>
+                </div>
+                <div className="flex justify-between mb-[18px]">
+                    <h2 className="text-[32px] font-bold">10 000 <span className="text-[18px] font-medium">курс</span>
+                    </h2>
+                    <h2 className="text-[32px] font-bold">320 <span className="text-[18px] font-medium">курс</span></h2>
+                </div>
+                <p className="text-[rgb(111,109,115)] font-[500] mb-[16px]">Популярные категории курсов</p>
+                <div>
+                    {[...Array(10)].map((_, index) => (
+                        <div className="flex justify-between w-[372px] h-[46px]" key={index}>
+                            <div className="flex gap-[12px] items-center">
+                                <img className="w-[32px]" src={Icon} alt=""/>
+                                <h3 className="font-[500] text-[14px]">UX/UI дизайн</h3>
+                            </div>
+                            <div className="flex gap-[20px] items-center">
+                                <h3 className="font-[500] text-[14px]">324 раз</h3>
+                                <VscKebabVertical/>
+                            </div>
+                        </div>))}
+                </div>
+            </div>
+
+            <div className="w-[700px] h-[810px] gap-[20px] p-[20px]">
+            <div className="w-[700px] h-[810px] gap-[20px] p-[20px] border rounded-[24px] bg-white">
+            <div className="w-[700px] h-[810px] gap-[20px] rounded-[20px] pr-[20px]">
+                <div>
+                    <h3 className="text-[20px] font-[500]">Курсы</h3>
+                    <div className="flex justify-between mt-[12px] mb-[12px]">
+                        <p className="text-[rgb(111,109,115)] font-[500] text-[16px]">Все курсы</p>
+                        <div className="flex gap-[12px] items-center">
+                            <CgSortAz className="text-[30px]"/>
+                            <FaListAlt className="text-[20px]"/>
+                            <IoMdAddCircle className="text-[24px]"/>
             <div className="w-full bg-black pt-[24px] pb-[24px]">
                 <div className="max-w-[1200px] mx-auto flex gap-[20px]">
                     {/* Левый блок */}
