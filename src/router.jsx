@@ -22,7 +22,6 @@ import UserData from "./components/UserData";
                path: 'about',
                element: <About/>
             },
-            },
             {
                path: '*',
                element: <Notfound/>
