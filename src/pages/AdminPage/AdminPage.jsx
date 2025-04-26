@@ -14,7 +14,6 @@ import Dashboard from "../../components/User-dashboard/Dashboard..jsx";
 import Mentory from "../../components/mentory/Mentory.jsx";
 import AdminCourse from "../../components/adminCourses/AdminCourse.jsx";
 import DeleteUsers from "../../components/Delete-users/index.jsx";
-import Payments from "../../components/payments/Payments.jsx";
 
 const AdminPage = () => {
     const [activeTab, setActiveTab] = useState("grid");
@@ -35,7 +34,6 @@ const AdminPage = () => {
             case "grid":
                 return (
                     <div className="w-full h-full bg-black">
-                         <Mentory/>
                         {/* <MentorModal/> */}
                     </div>
                 );
@@ -50,8 +48,6 @@ const AdminPage = () => {
                 );
             case "dashboard":
                 return (
-                    <div className="">
-                        <AdminCourse/>
                     <div className="bg-black">
                                 <Mentory/>
                         <Filtr/>
@@ -74,10 +70,9 @@ const AdminPage = () => {
                 );
             case "chat":
                 return (
-                    <div className="p-6 bg-black">
-                        {/*<h1 className="text-2xl font-bold">Chat Page</h1>*/}
-                        {/*<p>Chat content goes here</p>*/}
-                        <Payments/>
+                    <div className="p-6">
+                        <h1 className="text-2xl font-bold">Chat Page</h1>
+                        <p>Chat content goes here</p>
                     </div>
                 );
             case "messages":
