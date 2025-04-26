@@ -6,7 +6,7 @@ import c_icon2 from "../../assets/svg/cours2.svg";
 import c_icon3 from "../../assets/svg/cours3.svg";
 
 export default function UserData() {
-  const [isOpen, setIsOpen] = useState(true); // Управляем видимостью модального окна
+  const [isOpen, setIsOpen] = useState(true);
   const [activeTab, setActiveTab] = useState("courses");
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 5;
@@ -31,19 +31,17 @@ export default function UserData() {
     }
   };
 
-  // Функция для закрытия модального окна
   const closeModal = () => {
     setIsOpen(false);
   };
 
-  // Если модальное окно закрыто, не рендерим компонент
   if (!isOpen) return null;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80">
       <div className="w-[514px] h-[805px] bg-white rounded-2xl p-6 shadow-md relative">
         <button
-          onClick={closeModal} // Закрытие модального окна при нажатии на кнопку "×"
+          onClick={closeModal}
           className="absolute top-4 right-4 text-2xl font-bold"
         >
           ×
@@ -51,7 +49,6 @@ export default function UserData() {
 
         <h2 className="text-xl font-bold mb-4">Данные пользователя</h2>
 
-        {/* Профиль */}
         <div className="flex items-center gap-3 mb-5">
           <img src={marina} alt="avatar" className="w-12 h-12 rounded-full object-cover" />
           <div>
@@ -64,18 +61,16 @@ export default function UserData() {
           </div>
         </div>
 
-        {/* Таб кнопки */}
         <div className="flex gap-2 mb-4">
           {Object.keys(tabs).map((tab) => (
             <button
               key={tab}
               onClick={() => {
                 setActiveTab(tab);
-                setCurrentPage(1); // при смене таба сбрасываем страницу на 1
+                setCurrentPage(1);
               }}
               className={`flex-1 px-4 py-2 rounded-[14px] text-sm font-medium border ${
                 activeTab === tab
-                  ? "bg-black text-white border-black"
                   ? "bg-[rgb(35,175,206)] text-white border-black"
                   : "bg-white text-black border-[#d9d9d9]"
               }`}
@@ -85,11 +80,10 @@ export default function UserData() {
           ))}
         </div>
 
-        {/* Контент */}
         <div className="h-[520px] overflow-y-auto space-y-3 pr-1 scrollbar-hide">
           {paginatedData.map((item) => (
             <div
-              key={item.id} // предполагаем, что у каждого элемента есть уникальный id
+              key={item.id}
               className="flex gap-3 items-start bg-[#f9f9f9] w-[466px] h-[90px] rounded-xl p-3 text-sm"
             >
               <img
@@ -109,12 +103,11 @@ export default function UserData() {
           ))}
         </div>
 
-        {/* Пагинация */}
         <div className="mt-4 flex justify-center items-center gap-1 text-sm">
           <button
             className="w-8 h-8 rounded-[10px] text-gray-600 hover:bg-gray-200"
             onClick={() => changePage(currentPage - 1)}
-            disabled={currentPage === 1} // Отключаем кнопку «предыдущая страница»
+            disabled={currentPage === 1}
           >
             «
           </button>
@@ -124,7 +117,6 @@ export default function UserData() {
               onClick={() => changePage(page)}
               className={`w-8 h-8 rounded-[10px] text-sm font-medium border transition ${
                 currentPage === page
-                  ? "bg-black text-white border-black"
                   ? "bg-[rgb(35,175,206)] text-white border-black"
                   : "text-gray-700 bg-white border-[#d9d9d9] hover:bg-gray-100"
               }`}
@@ -138,7 +130,7 @@ export default function UserData() {
               onClick={() => changePage(totalPages)}
               className={`w-8 h-8 rounded-[10px] text-sm font-medium border transition ${
                 currentPage === totalPages
-                  ? "bg-black text-white border-black"
+                  ? "bg-[rgb(35,175,206)] text-white border-black"
                   : "text-gray-700 bg-white border-[#d9d9d9] hover:bg-gray-100"
               }`}
             >
@@ -148,7 +140,7 @@ export default function UserData() {
           <button
             className="w-8 h-8 rounded-[10px] text-gray-600 hover:bg-gray-200"
             onClick={() => changePage(currentPage + 1)}
-            disabled={currentPage === totalPages} // Отключаем кнопку «следующая страница»
+            disabled={currentPage === totalPages}
           >
             »
           </button>
