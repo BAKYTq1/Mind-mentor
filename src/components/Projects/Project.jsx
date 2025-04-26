@@ -32,8 +32,6 @@ const Project = () => {
   };
 
   return (
-    <div className='container projects'>
-      <div className='projects-header'>
     <div className='projects'>
       <div className='container projects-header'>
         <h1>Проекты</h1>
