@@ -45,6 +45,7 @@ const Hero2 = () => {
         </div>
       </div>
     </div>
+    </div>
   );
 };
 
