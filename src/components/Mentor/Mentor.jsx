@@ -36,8 +36,6 @@ const Mentor = () => {
   };
 
   return (
-    <div className='container Mentor'>
-      <div className='item-mentor'>
     <div className='Mentor'>
       <div className='container item-mentor'>
         <h1>Менторы</h1>
