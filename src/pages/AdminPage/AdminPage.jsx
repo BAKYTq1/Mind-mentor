@@ -14,6 +14,7 @@ import Dashboard from "../../components/User-dashboard/Dashboard..jsx";
 import Mentory from "../../components/mentory/Mentory.jsx";
 import AdminCourse from "../../components/adminCourses/AdminCourse.jsx";
 import DeleteUsers from "../../components/Delete-users/index.jsx";
+import ProjectsAdminka from "../../components/ProjectsAdminka/index.jsx";
 
 const AdminPage = () => {
     const [activeTab, setActiveTab] = useState("grid");
@@ -63,9 +64,8 @@ const AdminPage = () => {
                 );
             case "favorites":
                 return (
-                    <div className="p-6">
-                        <h1 className="text-2xl font-bold">Favorites Page</h1>
-                        <p>Favorites content goes here</p>
+                    <div className="bg-black">
+                              <ProjectsAdminka/>
                     </div>
                 );
             case "chat":
