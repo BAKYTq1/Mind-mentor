@@ -29,6 +29,7 @@ import UserData from "./components/UserData";
                path: 'user-data',
                element: <UserData/>
             },
+
         ]
       },
       {
@@ -38,4 +39,6 @@ import UserData from "./components/UserData";
 
          ]
       }
+      
+      
 ])

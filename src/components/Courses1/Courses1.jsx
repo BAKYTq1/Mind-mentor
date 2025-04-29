@@ -12,7 +12,6 @@ import strel from "../../assets/strel.svg"
 import strel2 from "../../assets/strel2.svg"
 import strel3 from "../../assets/strel3.svg"
 import smile from '../../assets/img/Smile_rating.svg'
-
 const Courses1 = () => {
     const [windowWidth, setWindowWidth] = useState(typeof window !== "undefined" ? window.innerWidth : 0)
     const [showMore, setShowMore] = useState(false)
@@ -150,13 +149,14 @@ const Courses1 = () => {
                 <div className=" max-w-[1180px] flex justify-between items-center mb-6">
                     <h2 className="text-3xl font-bold">Курсы</h2>
                     <div className="flex items-center">
-                            <button
-                                className="flex hover:text-gray mr-4 rounded-4xl bg-[rgba(250,250,250,1)] p-3 pl-5 pr-5"
-                                onClick={() => logAction("View all courses clicked")}
-                            >
-                                Посмотреть все
-                                <img className="ml-5 mt-1" src={strel3} alt=""/>
-                            </button>
+                        <button
+                            className=" flex hover:text-gray mr-4 rounded-4xl bg-[rgba(250,250,250,1)] p-3 pl-5 pr-5"
+                            onClick={() => logAction("View all courses clicked")}
+                        >
+                            Посмотреть все
+
+                            <img className={"ml-5   mt-1"} src={strel3} alt=""/>
+                        </button>
                         {windowWidth >= 768 && (
                             <div className="flex gap-[15px]">
                                 <button
@@ -283,19 +283,19 @@ const renderCourseCard = (course, logAction) => {
                             ))}
                         </div>
                     </div>
+                    
 
-                <div className="flex justify-between items-center mt-4">
-                    <span className="font-bold text-2xl ml-2">{course.price}</span>
-                    <button
-                        className="bg-gray-800 text-white px-6 py-4 rounded-[21px] font-bold text-[16px] mr-4 transition-colors duration-300 ease-in-out hover:bg-gray-700"
-                        onClick={() => logAction(`Details button clicked for course ${course.id}`)}
-                    >
-                        Подробно
-                    </button>
-
+                    <div className="flex justify-between items-center mt-4">
+                        <span className="font-bold text-2xl ml-2">{course.price}</span>
+                        <button
+                            className="!bg-gray-800 text-white px-6 py-4 rounded-[21px] font-bold text-[16px] mr-4"
+                            onClick={() => logAction(`Details button clicked for course ${course.id}`)}
+                        >
+                            Подробно
+                        </button>
+                    </div>
                 </div>
             </div>
-        </div>
-    )
+)
 }
 export default Courses1
