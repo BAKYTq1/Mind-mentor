@@ -7,14 +7,14 @@ const tabTexts = {
     dashboard: "Панель управления",
     videos: "Курсы",
     favorites: "Избранное",
-    chat: "Чат поддержки",
+    payments: "Платежи",
     messages: "Сообщения",
     windows: "Окна",
 };
 
 function UsersHeader({ activeTab }) {
     return (
-        <div className='container bg-[black]'>
+        <div className='max-w-[1200px] m-auto bg-[black]'>
             <header className='mx-auto w-full h-[102px] flex items-center justify-between'>
                 <div>
                     <h1 className='text-[45px] font-bold leading-[58px] text-left text-[white]'>

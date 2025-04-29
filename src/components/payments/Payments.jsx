@@ -81,7 +81,7 @@ const Payments = () => {
     }, []);
 
     return (
-        <div className="flex gap-[20px] bg-black mt-[36px]">
+        <div className="flex gap-[20px] bg-black">
             <div className="w-[412px] bg-white rounded-[24px] p-[20px]">
                 <div className="flex h-[32px] justify-between items-center mb-[20px]">
                     <h3 className="text-[20px] font-[500]">Курсы</h3>

@@ -14,8 +14,10 @@ import { Container } from 'lucide-react'
 import Mentory from '../../components/mentory/Mentory.jsx'
 import DeleteUsers from '../../components/Delete-users/index.jsx'
 import BlockUser from '../../components/BlockUser/index.jsx'
+import Dashboarde from '../../components/Dashboard/Dashboarde.jsx'
 import NewUser from '../../components/NewUser/index.jsx'
 import SpecialistsPanel from '../../components/Special/index.jsx'
+import Payments from '../../components/payments/Payments.jsx'
 
 function Home() {
   return (
@@ -28,8 +30,12 @@ function Home() {
         <Project/>
         <Reviews/>
         <ContactForm/>
+        <Payments/>
         {/* <AdminPage/> */}
         {/* <Mentory/> */}
+        {/* <Dashboarde/>
+        <AdminPage/>
+        <Mentory/> */}
         {/* <NewUser/> */}
         {/* <Dashboard/> */}
         {/* <DeleteUsers/> */}

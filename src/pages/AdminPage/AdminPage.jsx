@@ -10,6 +10,8 @@ import adm8 from "../../assets/adm8.svg";
 import Dashboard from "../../components/User-dashboard/Dashboard..jsx";
 import Mentory from "../../components/mentory/Mentory.jsx";
 import AdminCourse from "../../components/adminCourses/AdminCourse.jsx";
+import Dashboarde from "../../components/Dashboard/Dashboarde.jsx";
+import Payments from "../../components/payments/Payments.jsx";
 // import другие компоненты
 
 const AdminPage = ({ activeTab, setActiveTab }) => {
@@ -19,7 +21,7 @@ const AdminPage = ({ activeTab, setActiveTab }) => {
         { id: "dashboard", img: adm3, title: "Dashboard" },
         { id: "videos", img: adm4, title: "Videos" },
         { id: "favorites", img: adm5, title: "Favorites" },
-        { id: "chat", img: adm6, title: "Chat" },
+        { id: "payments", img: adm6, title: "payments" },
         { id: "messages", img: adm7, title: "Messages" },
         { id: "windows", img: adm8, title: "Windows" },
     ];
@@ -27,7 +29,9 @@ const AdminPage = ({ activeTab, setActiveTab }) => {
     const renderContent = () => {
         switch (activeTab) {
             case "grid":
-                return <div className="w-full h-full bg-black"></div>;
+                return <div className="w-full h-full bg-black">
+                    <Dashboarde/>
+                </div>;
             case "list":
                 return <Dashboard />;
             case "dashboard":
@@ -35,21 +39,21 @@ const AdminPage = ({ activeTab, setActiveTab }) => {
             case "videos":
                 return <AdminCourse />;
             case "favorites":
-                return <div className="p-6">Favorites Page</div>;
-            case "chat":
-                return <div className="p-6">Chat Page</div>;
+                return <div className="p-6">Favorites Pag</div>;
+            case "payments":
+                return <div className=""><Payments/></div>;
             case "messages":
                 return <div className="p-6">Messages Page</div>;
             case "windows":
-                return <div className="p-6">Windows Page</div>;
+                return <div className="p-6"></div>;
             default:
                 return <div className="p-6">Dashboard Page</div>;
         }
     };
 
     return (
-        <div className="w-[1200px] flex h-[810px] mx-auto">
-            <div className="w-16 flex flex-col h-full items-center justify-between pt-[60px] py-4 space-y-6 bg-black shadow-md z-20">
+        <div className="w-[1200px] flex justify-between h-[976px] mx-auto">
+            <div className="w-10 flex flex-col h-[810px] mt-[44px] items-center justify-between space-y-6 bg-black z-20">
                 {menuItems.map((item) => {
                     const buttonClass = item.id === "windows" ? "mt-[250px]" : "";
                     return (
@@ -72,7 +76,7 @@ const AdminPage = ({ activeTab, setActiveTab }) => {
                     );
                 })}
             </div>
-            <div className="w-[1132px] h-[810px] flex-1 bg-black text-white">
+            <div className="w-[1132px] h-[810px] flex-1 bg-black ml-[20px] mt-[44px]">
                 {renderContent()}
             </div>
         </div>
