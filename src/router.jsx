@@ -5,7 +5,6 @@ import About from "./pages/About/About";
 import UserLayout from "./Layout/UserLayout";
 import Notfound from "./components/Notfound/Notfound";
 import UserData from "./components/UserData";
-import Courses2 from "./pages/coursespage/CoursesPage.jsx";
 
 
 
@@ -30,11 +29,6 @@ import Courses2 from "./pages/coursespage/CoursesPage.jsx";
                path: 'user-data',
                element: <UserData/>
             },
-            {
-                path: 'курсы',
-                element: <Courses2/>
-            },
-
         ]
       },
       {

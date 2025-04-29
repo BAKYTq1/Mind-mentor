@@ -151,7 +151,6 @@ const Courses1 = () => {
                 <div className=" max-w-[1180px] flex justify-between items-center mb-6">
                     <h2 className="text-3xl font-bold">Курсы</h2>
                     <div className="flex items-center">
-                        <Link to="/курсы">
                             <button
                                 className="flex hover:text-gray mr-4 rounded-4xl bg-[rgba(250,250,250,1)] p-3 pl-5 pr-5"
                                 onClick={() => logAction("View all courses clicked")}
@@ -159,7 +158,6 @@ const Courses1 = () => {
                                 Посмотреть все
                                 <img className="ml-5 mt-1" src={strel3} alt=""/>
                             </button>
-                        </Link>
                         {windowWidth >= 768 && (
                             <div className="flex gap-[15px]">
                                 <button
