@@ -12,7 +12,6 @@ import strel from "../../assets/strel.svg"
 import strel2 from "../../assets/strel2.svg"
 import strel3 from "../../assets/strel3.svg"
 import smile from '../../assets/img/Smile_rating.svg'
-import  {Link} from "react-router-dom"
 
 const Courses1 = () => {
     const [windowWidth, setWindowWidth] = useState(typeof window !== "undefined" ? window.innerWidth : 0)
