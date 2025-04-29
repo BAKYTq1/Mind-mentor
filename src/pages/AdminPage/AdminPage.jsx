@@ -11,11 +11,6 @@ import Dashboard from "../../components/User-dashboard/Dashboard..jsx";
 import Mentory from "../../components/mentory/Mentory.jsx";
 import AdminCourse from "../../components/adminCourses/AdminCourse.jsx";
 // import другие компоненты
-import DeleteUsers from "../../components/Delete-users/index.jsx";
-import ProjectsAdminka from "../../components/ProjectsAdminka/index.jsx";
-
-const AdminPage = () => {
-    const [activeTab, setActiveTab] = useState("grid");
 
 const AdminPage = ({ activeTab, setActiveTab }) => {
     const menuItems = [
@@ -41,11 +36,6 @@ const AdminPage = ({ activeTab, setActiveTab }) => {
                 return <AdminCourse />;
             case "favorites":
                 return <div className="p-6">Favorites Page</div>;
-                return (
-                    <div className="bg-black">
-                              <ProjectsAdminka/>
-                    </div>
-                );
             case "chat":
                 return <div className="p-6">Chat Page</div>;
             case "messages":
