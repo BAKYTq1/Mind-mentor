@@ -2,10 +2,9 @@ import { createBrowserRouter } from "react-router-dom";
 import Layout from "./Layout/Layout";
 import Home from "./pages/Home/Home";
 import UserLayout from "./Layout/UserLayout";
-// import UserData from "./components/UserData";
 import Notfound from "./components/Notfound/Notfound";
 import UserData from "./components/UserData";
-import Kursy from "./pages/Kursy/Kursy";
+import CoursesPage from "./pages/coursespage/CoursesPage";
 
 
 
@@ -19,16 +18,16 @@ import Kursy from "./pages/Kursy/Kursy";
                element: <Home/>
             },
             {
-               path: 'kursy',
-               element: <Kursy/>
-            },
-            {
                path: '*',
                element: <Notfound/>
             },
             {
                path: 'user-data',
                element: <UserData/>
+            },
+            {
+               path: 'kours',
+               element: <CoursesPage/>
             },
 
         ]
