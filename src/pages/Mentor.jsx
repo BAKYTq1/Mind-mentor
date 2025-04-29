@@ -47,7 +47,7 @@ const coursesData = [
 
 const ITEMS_PER_PAGE = 3;
 
-export default function Mentor() {
+export default function Mentor2() {
     const [activeTab, setActiveTab] = useState("Курсы")
     const [currentPage, setCurrentPage] = useState(1)
     const [isOpen, setIsOpen] = useState(true)

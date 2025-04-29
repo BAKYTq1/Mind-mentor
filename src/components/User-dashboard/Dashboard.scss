@@ -114,6 +114,7 @@
       }
       .user-list-section{
         // height: 808px;
+        position: relative;
         // width: 700px;
       }
       .summary-card {
@@ -183,12 +184,11 @@ letter-spacing: 0px;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin: 12px 0;
+        margin: 12px 0px;
 
         h3 {
           color: #6F6D73;
           font-size: 16px;
-          margin-left: 20px;
           font-family: Jost;
 font-weight: 500;
 font-size: 16px;
@@ -208,27 +208,28 @@ letter-spacing: 0px;
         margin-top: -2px !important;
         width: 100%;
         height: 618px;
-        padding: 0;
+        background-color: #fff;
+        border-radius: 16px;
+        padding: 0px 20px;
         margin: 0;
        .head-list{
         padding-top: 20px !important; 
         width: 100%;
-        margin: 20px;
         color: #000;
         font-family: Jost;
 font-weight: 500;
 font-size: 20px;
 line-height: 24px;
 letter-spacing: 0px;
-
        }
         .user-item {
+          height: 44px;
           display: flex;
           align-items: center;
           justify-content: space-between;
           background-color: transparent;
           border-radius: 10px;
-          margin-bottom: 10px;
+          margin-bottom: 14px;
     color: #000;
           .user-avatar {
             width: 40px;
@@ -283,13 +284,13 @@ letter-spacing: 0px;
             }
           .user-menu-wrapper {
             position: relative;
-
             .menu-button {
               background: none;
               border: none;
               color: #0b0a0a;
               cursor: pointer;
               font-size: 18px;
+               
             }
 
             .user-actions-menu {
@@ -438,9 +439,14 @@ letter-spacing: 0px;
   }
 }
 .pagination {
+  width: 100%;
+  position: absolute;
+  bottom: 10px;
+  padding-right: 10px;
+  left: 6px;
   display: flex;
-  justify-content: space-between;
   gap: 10px;
+  justify-content: space-between;
   margin: 10px;
   margin-top: 20px;
   color: #000;

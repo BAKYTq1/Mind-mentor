@@ -7,18 +7,12 @@ import adm5 from "../../assets/adm5.svg";
 import adm6 from "../../assets/adm6.svg";
 import adm7 from "../../assets/adm7.svg";
 import adm8 from "../../assets/adm8.svg";
-import Filtr from "../Filtr/Filtr.jsx";
-import MentorModal from "../mentor-modal/Modal.jsx";
-import Mentor from "../../pages/Mentor.jsx"
 import Dashboard from "../../components/User-dashboard/Dashboard..jsx";
 import Mentory from "../../components/mentory/Mentory.jsx";
 import AdminCourse from "../../components/adminCourses/AdminCourse.jsx";
-import DeleteUsers from "../../components/Delete-users/index.jsx";
-import ProjectsAdminka from "../../components/ProjectsAdminka/index.jsx";
+// import другие компоненты
 
-const AdminPage = () => {
-    const [activeTab, setActiveTab] = useState("grid");
-
+const AdminPage = ({ activeTab, setActiveTab }) => {
     const menuItems = [
         { id: "grid", img: adm1, title: "grid" },
         { id: "list", img: adm2, title: "List" },
@@ -33,69 +27,23 @@ const AdminPage = () => {
     const renderContent = () => {
         switch (activeTab) {
             case "grid":
-                return (
-                    <div className="w-full h-full bg-black">
-                        {/* <MentorModal/> */}
-                    </div>
-                );
+                return <div className="w-full h-full bg-black"></div>;
             case "list":
-                return (
-                    <div className="bg-black">
-                        {/* <h1 className="text-2xl font-bold">List Page</h1>
-                        <p>List content goes here</p> */}
-                        <Dashboard/>
-                        {/* <Mentor/> */}
-                    </div>
-                );
+                return <Dashboard />;
             case "dashboard":
-                return (
-                    <div className="bg-black">
-                                <Mentory/>
-                        <Filtr/>
-                        <MentorModal/>
-                        {/* <DeleteUsers/> */}
-                    </div>
-                );
+                return <Mentory />;
             case "videos":
-                return (
-                    <div className="">
-                         <AdminCourse/>
-                    </div>
-                );
+                return <AdminCourse />;
             case "favorites":
-                return (
-                    <div className="bg-black">
-                              <ProjectsAdminka/>
-                    </div>
-                );
+                return <div className="p-6">Favorites Page</div>;
             case "chat":
-                return (
-                    <div className="p-6">
-                        <h1 className="text-2xl font-bold">Chat Page</h1>
-                        <p>Chat content goes here</p>
-                    </div>
-                );
+                return <div className="p-6">Chat Page</div>;
             case "messages":
-                return (
-                    <div className="p-6">
-                        <h1 className="text-2xl font-bold">Messages Page</h1>
-                        <p>Messages content goes here</p>
-                    </div>
-                );
+                return <div className="p-6">Messages Page</div>;
             case "windows":
-                return (
-                    <div className=" p-6">
-                        <h1 className="text-2xl font-bold">Windows Page</h1>
-                        <p>Windows content goes here</p>
-                    </div>
-                );
+                return <div className="p-6">Windows Page</div>;
             default:
-                return (
-                    <div className="p-6">
-                        <h1 className="text-2xl font-bold">Dashboard Page</h1>
-                        <p>Dashboard content goes here</p>
-                    </div>
-                );
+                return <div className="p-6">Dashboard Page</div>;
         }
     };
 
@@ -105,7 +53,6 @@ const AdminPage = () => {
                 {menuItems.map((item) => {
                     const buttonClass = item.id === "windows" ? "mt-[250px]" : "";
                     return (
-
                         <button
                             key={item.id}
                             className={`rounded-full !bg-white h-[65px] w-[50px] flex items-center justify-center transition-colors ${
@@ -113,7 +60,6 @@ const AdminPage = () => {
                                     ? "!bg-yellow-400 text-black"
                                     : "!bg-white text-black hover:bg-gray-200"
                             } ${buttonClass}`}
-
                             onClick={() => setActiveTab(item.id)}
                             title={item.title}
                         >
@@ -126,10 +72,11 @@ const AdminPage = () => {
                     );
                 })}
             </div>
-            <div className="w-[1132px] h-[810px] flex-1 bg-white">{renderContent()}</div>
+            <div className="w-[1132px] h-[810px] flex-1 bg-black text-white">
+                {renderContent()}
+            </div>
         </div>
     );
-
 };
 
 export default AdminPage;
