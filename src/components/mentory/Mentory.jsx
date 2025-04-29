@@ -129,7 +129,7 @@ const Mentory = () => {
 
       {/* Блок с менторами */}
       <div className="bg-[#F5F6FB] mt-[192px] ml-[-720px] w-[700px] h-[618px] p-4 rounded-[24px]">
-        <h1 className="font-medium text-[20px]">Менторы</h1>
+        <h1 className="font-medium text-[20px] text-black">Менторы</h1>
 
         <div className="flex justify-between items-center mt-[20px]">
           <p className="font-medium text-[16px] text-[#6F6D73]">Все менторы</p>

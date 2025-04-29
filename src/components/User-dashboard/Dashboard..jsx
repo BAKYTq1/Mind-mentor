@@ -44,7 +44,7 @@ const mockUsers = [
 ];
 
 
-const USERS_PER_PAGE = 7;
+const USERS_PER_PAGE = 8;
 
 const Dashboard = () => {
   const [filter, setFilter] = useState('all');
@@ -193,7 +193,7 @@ const Dashboard = () => {
               </div>
             <div className="section-header">
               <h3>Все пользователи</h3>
-              <div className='w-[50px] mr-[20px] flex justify-between'>
+              <div className='w-[50px]  flex justify-between'>
               <button><img src={Vector1} alt="" /></button>
               <button><img src={Vector2} alt="" /></button>
               </div>
