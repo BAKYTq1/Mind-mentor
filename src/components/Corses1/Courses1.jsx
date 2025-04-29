@@ -41,7 +41,7 @@ const Courses1 = () => {
         } else if (windowWidth < 964) {
             return 2;
         } else {
-            return 3.13;
+            return 3.12;
         }
     };
 
@@ -147,9 +147,9 @@ const Courses1 = () => {
     const visibleCourses = windowWidth < 768 ? (showMore ? courses : courses.slice(0, 3)) : courses;
 
     return (
-        <div className="container w-full px-4 py-8 bg-white">
-            <div className="mb-12">
-                <div className="flex justify-between items-center mb-6">
+        <div className="max-w-[1280px] m-auto px-4 py-8 bg-white relative">
+            <div className="mb-3">
+                <div className="container flex justify-between items-center mb-6">
                     <h2 className="text-3xl font-bold">Курсы</h2>
                     <div className="flex items-center">
                         <button
@@ -163,7 +163,6 @@ const Courses1 = () => {
                             <div className="flex">
                                 <button
                                     className="w-13 h-13 rounded-full border border-gray-300 flex items-center justify-center mr-2 swiper-button-prev-courses"
-                                    className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center mr-2\ swiper-button-prev-courses"
                                     onClick={() => logAction("Previous slide button clicked")}
                                 >
                                     <img src={strel2} alt="" />
@@ -183,7 +182,7 @@ const Courses1 = () => {
                 {windowWidth >= 768 ? (
                     <Swiper
                         modules={[Navigation]}
-                        spaceBetween={20}
+                        spaceBetween={0}
                         slidesPerView={getSlidesPerView()}
                         navigation={{
                             prevEl: ".swiper-button-prev-courses",
