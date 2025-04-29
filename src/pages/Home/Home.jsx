@@ -14,6 +14,7 @@ import { Container } from 'lucide-react'
 import Mentory from '../../components/mentory/Mentory.jsx'
 import DeleteUsers from '../../components/Delete-users/index.jsx'
 import BlockUser from '../../components/BlockUser/index.jsx'
+import Dashboarde from '../../components/Dashboard/Dashboarde.jsx'
 
 function Home() {
   return (
@@ -26,6 +27,7 @@ function Home() {
         <Project/>
         <Reviews/>
         <ContactForm/>
+        <Dashboarde/>
         {/* <DeleteUsers/> */}
         {/* <BlockUser/> */}
         {/* <AdminPage/> */}
