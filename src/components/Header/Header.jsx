@@ -21,7 +21,7 @@ export default function Header() {
             case "Главная":
                 return "/";
             case "Курсы":
-                return "/courses";
+                return "/курсы";
             case "Менторы":
                 return "/mentors";
             case "Проекты":
@@ -95,7 +95,7 @@ export default function Header() {
                                 <button
                                     onClick={() => {
                                         setActiveMenu(item);
-                                        setIsOpen(false); // optionally close menu on selection
+                                        setIsOpen(false);
                                     }}
                                     className={`whitespace-nowrap px-4 py-2 rounded font-semibold transition ${
                                         activeMenu === item
