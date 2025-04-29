@@ -4,7 +4,7 @@ import Avatar from "../../assets/mentor2.svg";
 import ShareIcon from "../../assets/icons/share-icon.svg";
 import LoveIcon from "../../assets/icons/love.svg";
 import Icon from "../../assets/icons/icon2.svg";
-import Courses1 from "../Corses1/Courses1.jsx";
+// import Courses1 from "../Corses1/Courses1.jsx";
 
 const CourseDetail = () => {
     return (

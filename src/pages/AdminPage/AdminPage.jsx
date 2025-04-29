@@ -7,25 +7,21 @@ import adm5 from "../../assets/adm5.svg";
 import adm6 from "../../assets/adm6.svg";
 import adm7 from "../../assets/adm7.svg";
 import adm8 from "../../assets/adm8.svg";
-import Filtr from "../Filtr/Filtr.jsx";
-import MentorModal from "../mentor-modal/Modal.jsx";
-import Mentor from "../../pages/Mentor.jsx"
 import Dashboard from "../../components/User-dashboard/Dashboard..jsx";
 import Mentory from "../../components/mentory/Mentory.jsx";
 import AdminCourse from "../../components/adminCourses/AdminCourse.jsx";
-import DeleteUsers from "../../components/Delete-users/index.jsx";
+import Dashboarde from "../../components/Dashboard/Dashboarde.jsx";
 import Payments from "../../components/payments/Payments.jsx";
+// import другие компоненты
 
-const AdminPage = () => {
-    const [activeTab, setActiveTab] = useState("grid");
-
+const AdminPage = ({ activeTab, setActiveTab }) => {
     const menuItems = [
         { id: "grid", img: adm1, title: "grid" },
         { id: "list", img: adm2, title: "List" },
         { id: "dashboard", img: adm3, title: "Dashboard" },
         { id: "videos", img: adm4, title: "Videos" },
         { id: "favorites", img: adm5, title: "Favorites" },
-        { id: "chat", img: adm6, title: "Chat" },
+        { id: "payments", img: adm6, title: "payments" },
         { id: "messages", img: adm7, title: "Messages" },
         { id: "windows", img: adm8, title: "Windows" },
     ];
@@ -33,81 +29,34 @@ const AdminPage = () => {
     const renderContent = () => {
         switch (activeTab) {
             case "grid":
-                return (
-                    <div className="w-full h-full bg-black">
-                        {/* <MentorModal/> */}
-                    </div>
-                );
+                return <div className="w-full h-full bg-black">
+                    <Dashboarde/>
+                </div>;
             case "list":
-                return (
-                    <div className="bg-black">
-                        {/* <h1 className="text-2xl font-bold">List Page</h1>
-                        <p>List content goes here</p> */}
-                        <Dashboard/>
-                        {/* <Mentor/> */}
-                    </div>
-                );
+                return <Dashboard />;
             case "dashboard":
-                return (
-                    <div className="bg-black">
-                                <Mentory/>
-                        <Filtr/>
-                        <MentorModal/>
-                        {/* <DeleteUsers/> */}
-                    </div>
-                );
+                return <Mentory />;
             case "videos":
-                return (
-                    <div className="">
-                         <AdminCourse/>
-                    </div>
-                );
+                return <AdminCourse />;
             case "favorites":
-                return (
-                    <div className="p-6">
-                        <h1 className="text-2xl font-bold">Favorites Page</h1>
-                        <p>Favorites content goes here</p>
-                    </div>
-                );
-            case "chat":
-                return (
-                    <div className="p-6 bg-black">
-                        {/*<h1 className="text-2xl font-bold">Chat Page</h1>*/}
-                        {/*<p>Chat content goes here</p>*/}
-                        <Payments/>
-                    </div>
-                );
+                return <div className="p-6">Favorites Pag</div>;
+            case "payments":
+                return <div className=""><Payments/></div>;
             case "messages":
-                return (
-                    <div className="p-6">
-                        <h1 className="text-2xl font-bold">Messages Page</h1>
-                        <p>Messages content goes here</p>
-                    </div>
-                );
+                return <div className="p-6">Messages Page</div>;
             case "windows":
-                return (
-                    <div className=" p-6">
-                        <h1 className="text-2xl font-bold">Windows Page</h1>
-                        <p>Windows content goes here</p>
-                    </div>
-                );
+                return <div className="p-6"></div>;
             default:
-                return (
-                    <div className="p-6">
-                        <h1 className="text-2xl font-bold">Dashboard Page</h1>
-                        <p>Dashboard content goes here</p>
-                    </div>
-                );
+                return <div className="p-6">Dashboard Page</div>;
         }
     };
 
     return (
-        <div className="w-[1200px] flex h-[810px] mx-auto">
-            <div className="w-16 flex flex-col h-full items-center justify-between pt-[60px] py-4 space-y-6 bg-black shadow-md z-20">
+        <div className="w-[1200px] flex justify-between h-[976px] mx-auto">
+            <div className="w-10 flex flex-col h-[810px] mt-[44px] items-center justify-between space-y-6 bg-black z-20">
                 {menuItems.map((item) => {
                     const buttonClass = item.id === "windows" ? "mt-[250px]" : "";
                     return (
-
                         <button
                             key={item.id}
                             className={`rounded-full !bg-white h-[65px] w-[50px] flex items-center justify-center transition-colors ${
@@ -115,7 +64,6 @@ const AdminPage = () => {
                                     ? "!bg-yellow-400 text-black"
                                     : "!bg-white text-black hover:bg-gray-200"
                             } ${buttonClass}`}
-
                             onClick={() => setActiveTab(item.id)}
                             title={item.title}
                         >
@@ -128,10 +76,11 @@ const AdminPage = () => {
                     );
                 })}
             </div>
-            <div className="w-[1132px] h-[810px] flex-1 bg-white">{renderContent()}</div>
+            <div className="w-[1132px] h-[810px] flex-1 bg-black ml-[20px] mt-[44px]">
+                {renderContent()}
+            </div>
         </div>
     );
-
 };
 
 export default AdminPage;

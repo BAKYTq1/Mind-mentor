@@ -2,7 +2,7 @@ import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
-import 'swiper/css/autoplay'
+import 'swiper/css/autoplay';
 
 import input from "../../assets/input.svg";
 
@@ -54,7 +54,7 @@ const Hero = () => {
 
               <div className="mt-[32px] flex justify-center flex-wrap">
                 <input
-                  className=" w-[580px] h-[64px] rounded-[20px] pl-[25px] text-[20px] font-jost bg-white font-medium text-[#6F6D73] "
+                  className="w-[580px] h-[64px] rounded-[20px] pl-[25px] text-[20px] font-jost bg-white font-medium text-[#6F6D73]"
                   type="text"
                   placeholder="Поиск, например курс для дизайнера"
                 />
@@ -63,8 +63,7 @@ const Hero = () => {
                   src={input}
                   alt="Search Icon"
                 />
-
-                <button className="  w-[158px] h-[64px]  hero-btn    text-white rounded-[24px]  flex items-center justify-center  transition duration-300 ml-[20px] z-1">
+                <button className="w-[158px] h-[64px] hero-btn text-white rounded-[24px] flex items-center justify-center transition duration-300 ml-[20px] z-1">
                   Подобрать
                 </button>
               </div>

@@ -1,46 +1,51 @@
-import {createBrowserRouter} from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import Layout from "./Layout/Layout";
 import Home from "./pages/Home/Home";
-import About from "./pages/About/About";
 import UserLayout from "./Layout/UserLayout";
 import Notfound from "./components/Notfound/Notfound";
 import UserData from "./components/UserData";
-import CourseDetailPage from "./pages/courseDetailPage/CourseDetailPage.jsx";
+import CourseDetail from "./components/courseDetail/CourseDetail.jsx";
 
+
+function About() {
+    return null;
+}
 
 export const myRouter = createBrowserRouter([
-    {
+      {
         path: '/',
         element: <Layout/>,
         children: [
             {
-                path: '/',
-                element: <Home/>
+               path: '/',
+               element: <Home/>
             },
             {
-                path: 'about',
-                element: <About/>
+               path: 'about',
+               element: <About/>
             },
             {
-                path: '*',
-                element: <Notfound/>
+               path: '*',
+               element: <Notfound/>
             },
             {
-                path: 'user-data',
-                element: <UserData/>
+               path: 'user-data',
+               element: <UserData/>
             },
 
         ]
-    },
-    {
-        path: 'adminka',
-        element: <UserLayout/>,
-        children: []
-    },
+      },
+      {
+         path:'adminka',
+         element: <UserLayout/>,
+         children: [
 
-    {
-        path: 'course-detail',
-        element: <CourseDetailPage/>
-    }
+         ]
+      },
 
+     {
+         path: 'course-detail',
+         element: <CourseDetail/>,
+     }
+      
 ])

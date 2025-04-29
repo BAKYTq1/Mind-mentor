@@ -1,11 +1,11 @@
 import React from 'react'
 
-function About() {
+function Kursy() {
   return (
     <div>
-      about
+      
     </div>
   )
 }
 
-export default About
+export default Kursy

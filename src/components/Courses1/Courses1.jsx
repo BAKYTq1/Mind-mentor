@@ -12,6 +12,7 @@ import strel from "../../assets/strel.svg"
 import strel2 from "../../assets/strel2.svg"
 import strel3 from "../../assets/strel3.svg"
 import smile from '../../assets/img/Smile_rating.svg'
+import { Link } from "react-router-dom"
 const Courses1 = () => {
     const [windowWidth, setWindowWidth] = useState(typeof window !== "undefined" ? window.innerWidth : 0)
     const [showMore, setShowMore] = useState(false)
@@ -40,7 +41,7 @@ const Courses1 = () => {
         } else if (windowWidth < 964) {
             return 2
         } else {
-            return 3.18
+            return 3.12;
         }
     }
 
@@ -144,16 +145,16 @@ const Courses1 = () => {
 
     const visibleCourses = windowWidth < 768 ? (showMore ? courses : courses.slice(0, 3)) : courses
     return (
-        <div className="max-w-[1280px] m-auto px-4 py-8 bg-white">
-            <div className="mb-12 ml-[30px] mr-[-16px]">
+        <div className="max-w-[1280px] m-auto px-4 py-8 bg-white relative">
+                <div className="ml-[20px] mb-6">
                 <div className=" max-w-[1180px] flex justify-between items-center mb-6">
                     <h2 className="text-3xl font-bold">Курсы</h2>
                     <div className="flex items-center">
+                        
                         <button
                             className=" flex hover:text-gray mr-4 rounded-4xl bg-[rgba(250,250,250,1)] p-3 pl-5 pr-5"
-                            onClick={() => logAction("View all courses clicked")}
                         >
-                            Посмотреть все
+                          <Link to={'kours'}>  Посмотреть все</Link>
 
                             <img className={"ml-5   mt-1"} src={strel3} alt=""/>
                         </button>
@@ -179,7 +180,7 @@ const Courses1 = () => {
                 {windowWidth >= 768 ? (
                     <Swiper
                         modules={[Navigation]}
-                        spaceBetween={40}
+                        spaceBetween={0}
                         slidesPerView={getSlidesPerView()}
                         navigation={{
                             prevEl: ".swiper-button-prev-courses",
