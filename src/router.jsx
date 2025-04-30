@@ -5,7 +5,7 @@ import UserLayout from "./Layout/UserLayout";
 import Notfound from "./components/Notfound/Notfound";
 import UserData from "./components/UserData";
 import CoursesPage from "./pages/coursespage/CoursesPage";
-
+import NewProject from "./components/NewProject";
 
 
  export const myRouter = createBrowserRouter([
@@ -30,15 +30,23 @@ import CoursesPage from "./pages/coursespage/CoursesPage";
                element: <CoursesPage/>
             },
 
-        ]
+        ],
+       
       },
       {
          path:'adminka',
          element: <UserLayout/>,
          children: [
-
+           
          ]
+      },
+      {
+         
+            path: 'new-project',
+            element: <NewProject/>
+         
       }
+     
       
       
 ])

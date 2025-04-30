@@ -27,7 +27,7 @@ const moveTodayToLast = () => {
 };
 
 const data = moveTodayToLast();
-
+                                                                                                                                    
 const CustomLabel = (key1, key2) => ({ x, y, index }) => {
     const d = data[index];
     const isToday = index === data.length - 1;

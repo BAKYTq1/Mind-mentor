@@ -10,6 +10,7 @@ import { FaAnglesLeft, FaAnglesRight } from "react-icons/fa6";
 import CourseDataModal from "../coursesModals/courseDataModal/CourseDataModal.jsx";
 import CourseDeleteModal from "../coursesModals/courseDeleteModal/CourseDeleteModal.jsx";
 import SpecialistsPanel from '../Special/index.jsx';
+import NewProject from '../NewProject/index.jsx';
 
 const ProjectsAdminka = () => {
     const [currentPage, setCurrentPage] = useState(1);
@@ -49,6 +50,11 @@ const ProjectsAdminka = () => {
     };
 
     const handleOpenModal = (type, course) => {
+        setModalType(type);
+        setSelectedCourse(course);
+        setActiveMenu(null);
+    };
+    const handleIzmenModal = (type, course) => {
         setModalType(type);
         setSelectedCourse(course);
         setActiveMenu(null);
@@ -122,12 +128,11 @@ const ProjectsAdminka = () => {
                                                 >
                                                     Данные
                                                 </p>
-                                                <p
+                                                <a href='./new-project'
                                                     className="text-[14px] font-medium mb-2 cursor-pointer hover:underline"
-                                                    onClick={() => handleOpenModal('data', item)}
                                                 >
                                                     Изменить
-                                                </p>
+                                                </a>
                                                 <p
                                                     className="text-[14px] text-red-500 font-medium cursor-pointer hover:underline"
                                                     onClick={() => handleOpenModal('delete', item)}
@@ -182,6 +187,14 @@ const ProjectsAdminka = () => {
                     <CourseDataModal
                         course={selectedCourse}
                         onClose={() => setModalType(null)}
+                    />
+                )}
+
+                {modalType === 'izmenit' && selectedCourse && (
+                    <NewProject
+                        course={selectedCourse}
+                        onClose={() => setModalType(null)}
+                        onConfirm={(id) => handleIzmenCourse(id)}
                     />
                 )}
 
