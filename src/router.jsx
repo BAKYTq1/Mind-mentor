@@ -6,6 +6,7 @@ import Notfound from "./components/Notfound/Notfound";
 import UserData from "./components/UserData";
 import CoursesPage from "./pages/coursespage/CoursesPage";
 import NewProject from "./components/NewProject";
+import DataProjectAdmin from "./components/DataProjectAdmin";
 
 
  export const myRouter = createBrowserRouter([
@@ -45,7 +46,13 @@ import NewProject from "./components/NewProject";
             path: 'new-project',
             element: <NewProject/>
          
-      }
+      },
+      {
+         
+         path: 'data-project',
+         element: <DataProjectAdmin/>
+      
+   }
      
       
       
