@@ -247,7 +247,7 @@ const CoursesPage = () => {
                         spaceBetween={8}
                         slidesPerView={windowWidth < 768 ? 1.5 : 5.5}
                         loop={true}
-                        autoplay={{ delay: 1400, disableOnInteraction: false }}
+                        autoplay={{delay: 1400, disableOnInteraction: false}}
                         onSwiper={(swiper) => (swiperRef.current = swiper)}
                         className="w-full"
                     >
@@ -265,7 +265,7 @@ const CoursesPage = () => {
                                             ? "bg-yellow-400 text-black"
                                             : "bg-white text-black"
                                     }`}
-                                    style={{ boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }}
+                                    style={{boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)"}}
                                 >
                                     {tag}
                                 </button>
@@ -274,11 +274,11 @@ const CoursesPage = () => {
                     </Swiper>
                     <div className={'flex gap-4 text-[17px] relative top-[7px] ml-[940px]'}>
                         <div className={'flex gap-1 text-[rgba(111,109,115,1)]'}>
-                            <img src={down1} alt="" />
+                            <img src={down1} alt=""/>
                             <p>Сортировка</p>
                         </div>
                         <div className={'flex gap-1 text-[rgba(111,109,115,1)]'}>
-                            <img src={down1} alt="" />
+                            <img src={down1} alt=""/>
                             <p>Обзоры</p>
                         </div>
                     </div>
@@ -306,6 +306,7 @@ const CoursesPage = () => {
                 )}
             </div>
 
+
             <div className="flex items-center gap-6 ml-10 relative bottom-[40px]">
                 <div className="flex gap-2">
                     {[1, 2, 3, 4].map((num, index) => (
@@ -316,15 +317,16 @@ const CoursesPage = () => {
                             }`}
                             onClick={() => handleClick(index)}
                         >
-                        {num}
+                            {num}
                         </p>
                     ))}
                 </div>
                 <div className="flex relative right-[37px] top-[10px] flex-none">
-                    <img src={left} alt="Left arrow" className="max-w-7xl" />
-                    <img src={right} alt="Right arrow" className="max-w-7xl relative right-[45px]" />
+                    <img src={left} alt="Left arrow" className="max-w-7xl"/>
+                    <img src={right} alt="Right arrow" className="max-w-7xl relative right-[45px]"/>
                 </div>
             </div>
+
 
             <div className="">
                 <button
@@ -347,7 +349,7 @@ const renderCourseCard = (course, logAction) => {
         return (
             <>
                 {parts[0]}UX/UI
-                <br />
+                <br/>
                 {parts[1]}
             </>
         )
@@ -419,6 +421,7 @@ const renderCourseCard = (course, logAction) => {
                     </button>
                 </div>
             </div>
+
         </div>
     )
 }

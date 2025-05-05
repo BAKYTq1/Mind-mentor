@@ -6,7 +6,8 @@ import Notfound from "./components/Notfound/Notfound";
 import UserData from "./components/UserData";
 import CoursesPage from "./pages/coursespage/CoursesPage";
 import NewProject from "./components/NewProject";
-
+import History from "./pages/History.jsx";
+import WatchPage from "./pages/watchpage/WatchPage.jsx";
 
  export const myRouter = createBrowserRouter([
       {
@@ -29,7 +30,14 @@ import NewProject from "./components/NewProject";
                path: 'kours',
                element: <CoursesPage/>
             },
-
+            {
+                path: 'History',
+                element: <History/>
+            },
+            {
+                path: '/смотреть',
+                element: <WatchPage/>
+            },
         ],
        
       },
@@ -45,8 +53,5 @@ import NewProject from "./components/NewProject";
             path: 'new-project',
             element: <NewProject/>
          
-      }
-     
-      
-      
+      },
 ])
