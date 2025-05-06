@@ -12,15 +12,13 @@
 /* body{
     font-family: Jost;
 } */
-.container{
 body{
-    font-family: J
-    ost;
+    font-family: Jost;
 }
-/* .container{
+.container{
     width: 1280px;
     margin: auto;
-} */
+}
 .adminka{
     width: 100% !important;
     height: 100% !important;

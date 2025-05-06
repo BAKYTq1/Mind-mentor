@@ -1,7 +1,3 @@
-import React, { useState } from 'react';
-import Vector1 from '../../assets/Vector (34).svg'
-import Vector2 from '../../assets/Vector (35).svg'
-import { FaSearch } from 'react-icons/fa';
 import  { useState } from 'react';
 import Vector1 from '../../assets/Vector (34).svg'
 import Vector2 from '../../assets/Vector (35).svg'
@@ -13,6 +9,8 @@ import './Dashboard.scss';
 import ava1 from "../../assets/ava1.svg"
 import star1 from "../../assets/star1.svg"
 import star2 from "../../assets/star2.svg"
+// import { div } from 'framer-motion/client';
+
 
 
 
@@ -46,7 +44,7 @@ const mockUsers = [
 ];
 
 
-const USERS_PER_PAGE = 7;
+const USERS_PER_PAGE = 8;
 
 const Dashboard = () => {
   const [filter, setFilter] = useState('all');
@@ -57,7 +55,6 @@ const Dashboard = () => {
   const [openblock, setOpenblock] = useState(false);
   const [openZablock, setOpenzablock] = useState(false);
   const [clicked, setClicked] = useState(false);
-
   const [mentor, setMentor] = useState(false);
   
       // const handleCancel = () => {
@@ -174,7 +171,6 @@ const Dashboard = () => {
 </div>
           <section className="user-list-section">
             <div className="summary-card">
-              <h1>статистика</h1>
               <h1>Статистика</h1>
               <div>
                 <h3>Новые пользователи</h3>
@@ -197,8 +193,7 @@ const Dashboard = () => {
               </div>
             <div className="section-header">
               <h3>Все пользователи</h3>
-              <div>
-              <div className='w-[50px] mr-[20px] flex justify-between'>
+              <div className='w-[50px]  flex justify-between'>
               <button><img src={Vector1} alt="" /></button>
               <button><img src={Vector2} alt="" /></button>
               </div>
@@ -236,7 +231,6 @@ const Dashboard = () => {
                       <ul className="user-actions-menu"> 
                     
                         <li onClick={() => handleUserAction(user.id, 'Активировать')}>Данные</li> 
-                        <li onClick={() => handleUserAction(user.id, 'Редактировать')}>Изменить данные</li>
                         <li onClick={() => setMentor(true)}>Изменить данные</li>
                         <li onClick={() => {
     setOpenzablock(true);

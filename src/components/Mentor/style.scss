@@ -71,16 +71,6 @@ h4{
     } 
     }
   }
-  .Mentors {
-    position: relative;
-    right: -18px;
-    bottom: 0px;
-    margin: 0 auto;
-    max-width: 1240px;
-    height: 100%;
-    padding-bottom: 10px;
- 
-      // overflow: visible !important;
  .swiper{
     gap: 20px !important;
     margin-top: 20px;
@@ -88,7 +78,13 @@ h4{
     
  } 
 .Mentors {
-    // gap: 8px;
+     position: relative;
+    right: -18px;
+    bottom: 0px;
+    margin: 0 auto;
+    max-width: 1240px;
+    height: 100%;
+    padding-bottom: 10px;
     .swiper {
       width: 100%; /* ширина swiper */
       padding: 10px 0; /* отступы по вертикали */
