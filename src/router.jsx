@@ -5,7 +5,9 @@ import UserLayout from "./Layout/UserLayout";
 import Notfound from "./components/Notfound/Notfound";
 import UserData from "./components/UserData";
 import CourseDetail from "./components/courseDetail/CourseDetail.jsx";
-
+import CoursesPage from "./pages/coursespage/CoursesPage";
+import NewProject from "./components/NewProject";
+import DataProjectAdmin from "./components/DataProjectAdmin";
 
 function About() {
     return null;
@@ -33,13 +35,14 @@ export const myRouter = createBrowserRouter([
                element: <UserData/>
             },
 
-        ]
+        ],
+       
       },
       {
          path:'adminka',
          element: <UserLayout/>,
          children: [
-
+           
          ]
       },
 
@@ -47,5 +50,19 @@ export const myRouter = createBrowserRouter([
          path: 'course-detail',
          element: <CourseDetail/>,
      }
+      {
+         
+            path: 'new-project',
+            element: <NewProject/>
+         
+      },
+      {
+         
+         path: 'data-project',
+         element: <DataProjectAdmin/>
+      
+   }
+     
+      
       
 ])
