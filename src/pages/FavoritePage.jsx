@@ -1,34 +1,30 @@
 "use client"
-import { useEffect, useState, useRef } from "react"
+import { useState, useEffect, useRef } from "react"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Autoplay } from "swiper/modules"
 import "swiper/css"
-import avi from "../../assets/avi.svg"
-import courl2 from "../../assets/courl2.svg"
-import courl3 from "../../assets/courl3.svg"
-import cursava1 from "../../assets/cursava1.png"
-import cursava2 from "../../assets/cursava2.png"
-import cursava3 from "../../assets/cursava3.png"
-import cursava4 from "../../assets/cursava4.png"
-import cursava5 from "../../assets/cursava5.png"
-import cursava6 from "../../assets/cursava6.png"
-import cursava7 from "../../assets/cursava7.png"
-import cursava8 from "../../assets/cursava8.png"
-import cursava9 from "../../assets/cursava9.png"
-import cursava10 from "../../assets/cursava10.png"
-import cursava11 from "../../assets/cursava11.png"
-import cursava12 from "../../assets/cursava12.png"
-import down1 from "../../assets/down1.svg"
-import smile from '../../assets/img/Smile_rating.svg'
-import left from "../../assets/left.svg"
-import right from "../../assets/right.svg"
-import img from "../../assets/img.png"
+import avi from "../assets/avi.svg"
+import courl2 from "../assets/courl2.svg"
+import courl3 from "../assets/courl3.svg"
+import cursava1 from "../assets/cursava1.png"
+import cursava2 from "../assets/cursava2.png"
+import cursava3 from "../assets/cursava3.png"
+import cursava4 from "../assets/cursava4.png"
+import cursava5 from "../assets/cursava5.png"
+import cursava6 from "../assets/cursava6.png"
+import cursava7 from "../assets/cursava7.png"
+import cursava8 from "../assets/cursava8.png"
+import cursava9 from "../assets/cursava9.png"
+import cursava10 from "../assets/cursava10.png"
+import cursava11 from "../assets/cursava11.png"
+import cursava12 from "../assets/cursava12.png"
+import down1 from "../assets/down1.svg"
+import smile from "../assets/img/Smile_rating.svg"
+import left from "../assets/left.svg"
+import right from "../assets/right.svg"
+import img from "../assets/img.png"
 
-const CoursesPage = () => {
-    const [windowWidth, setWindowWidth] = useState(typeof window !== "undefined" ? window.innerWidth : 0)
-    const [activeIndex, setActiveIndex] = useState(null)
-    const [showMore, setShowMore] = useState(false)
-    const [activeTag, setActiveTag] = useState("#АНАЛИЗЫ")
+const FavoritePage = () => {
     const [favorites, setFavorites] = useState(() => {
         if (typeof window !== "undefined") {
             const saved = localStorage.getItem("favoriteCourseIds")
@@ -36,6 +32,10 @@ const CoursesPage = () => {
         }
         return []
     })
+    const [windowWidth, setWindowWidth] = useState(typeof window !== "undefined" ? window.innerWidth : 0)
+    const [activeIndex, setActiveIndex] = useState(null)
+    const [showMore, setShowMore] = useState(false)
+    const [activeTag, setActiveTag] = useState("#АНАЛИЗЫ")
     const swiperRef = useRef(null)
 
     const logAction = (action) => {
@@ -245,20 +245,27 @@ const CoursesPage = () => {
         },
     ]
 
-    const visibleCourses = windowWidth < 768 ? (showMore ? courses : courses.slice(0, 3)) : courses
+    const favoriteCourses = courses.filter((course) => favorites.includes(course.id))
 
     const tags = [
-        "#АНАЛИЗЫ",
-        "#FRONTEND",
         "#BACKEND",
         "#DESIGN",
         "#DEVOPS",
         "#ТЕСТЕР",
         "#ДЕВЕЛОПЕР",
         "#АНАЛИЗ",
-        "#СЕКЬЮРИТИ",
-        "#UIUX",
     ]
+
+    const formatTitle = (title) => {
+        const parts = title.split("UX/UI ")
+        return (
+            <>
+                {parts[0]}UX/UI
+                <br/>
+                {parts[1]}
+            </>
+        )
+    }
 
     return (
         <div className="max-w-[1280px] m-auto px-4 py-8 bg-white">
@@ -308,19 +315,22 @@ const CoursesPage = () => {
                         </div>
                     </div>
                 </div>
-
                 {windowWidth >= 768 ? (
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-7">
-                        {courses.map((course) => (
-                            <div key={course.id}>{renderCourseCard(course, logAction, toggleFavorite, favorites)}</div>
+                        {favoriteCourses.map((course) => (
+                            <div key={course.id}>
+                                {renderCourseCard(course, logAction, toggleFavorite, favorites)}
+                            </div>
                         ))}
                     </div>
                 ) : (
                     <div className="flex flex-col gap-1">
-                        {visibleCourses.map((course) => (
-                            <div key={course.id}>{renderCourseCard(course, logAction, toggleFavorite, favorites)}</div>
+                        {favoriteCourses.map((course) => (
+                            <div key={course.id}>
+                                {renderCourseCard(course, logAction, toggleFavorite, favorites)}
+                            </div>
                         ))}
-                        {!showMore && courses.length > 3 && (
+                        {!showMore && favoriteCourses.length > 3 && (
                             <div className="mt-4 text-center">
                                 <button className="text-gray-500 hover:text-black" onClick={handleShowMore}>
                                     Показать еще
@@ -330,7 +340,6 @@ const CoursesPage = () => {
                     </div>
                 )}
             </div>
-
             <div className="flex items-center gap-6 ml-10 relative bottom-[40px]">
                 <div className="flex gap-2">
                     {[1, 2, 3, 4].map((num, index) => (
@@ -350,7 +359,6 @@ const CoursesPage = () => {
                     <img src={right} alt="Right arrow" className="max-w-7xl relative right-[45px]"/>
                 </div>
             </div>
-
             <div className="">
                 <button
                     className="bg-black text-white ml-[860px] text-[20px] relative bottom-[120px] rounded-[23px] p-[15px] pl-[120px] pr-[120px] whitespace-nowrap"
@@ -382,7 +390,7 @@ const renderCourseCard = (course, logAction, toggleFavorite, favorites) => {
 
     return (
         <div
-            className="bg-white w-[378px] rounded-[25px] border  border-gray-100 h-[560px] shadow-lg"
+            className="bg-white w-[378px] rounded-[25px] border rounded-4xl border-gray-100 h-[560px] shadow-lg"
             style={{ boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)" }}
         >
             <div className="relative">
@@ -462,4 +470,4 @@ const renderCourseCard = (course, logAction, toggleFavorite, favorites) => {
     )
 }
 
-export default CoursesPage
+export default FavoritePage

@@ -2,13 +2,13 @@
 
 import React, { useState } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
-import down1 from "../assets/down1.svg"
-import mentor2 from "../assets/mentor2.svg"
-import mentor3 from "../assets/mentor3.svg"
-import mentor4 from "../assets/mentor4.svg"
-import mentor22 from "../assets/mentor22.svg"
+import down1 from "../../assets/down1.svg"
+import mentor2 from "../../assets/mentor2.svg"
+import mentor3 from "../../assets/mentor3.svg"
+import mentor4 from "../../assets/mentor4.svg"
+import mentor22 from "../../assets/mentor22.svg"
 
-const History = () => {
+const HistoryPage = () => {
     const [activeIndex, setActiveIndex] = useState(0)
 
     const handleClick = (index) => {
@@ -164,4 +164,4 @@ const History = () => {
 )
 }
 
-export default History
+export default HistoryPage

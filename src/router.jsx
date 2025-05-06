@@ -6,8 +6,9 @@ import Notfound from "./components/Notfound/Notfound";
 import UserData from "./components/UserData";
 import CoursesPage from "./pages/coursespage/CoursesPage";
 import NewProject from "./components/NewProject";
-import History from "./pages/History.jsx";
+import HistoryPage from "./pages/history/HistoryPage.jsx";
 import WatchPage from "./pages/watchpage/WatchPage.jsx";
+import FavoritePage from "./pages/FavoritePage.jsx";
 
  export const myRouter = createBrowserRouter([
       {
@@ -32,11 +33,15 @@ import WatchPage from "./pages/watchpage/WatchPage.jsx";
             },
             {
                 path: 'History',
-                element: <History/>
+                element: <HistoryPage/>
             },
             {
                 path: '/смотреть',
                 element: <WatchPage/>
+            },
+            {
+                path: '/сохраненные',
+                element: <FavoritePage/>
             },
         ],
        
