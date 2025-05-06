@@ -17,7 +17,6 @@ function Chat() {
     reviews: 220,
   });
 
-  // Динамический список пользователей (пример)
   const chatList = Array.from({ length: 10 }, (_, index) => ({
     id: index + 1,
     name: `Пользователь ${index + 1}`,
@@ -64,7 +63,7 @@ function Chat() {
             </div>
           )}
         </div>
-
+   
         <div className="messages">
           {messages.map((msg, i) => (
             <div
@@ -91,7 +90,6 @@ function Chat() {
         </div>
       </div>
 
-      {/* Правая часть: запросы, жалобы, отзывы и список пользователей */}
       <div className="chat-right">
         <div className="stats">
         <h1>Данные</h1>
