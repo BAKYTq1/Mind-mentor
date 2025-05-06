@@ -4,12 +4,16 @@ import Home from "./pages/Home/Home";
 import UserLayout from "./Layout/UserLayout";
 import Notfound from "./components/Notfound/Notfound";
 import UserData from "./components/UserData";
+import CourseDetail from "./components/courseDetail/CourseDetail.jsx";
 import CoursesPage from "./pages/coursespage/CoursesPage";
 import NewProject from "./components/NewProject";
 import DataProjectAdmin from "./components/DataProjectAdmin";
 
+function About() {
+    return null;
+}
 
- export const myRouter = createBrowserRouter([
+export const myRouter = createBrowserRouter([
       {
         path: '/',
         element: <Layout/>,
@@ -19,16 +23,16 @@ import DataProjectAdmin from "./components/DataProjectAdmin";
                element: <Home/>
             },
             {
+               path: 'about',
+               element: <About/>
+            },
+            {
                path: '*',
                element: <Notfound/>
             },
             {
                path: 'user-data',
                element: <UserData/>
-            },
-            {
-               path: 'kours',
-               element: <CoursesPage/>
             },
 
         ],
@@ -41,6 +45,11 @@ import DataProjectAdmin from "./components/DataProjectAdmin";
            
          ]
       },
+
+     {
+         path: 'course-detail',
+         element: <CourseDetail/>,
+     }
       {
          
             path: 'new-project',
