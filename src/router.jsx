@@ -5,6 +5,8 @@ import UserLayout from "./Layout/UserLayout";
 import Notfound from "./components/Notfound/Notfound";
 import UserData from "./components/UserData";
 import CoursesPage from "./pages/coursespage/CoursesPage";
+import Korzina from "./components/korzina/Korzina";
+import Pokupka from "./components/korzina-pokupka/Pokupka";
 
 
 
@@ -38,7 +40,15 @@ import CoursesPage from "./pages/coursespage/CoursesPage";
          children: [
 
          ]
-      }
+      },
+      {
+         path:"details",
+         element: <Korzina/>
+      },
+      {
+         path:"pokupka",
+         element: <Pokupka/>
+      },
       
       
 ])
