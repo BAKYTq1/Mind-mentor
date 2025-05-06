@@ -11,6 +11,7 @@ import CourseDataModal from "../coursesModals/courseDataModal/CourseDataModal.js
 import CourseDeleteModal from "../coursesModals/courseDeleteModal/CourseDeleteModal.jsx";
 import SpecialistsPanel from '../Special/index.jsx';
 
+
 const ProjectsAdminka = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 8;
@@ -53,6 +54,7 @@ const ProjectsAdminka = () => {
         setSelectedCourse(course);
         setActiveMenu(null);
     };
+   
 
     const handleDeleteCourse = (id) => {
         setCourses((prevCourses) => prevCourses.filter((course) => course.id !== id));
@@ -116,18 +118,18 @@ const ProjectsAdminka = () => {
                                         />
                                         {activeMenu === item.id && (
                                             <div className="absolute right-0 mt-[10px] w-[120px] bg-[#0F0F11] text-white rounded-[10px] p-[10px] z-10 shadow-lg">
-                                                <p
+                                                <a href='./data-project'
                                                     className="text-[14px] font-medium mb-2 cursor-pointer hover:underline"
-                                                    onClick={() => handleOpenModal('data', item)}
                                                 >
+                                                  
                                                     Данные
-                                                </p>
-                                                <p
+                                                </a>
+                                            <br />
+                                                <a href='./new-project'
                                                     className="text-[14px] font-medium mb-2 cursor-pointer hover:underline"
-                                                    onClick={() => handleOpenModal('data', item)}
                                                 >
                                                     Изменить
-                                                </p>
+                                                </a>
                                                 <p
                                                     className="text-[14px] text-red-500 font-medium cursor-pointer hover:underline"
                                                     onClick={() => handleOpenModal('delete', item)}
@@ -184,6 +186,8 @@ const ProjectsAdminka = () => {
                         onClose={() => setModalType(null)}
                     />
                 )}
+
+               
 
                 {modalType === 'delete' && selectedCourse && (
                     <CourseDeleteModal
