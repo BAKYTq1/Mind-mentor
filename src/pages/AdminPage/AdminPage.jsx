@@ -11,7 +11,6 @@ import Dashboard from "../../components/User-dashboard/Dashboard..jsx";
 import Mentory from "../../components/mentory/Mentory.jsx";
 import AdminCourse from "../../components/adminCourses/AdminCourse.jsx";
 import Dashboarde from "../../components/Dashboard/Dashboarde.jsx";
-import Payments from "../../components/payments/Payments.jsx";
 import ProjectsAdminka from "../../components/ProjectsAdminka/index.jsx";
 // import другие компоненты
 
@@ -41,8 +40,6 @@ const AdminPage = ({ activeTab, setActiveTab }) => {
                 return <AdminCourse />;
             case "favorites":
                 return <ProjectsAdminka />;
-            case "payments":
-                return <div className=""><Payments/></div>;
             case "messages":
                 return <div className="p-6">Messages Page</div>;
             case "windows":

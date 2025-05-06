@@ -7,6 +7,9 @@ import UserData from "./components/UserData";
 import CourseDetail from "./components/courseDetail/CourseDetail.jsx";
 import CoursesPage from "./pages/coursespage/CoursesPage";
 import NewProject from "./components/NewProject";
+import HistoryPage from "./pages/history/HistoryPage.jsx";
+import WatchPage from "./pages/watchpage/WatchPage.jsx";
+import FavoritePage from "./pages/FavoritePage.jsx";
 import DataProjectAdmin from "./components/DataProjectAdmin";
 
 function About() {
@@ -33,6 +36,22 @@ export const myRouter = createBrowserRouter([
             {
                path: 'user-data',
                element: <UserData/>
+            },
+            {
+               path: 'kours',
+               element: <CoursesPage/>
+            },
+            {
+                path: 'History',
+                element: <HistoryPage/>
+            },
+            {
+                path: '/смотреть',
+                element: <WatchPage/>
+            },
+            {
+                path: '/сохраненные',
+                element: <FavoritePage/>
             },
 
         ],
@@ -63,6 +82,5 @@ export const myRouter = createBrowserRouter([
       
    }
      
-      
       
 ])
