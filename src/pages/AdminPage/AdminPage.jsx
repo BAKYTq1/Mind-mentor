@@ -12,6 +12,7 @@ import Mentory from "../../components/mentory/Mentory.jsx";
 import AdminCourse from "../../components/adminCourses/AdminCourse.jsx";
 import Dashboarde from "../../components/Dashboard/Dashboarde.jsx";
 import Payments from "../../components/payments/Payments.jsx";
+import Chat from "../../components/Chat/Chat.jsx";
 // import другие компоненты
 
 const AdminPage = ({ activeTab, setActiveTab }) => {
@@ -39,13 +40,13 @@ const AdminPage = ({ activeTab, setActiveTab }) => {
             case "videos":
                 return <AdminCourse />;
             case "favorites":
-                return <div className="p-6">Favorites Pag</div>;
+                return <div className="p-6 text-white">Favorites Pag</div>;
             case "payments":
                 return <div className=""><Payments/></div>;
             case "messages":
-                return <div className="p-6">Messages Page</div>;
+                return <div className=""><Chat/></div>;
             case "windows":
-                return <div className="p-6"></div>;
+                return <div className=""></div>;
             default:
                 return <div className="p-6">Dashboard Page</div>;
         }
