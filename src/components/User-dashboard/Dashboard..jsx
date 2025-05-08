@@ -338,7 +338,7 @@ const Dashboard = () => {
                               <div className="ml-4 flex flex-col">
                                   <div className="flex items-center">
                                       <h2 className=" font-semibold text-base ">Марина Сополова</h2>
-                                      <img src={star1} alt="star1" className="w-5 h-5 w-[45px] ml-[35px]"/>
+                                      <img src={star1} alt="star1" className=" h-5 w-[45px] ml-[35px]"/>
                                   </div>
   
                                   <div className="flex items-center text-sm text-gray-600 mt-1">

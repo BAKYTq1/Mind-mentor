@@ -18,6 +18,7 @@ import Dashboarde from '../../components/Dashboard/Dashboarde.jsx'
 import NewUser from '../../components/NewUser/index.jsx'
 import SpecialistsPanel from '../../components/Special/index.jsx'
 import Payments from '../../components/payments/Payments.jsx'
+import Korzina from '../../components/korzina/Korzina.jsx'
 
 function Home() {
   return (
@@ -49,6 +50,7 @@ function Home() {
         {/* <AdminPage/> */}
         {/* <UserData/> */}
         {/* <SpecialistsPanel/> */}
+        {/* <Korzina/> */}
     </div>
   )
 }
