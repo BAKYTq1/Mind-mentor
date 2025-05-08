@@ -24,6 +24,7 @@ import WatchPage from '../watchpage/WatchPage.jsx'
 import FavoritePage from '../FavoritePage.jsx'
 import CoursesPage from '../coursespage/CoursesPage.jsx'
 import MentorDetail from '../MentorDetail/MentorDetail.jsx'
+import Korzina from '../../components/korzina/Korzina.jsx'
 
 function Home() {
   return (
@@ -56,6 +57,7 @@ function Home() {
         {/* <UserData/> */}
         {/* <SpecialistsPanel/> */}
         <MentorDetail/>
+        {/* <Korzina/> */}
     </div>
   )
 }
