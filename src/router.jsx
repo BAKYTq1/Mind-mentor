@@ -6,6 +6,8 @@ import Notfound from "./components/Notfound/Notfound";
 import UserData from "./components/UserData";
 import CourseDetail from "./components/courseDetail/CourseDetail.jsx";
 import CoursesPage from "./pages/coursespage/CoursesPage";
+import Korzina from "./components/korzina/Korzina";
+import Pokupka from "./components/korzina-pokupka/Pokupka";
 import NewProject from "./components/NewProject";
 import HistoryPage from "./pages/history/HistoryPage.jsx";
 import WatchPage from "./pages/watchpage/WatchPage.jsx";
@@ -68,6 +70,14 @@ export const myRouter = createBrowserRouter([
          children: [
            
          ]
+      },
+      {
+         path:"details",
+         element: <Korzina/>
+      },
+      {
+         path:"pokupka",
+         element: <Pokupka/>
       },
 
      {
