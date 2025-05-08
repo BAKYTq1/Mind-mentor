@@ -13,6 +13,7 @@ import HistoryPage from "./pages/history/HistoryPage.jsx";
 import WatchPage from "./pages/watchpage/WatchPage.jsx";
 import FavoritePage from "./pages/FavoritePage.jsx";
 import DataProjectAdmin from "./components/DataProjectAdmin";
+import Project from "./pages/project/Project.jsx";
 
 function About() {
     return null;
@@ -55,6 +56,10 @@ export const myRouter = createBrowserRouter([
                 path: '/сохраненные',
                 element: <FavoritePage/>
             },
+            {
+                path: '/projects',
+                element: <Project/>
+            },
 
         ],
        
@@ -78,7 +83,7 @@ export const myRouter = createBrowserRouter([
      {
          path: 'course-detail',
          element: <CourseDetail/>,
-     }
+     },
       {
          
             path: 'new-project',
