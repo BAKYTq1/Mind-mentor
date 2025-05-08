@@ -14,7 +14,8 @@ import Dashboarde from "../../components/Dashboard/Dashboarde.jsx";
 import Payments from "../../components/payments/Payments.jsx";
 import Chat from "../../components/Chat/Chat.jsx";
 import ProjectsAdminka from "../../components/ProjectsAdminka/Index.jsx";
-// import другие компоненты
+import { useNavigate } from "react-router-dom";
+
 
 const AdminPage = ({ activeTab, setActiveTab }) => {
     const menuItems = [
@@ -27,6 +28,7 @@ const AdminPage = ({ activeTab, setActiveTab }) => {
         { id: "messages", img: adm7, title: "Messages" },
         { id: "windows", img: adm8, title: "Windows" },
     ];
+    const navigate = useNavigate();
 
     const renderContent = () => {
         switch (activeTab) {
@@ -41,13 +43,13 @@ const AdminPage = ({ activeTab, setActiveTab }) => {
             case "videos":
                 return <AdminCourse />;
             case "favorites":
-                return <div className="p-6 text-white">Favorites Pag</div>;
+                return <div className=""><ProjectsAdminka/></div>;
             case "payments":
                 return <div className=""><Payments/></div>;
             case "messages":
                 return <div className=""><Chat/></div>;
             case "windows":
-                return <div className=""><ProjectsAdminka/></div>;
+                return <div className=""></div>;
             default:
                 return <div className="p-6">Dashboard Page</div>;
         }
@@ -66,7 +68,13 @@ const AdminPage = ({ activeTab, setActiveTab }) => {
                                     ? "!bg-yellow-400 text-black"
                                     : "!bg-white text-black hover:bg-gray-200"
                             } ${buttonClass}`}
-                            onClick={() => setActiveTab(item.id)}
+                            onClick={() => {
+                                if (item.id === "windows") {
+                                    navigate("/");
+                                } else {
+                                    setActiveTab(item.id);
+                                }
+                            }}
                             title={item.title}
                         >
                             <img
