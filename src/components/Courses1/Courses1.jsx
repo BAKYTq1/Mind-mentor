@@ -13,12 +13,22 @@ import strel2 from "../../assets/strel2.svg";
 import strel3 from "../../assets/strel3.svg";
 import smile from "../../assets/img/Smile_rating.svg";
 import { Link } from "react-router-dom";
+import x11 from "../../assets/x11.svg";
+import like11 from "../../assets/like11.svg";
 
 const Courses1 = () => {
     const [windowWidth, setWindowWidth] = useState(
         typeof window !== "undefined" ? window.innerWidth : 0
     );
     const [showMore, setShowMore] = useState(false);
+    const [favorites, setFavorites] = useState(() => {
+        if (typeof window !== "undefined") {
+            const saved = localStorage.getItem("favoriteCourseIds");
+            return saved ? JSON.parse(saved) : [];
+        }
+        return [];
+    });
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     const logAction = (action) => {
         console.log(`[${new Date().toISOString()}] User action: ${action}`);
@@ -39,7 +49,13 @@ const Courses1 = () => {
         };
     }, []);
 
+    useEffect(() => {
+        localStorage.setItem("favoriteCourseIds", JSON.stringify(favorites));
+        logAction(`Favorite course IDs updated: ${favorites.length} items`);
+    }, [favorites]);
+
     const getSlidesPerView = () => {
+        if (windowWidth < 422) return 1;
         if (windowWidth < 768) return 1;
         if (windowWidth < 964) return 2;
         return 3.12;
@@ -48,6 +64,28 @@ const Courses1 = () => {
     const handleShowMore = () => {
         setShowMore(true);
         logAction("Show more button clicked");
+    };
+
+    const openModal = () => {
+        setIsModalOpen(true);
+        logAction("Modal opened");
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+        logAction("Modal closed");
+    };
+
+    const toggleFavorite = (courseId) => {
+        setFavorites((prev) => {
+            if (prev.includes(courseId)) {
+                logAction(`Course ${courseId} removed from favorites`);
+                return prev.filter((id) => id !== courseId);
+            } else {
+                logAction(`Course ${courseId} added to favorites`);
+                return [...prev, courseId];
+            }
+        });
     };
 
     const courses = [
@@ -151,23 +189,24 @@ const Courses1 = () => {
                 <div className="max-w-[1180px] flex justify-between items-center mb-6">
                     <h2 className="text-3xl font-bold">Курсы</h2>
                     <div className="flex items-center">
-                        <button className="flex hover:text-gray-700 mr-4 rounded-[25px] bg-[rgba(250,250,250,1)] p-3 pl-5 pr-5">
+                        <button
+                            className="flex hover:text-gray-700 rounded-[25px] bg-[rgba(250,250,250,1)] p-3 pl-5 pr-5">
                             <Link to="courses">Посмотреть все</Link>
-                            <img className="ml-5 mt-1" src={strel3} alt="" />
+                            <img className="ml-5 mt-1" src={strel3} alt=""/>
                         </button>
                         {windowWidth >= 768 && (
-                            <div className="flex gap-[15px]">
+                            <div className="flex gap-[5px] relative left-5">
                                 <button
                                     className="w-[56px] h-[56px] rounded-full border border-gray-300 flex items-center justify-center mr-2 swiper-button-prev-courses"
                                     onClick={() => logAction("Previous slide button clicked")}
                                 >
-                                    <img src={strel2} alt="" />
+                                    <img src={strel2} alt=""/>
                                 </button>
                                 <button
                                     className="w-[56px] h-[56px] rounded-full border border-gray-300 flex items-center justify-center swiper-button-next-courses"
                                     onClick={() => logAction("Next slide button clicked")}
                                 >
-                                    <img src={strel} alt="" />
+                                    <img src={strel} alt=""/>
                                 </button>
                             </div>
                         )}
@@ -188,14 +227,15 @@ const Courses1 = () => {
                     >
                         {courses.map((course) => (
                             <SwiperSlide key={course.id}>
-                                {renderCourseCard(course, logAction)}
+                                {renderCourseCard(course, logAction, toggleFavorite, favorites, openModal)}
                             </SwiperSlide>
                         ))}
                     </Swiper>
                 ) : (
                     <div className="flex flex-col gap-6">
                         {visibleCourses.map((course) => (
-                            <div key={course.id}>{renderCourseCard(course, logAction)}</div>
+                            <div
+                                key={course.id}>{renderCourseCard(course, logAction, toggleFavorite, favorites, openModal)}</div>
                         ))}
                         {!showMore && courses.length > 3 && (
                             <div className="mt-4 text-center">
@@ -210,29 +250,92 @@ const Courses1 = () => {
                     </div>
                 )}
             </div>
+
+            {isModalOpen && (
+                <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+                    <div className="bg-white rounded-2xl p-6 w-[380px] relative shadow-lg">
+                        <img className="absolute top-8 right-10 text-xl font-bold text-black hover:text-gray-600"
+                             src={x11} alt=""
+                             onClick={closeModal}
+                        />
+                        <h3 className="text-[16px] font-bold mb-5 pt-3 text-black">Учебный план</h3>
+                        <div className="space-y-3">
+                            <div className={"flex ml-3"}><h1>1.</h1> Подготовка</div>
+                            <div className="flex mt-6 justify-between items-center">
+                                <p className="text-[16px] text-black">
+                                    <span className=" mr-2">01</span> Как продать курс
+                                </p>
+                                <p className="text-[14px] text-gray-500">2:00 мин</p>
+                            </div>
+                            <div className="flex mt-8 justify-between items-center">
+                                <p className="text-[16px] text-black">
+                                    <span className=" mr-2">02</span> Сканы материалы
+                                </p>
+                                <p className="text-[14px] text-gray-500">2:00 мин</p>
+                            </div>
+                            <div className={"flex ml-3 mt-8"}><h1>2.</h1>Основы Figma</div>
+                            <div className="flex mt-5 justify-between items-center">
+                                <p className="text-[16px] text-black">
+                                    <span className=" mr-2">03</span> Об обновлении Figma
+                                </p>
+                                <p className="text-[14px] text-gray-500">2:00 мин</p>
+                            </div>
+                            <div className="flex mt-8 justify-between items-center">
+                                <p className="text-[16px] text-black">
+                                    <span className="mr-2">04</span> Какие размеры у сайта
+                                </p>
+                                <p className="text-[14px] text-gray-500">2:00 мин</p>
+                            </div>
+                            <div className="flex mt-8 justify-between items-center">
+                                <p className="text-[16px] text-black">
+                                    <span className=" mr-2">05</span> Создать фрейм сайта
+                                </p>
+                                <p className="text-[14px] text-gray-500">2:00 мин</p>
+                            </div>
+                        </div>
+                        <div className="flex mt-8 justify-between items-center mt-6">
+                            <button
+                                className="bg-black pl-[70px] pr-[70px] text-white px-10 py-4 rounded-2xl font-semibold text-[16px] hover:bg-gray-800 transition-colors"
+                                onClick={() => logAction("Buy Now button clicked")}
+                            >
+                                Купить сейчас
+                            </button>
+                            <button
+                                className="p-2 rounded-full hover:bg-gray-100 transition-colors"
+                                onClick={() => logAction("Heart icon clicked")}
+                            >
+                                <img className="text-[20px] bg-black text-white bg-black rounded-[100px] p-4 "
+                                     src={like11} alt=""/>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
 
-const renderCourseCard = (course, logAction) => {
+const renderCourseCard = (course, logAction, toggleFavorite, favorites, openModal) => {
     const formatTitle = (title) => {
         const parts = title.split("UX/UI ");
         return (
             <>
                 {parts[0]}UX/UI
-                <br />
+                <br/>
                 {parts[1]}
             </>
         );
     };
 
+    const isFavorite = favorites.includes(course.id);
+
     return (
         <div
-            className="bg-white w-[378px] rounded-[25px] border rounded-4xl border-gray-100 h-[580px] shadow-lg "
+            className="bg-white w-full max-w-[378px] rounded-[25px] border border-gray-100 min-h-[400px] shadow-lg overflow-auto"
             style={{boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)"}}
         >
             <div className="relative">
-                <div className="aspect-[5/3] relative p[20px]">
+                <div className="aspect-[5/3] relative p-[1px]">
                     <img
                         src={course.image || "/placeholder.svg"}
                         alt={course.title}
@@ -242,25 +345,26 @@ const renderCourseCard = (course, logAction) => {
                         <span className="text-[19px] p-1 font-bold">{course.rating}</span>
                         <img src={smile} alt="Рейтинг" className="pt-[1px]"/>
                     </div>
-
                     <div className="absolute right-2 bg-white rounded-md px-2 py-1"></div>
-                    <div className=" absolute w-[45px] bottom-2 mb-3 mr-5 w-[23px] right-1 flex flex-col gap-4">
+                    <div className="absolute w-[45px] bottom-2 mb-3 mr-5 w-[23px] right-1 flex flex-col gap-4">
                         <img
-                            className="bg-black rounded-3xl p-3 hover:bg-[rgba(35,175,206,1)] transition-colors duration-300"
+                            className="bg-black rounded-3xl p-3 hover:bg-[rgba(35,175,206,1)] transition-colors duration-300 cursor-pointer"
                             src={courl2}
                             alt="Course icon 1"
+                            onClick={openModal}
                         />
                         <img
-                            className="bg-black rounded-3xl p-3 hover:bg-[rgba(35,175,206,1)] transition-colors duration-300"
+                            className={`rounded-3xl p-3 transition-colors duration-300 cursor-pointer ${
+                                isFavorite ? "bg-[rgba(35,175,206,1)]" : "bg-black"
+                            } hover:bg-[rgba(35,175,206,1)]`}
                             src={courl3}
                             alt="Course icon 2"
+                            onClick={() => toggleFavorite(course.id)}
                         />
                     </div>
                 </div>
-
-
             </div>
-            <div className="p-4 h-[310px] mt-[10px] ml-5">
+            <div className="p-4 h-auto">
                 <h3 className="font-bold text-lg mb-2">{formatTitle(course.title)}</h3>
                 <div className="flex items-center mb-2">
                     <img
@@ -304,7 +408,6 @@ const renderCourseCard = (course, logAction) => {
                     </button>
                 </div>
             </div>
-
         </div>
     );
 };

@@ -40,7 +40,7 @@ import FavoritePage from "./pages/FavoritePage.jsx";
                 element: <WatchPage/>
             },
             {
-                path: '/сохраненные',
+                path: '/like1',
                 element: <FavoritePage/>
             },
         ],
