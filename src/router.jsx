@@ -11,6 +11,8 @@ import HistoryPage from "./pages/history/HistoryPage.jsx";
 import WatchPage from "./pages/watchpage/WatchPage.jsx";
 import FavoritePage from "./pages/FavoritePage.jsx";
 import DataProjectAdmin from "./components/DataProjectAdmin";
+import SigneIn from "./pages/Auth/SigneIn.jsx";
+import Register from "./pages/Auth/Register.jsx";
 
 function About() {
     return null;
@@ -53,6 +55,14 @@ export const myRouter = createBrowserRouter([
                 path: '/сохраненные',
                 element: <FavoritePage/>
             },
+            {
+                path: '/sign-in',
+                element: <SigneIn/>
+            },
+            {
+                path:"register",
+                element:<Register/>
+            }
 
         ],
        
@@ -68,7 +78,7 @@ export const myRouter = createBrowserRouter([
      {
          path: 'course-detail',
          element: <CourseDetail/>,
-     }
+     },
       {
          
             path: 'new-project',
