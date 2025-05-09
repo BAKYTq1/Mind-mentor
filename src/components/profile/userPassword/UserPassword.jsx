@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { IoIosClose } from "react-icons/io";
 import WarningIcon from "../../../assets/icons/warning-icon.svg";
 import WarningIcon2 from "../../../assets/icons/warning-icon2.svg";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const UserPassword = () => {
     const [currentPassword, setCurrentPassword] = useState("");
@@ -41,9 +41,9 @@ const UserPassword = () => {
 
     return (
         <div className="bg-black min-h-screen flex items-center justify-center px-4">
-            <div className="bg-white p-[30px] rounded-[32px] w-[348px] sm:w-[409px] mx-auto text-center">
+            <div className="bg-white p-[24px] sm:p-[30px] rounded-[32px] w-full max-w-[348px] sm:max-w-[409px] mx-auto text-center">
                 <div className="flex justify-between items-center mb-[35px]">
-                    <h3 className="text-[24px] font-[700]">Ваш пароль</h3>
+                    <h3 className="text-[22px] sm:text-[24px] font-[700]">Ваш пароль</h3>
                     <div className="w-[25px] h-[25px] rounded-[50%] flex items-center justify-center bg-gray-300">
                         <IoIosClose onClick={() => navigate('/profile')} className="text-[rgb(40,48,63)] text-[20px] cursor-pointer" />
                     </div>
@@ -72,7 +72,7 @@ const UserPassword = () => {
                         onChange={(e) => setNewPassword(e.target.value)}
                     />
                     {error === "format" && (
-                        <div className="flex gap-[6px] pl-[6px] text-[12px] text-[#6F6D73] ">
+                        <div className="flex gap-[6px] pl-[6px] text-[12px] text-[#6F6D73]">
                             <img src={WarningIcon2} alt="" />
                             <p>Пароль должен содержать минимум 8 символов, а также заглавные буквы и цифры</p>
                         </div>
@@ -94,7 +94,7 @@ const UserPassword = () => {
 
                     <button
                         onClick={handleSave}
-                        className='h-[56px] w-full bg-[rgb(45,45,45)] rounded-[24px] text-[20px] font-[700] text-white mt-[32px]'>
+                        className="h-[56px] w-full bg-[rgb(45,45,45)] rounded-[24px] text-[18px] sm:text-[20px] font-[700] text-white mt-[32px]">
                         Сохранить
                     </button>
                 </div>
