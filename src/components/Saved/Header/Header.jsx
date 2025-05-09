@@ -1,10 +1,10 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import glaw1 from "../../assets/glaw1.svg";
-import glaw2 from "../../assets/glaw2.svg";
-import glaw3 from "../../assets/glaw3.svg";
-import glaw4 from "../../assets/glaw4.svg";
-import md from "../../assets/md.svg";
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import glaw1 from "../../../assets/glaw1.svg";
+import glaw2 from "../../../assets/glaw2.svg";
+import glaw3 from "../../../assets/glaw3.svg";
+import glaw4 from "../../../assets/glaw4.svg";
+import md from "../../../assets/md.svg";
 import { Menu, X } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -14,24 +14,35 @@ import "swiper/css/pagination";
 export default function Header() {
     const [activeMenu, setActiveMenu] = useState("Главная");
     const [isOpen, setIsOpen] = useState(false);
-    const menuItems = ["Главная", "Курсы", "Менторы", "Проекты", "История"];
+    const menuItems = ["Курсы", "Менторы", "Проекты"];
+    
+    const location = useLocation(); // Для отслеживания текущего пути
 
+    // Функция для получения пути для каждой кнопки
     const getPath = (item) => {
         switch (item) {
-            case "Главная":
-                return "/";
             case "Курсы":
-                return "/kours";
+                return "/saved";
             case "Менторы":
                 return "/mentors";
             case "Проекты":
                 return "/projects";
-            case "История":
-                return "/history";
             default:
-                return "/";
+                return "";
         }
     };
+
+    useEffect(() => {
+        if (location.pathname === "/saved") {
+            setActiveMenu("Курсы");
+        } else if (location.pathname === "/mentors") {
+            setActiveMenu("Менторы");
+        } else if (location.pathname === "/projects") {
+            setActiveMenu("Проекты");
+        } else {
+            setActiveMenu("Главная");
+        }
+    }, [location.pathname]);
 
     return (
         <header className="w-full bg-white px-4 py-3 mt-[15px] relative">
@@ -52,10 +63,11 @@ export default function Header() {
                         <Link to={getPath(item)} key={item}>
                             <button
                                 onClick={() => setActiveMenu(item)}
-                                className={`px-4 py-1.5  transition-colors duration-200 rounded-[10px] ${activeMenu === item
+                                className={`px-4 py-1.5 rounded transition-colors duration-200 rounded-[10px] ${
+                                    activeMenu === item
                                         ? "bg-black text-white"
                                         : "bg-transparent text-black hover:bg-gray-200"
-                                    }`}
+                                }`}
                             >
                                 {item}
                             </button>
@@ -64,19 +76,17 @@ export default function Header() {
                 </nav>
 
                 <div className="flex items-center gap-3">
-                  <Link to={'/saved'}><div className="bg-black rounded-full w-10 h-10 flex items-center justify-center">
+                    <div className="bg-black rounded-full w-10 h-10 flex items-center justify-center">
                         <img src={glaw1} alt="calendar" className="w-[35px]" />
-                    </div></Link>  
+                    </div>
                     <div className="relative bg-black rounded-full w-10 h-10 flex items-center justify-center">
                         <img src={glaw2} alt="bell" className="w-[35px]" />
                         <span className="absolute top-1 right-1 bg-yellow-400 w-2 h-2 rounded-full" />
                     </div>
-                    <Link to="/details">
-                        <div className="bg-black rounded-full w-10 h-10 flex items-center justify-center">
-                            <img src={glaw3} alt="calendar" className="w-[35px]" />
-                        </div>
-                    </Link>
-
+                    <div className="relative bg-black rounded-full w-10 h-10 flex items-center justify-center">
+                        <img src={glaw3} alt="chat" className="w-[35px]" />
+                        <span className="absolute top-1 right-1 bg-yellow-400 w-2 h-2 rounded-full" />
+                    </div>
                     <Link to="/adminka">
                         <img src={glaw4} alt="avatar" className="w-10 h-10 rounded-full" />
                     </Link>
@@ -96,10 +106,11 @@ export default function Header() {
                                         setActiveMenu(item);
                                         setIsOpen(false);
                                     }}
-                                    className={`whitespace-nowrap px-4 py-2 rounded font-semibold transition-colors duration-200 ${activeMenu === item
+                                    className={`whitespace-nowrap px-4 py-2 rounded font-semibold transition-colors duration-200 ${
+                                        activeMenu === item
                                             ? "bg-black text-white"
                                             : "bg-white text-black hover:bg-gray-100"
-                                        }`}
+                                    }`}
                                 >
                                     {item}
                                 </button>

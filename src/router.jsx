@@ -1,4 +1,4 @@
-import {createBrowserRouter} from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import Layout from "./Layout/Layout";
 import Home from "./pages/Home/Home";
 import UserLayout from "./Layout/UserLayout";
@@ -10,6 +10,17 @@ import UserProfile from "./components/profile/userProfile/UserProfile .jsx";
 import UserPassword from "./components/profile/userPassword/UserPassword.jsx";
 import PaymentMethod from "./components/profile/paymentMethod/PaymentMethod.jsx";
 
+import CoursesPage from "./pages/coursespage/CoursesPage";
+import Korzina from "./components/korzina/Korzina";
+import Pokupka from "./components/korzina-pokupka/Pokupka";
+import NewProject from "./components/NewProject";
+import HistoryPage from "./pages/history/HistoryPage.jsx";
+import WatchPage from "./pages/watchpage/WatchPage.jsx";
+import FavoritePage from "./pages/FavoritePage.jsx";
+import DataProjectAdmin from "./components/DataProjectAdmin";
+import Project from "./pages/project/Project.jsx";
+import Mentor from "./pages/mentor/Mentor.jsx";
+import SavedLayout from "./Layout/SavedLayout.jsx";
 
 function About() {
     return null;
@@ -18,50 +29,100 @@ function About() {
 export const myRouter = createBrowserRouter([
     {
         path: '/',
-        element: <Layout/>,
+        element: <Layout />,
         children: [
             {
                 path: '/',
-                element: <Home/>
+                element: <Home />
             },
             {
                 path: 'about',
-                element: <About/>
+                element: <About />
             },
             {
                 path: '*',
-                element: <Notfound/>
+                element: <Notfound />
             },
             {
                 path: 'user-data',
-                element: <UserData/>
+                element: <UserData />
             },
             {
                 path: 'course-detail',
-                element: <CourseDetail/>,
+                element: <CourseDetail />,
             },
         ]
     },
 
     {
         path: 'adminka',
-        element: <UserLayout/>,
+        element: <UserLayout />,
         children: []
     },
     {
         path: 'profile',
-        element: <Profile/>,
+        element: <Profile />,
     },
     {
         path: '/user-profile',
-        element: <UserProfile/>,
+        element: <UserProfile />,
     },
     {
         path: '/user-password',
-        element: <UserPassword/>,
+        element: <UserPassword />,
     },
     {
         path: '/payment-method',
-        element: <PaymentMethod/>,
+        element: <PaymentMethod />,
+    },
+    {
+        path: 'kours',
+        element: <CoursesPage />
+    },
+    {
+        path: 'History',
+        element: <HistoryPage />
+    },
+    {
+        path: '/смотреть',
+        element: <WatchPage />
+    },
+    {
+        path: '/projects',
+        element: <Project />
+    },
+    {
+        path: '/сохраненные',
+        element: <FavoritePage />
+    },
+    {
+        path: '/mentors',
+        element: <Mentor />
+    },
+    {
+        path: "details",
+        element: <Korzina />
+    },
+    {
+        path: "pokupka",
+        element: <Pokupka />
+    },
+    {
+        path: 'new-project',
+        element: <NewProject />
+    },
+    {
+        path: 'data-project',
+        element: <DataProjectAdmin />
+    },
+    {
+        path: '/saved',
+        element: <SavedLayout />,
+        children: [
+            {
+                index: true,
+                element: <FavoritePage />
+            },
+        ]
     }
 ])
