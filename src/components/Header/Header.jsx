@@ -14,7 +14,7 @@ import "swiper/css/pagination";
 export default function Header() {
     const [activeMenu, setActiveMenu] = useState("Главная");
     const [isOpen, setIsOpen] = useState(false);
-    const menuItems = ["Главная", "Курсы", "Менторы", "Проекты"];
+    const menuItems = ["Главная", "Курсы", "Менторы", "Проекты", "История"];
 
     const getPath = (item) => {
         switch (item) {
@@ -26,6 +26,8 @@ export default function Header() {
                 return "/mentors";
             case "Проекты":
                 return "/projects";
+            case "История":
+                return "/history";
             default:
                 return "/";
         }
@@ -50,11 +52,10 @@ export default function Header() {
                         <Link to={getPath(item)} key={item}>
                             <button
                                 onClick={() => setActiveMenu(item)}
-                                className={`px-4 py-1.5 rounded transition-colors duration-200 rounded-[10px] ${
-                                    activeMenu === item
+                                className={`px-4 py-1.5  transition-colors duration-200 rounded-[10px] ${activeMenu === item
                                         ? "bg-black text-white"
                                         : "bg-transparent text-black hover:bg-gray-200"
-                                }`}
+                                    }`}
                             >
                                 {item}
                             </button>
@@ -63,17 +64,19 @@ export default function Header() {
                 </nav>
 
                 <div className="flex items-center gap-3">
-                    <div className="bg-black rounded-full w-10 h-10 flex items-center justify-center">
+                  <Link to={'/saved'}><div className="bg-black rounded-full w-10 h-10 flex items-center justify-center">
                         <img src={glaw1} alt="calendar" className="w-[35px]" />
-                    </div>
+                    </div></Link>  
                     <div className="relative bg-black rounded-full w-10 h-10 flex items-center justify-center">
                         <img src={glaw2} alt="bell" className="w-[35px]" />
                         <span className="absolute top-1 right-1 bg-yellow-400 w-2 h-2 rounded-full" />
                     </div>
-                    <div className="relative bg-black rounded-full w-10 h-10 flex items-center justify-center">
-                        <img src={glaw3} alt="chat" className="w-[35px]" />
-                        <span className="absolute top-1 right-1 bg-yellow-400 w-2 h-2 rounded-full" />
-                    </div>
+                    <Link to="/details">
+                        <div className="bg-black rounded-full w-10 h-10 flex items-center justify-center">
+                            <img src={glaw3} alt="calendar" className="w-[35px]" />
+                        </div>
+                    </Link>
+
                     <Link to="/adminka">
                         <img src={glaw4} alt="avatar" className="w-10 h-10 rounded-full" />
                     </Link>
@@ -93,11 +96,10 @@ export default function Header() {
                                         setActiveMenu(item);
                                         setIsOpen(false);
                                     }}
-                                    className={`whitespace-nowrap px-4 py-2 rounded font-semibold transition-colors duration-200 ${
-                                        activeMenu === item
+                                    className={`whitespace-nowrap px-4 py-2 rounded font-semibold transition-colors duration-200 ${activeMenu === item
                                             ? "bg-black text-white"
                                             : "bg-white text-black hover:bg-gray-100"
-                                    }`}
+                                        }`}
                                 >
                                     {item}
                                 </button>

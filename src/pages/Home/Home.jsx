@@ -18,6 +18,13 @@ import Dashboarde from '../../components/Dashboard/Dashboarde.jsx'
 import NewUser from '../../components/NewUser/index.jsx'
 import SpecialistsPanel from '../../components/Special/index.jsx'
 import Payments from '../../components/payments/Payments.jsx'
+import Mentor2 from '../Mentor.jsx'
+import Modal from '../mentor-modal/Modal.jsx'
+import WatchPage from '../watchpage/WatchPage.jsx'
+import FavoritePage from '../FavoritePage.jsx'
+import CoursesPage from '../coursespage/CoursesPage.jsx'
+import MentorDetail from '../MentorDetail/MentorDetail.jsx'
+import Korzina from '../../components/korzina/Korzina.jsx'
 
 function Home() {
   return (
@@ -49,6 +56,8 @@ function Home() {
         {/* <AdminPage/> */}
         {/* <UserData/> */}
         {/* <SpecialistsPanel/> */}
+        <MentorDetail/>
+        {/* <Korzina/> */}
     </div>
   )
 }

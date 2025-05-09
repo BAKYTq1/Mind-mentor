@@ -20,7 +20,7 @@ const Dashboarde = () => {
 
       <div className="p-4 w-[412px] h-auto bg-[#F5F6FB] rounded-[24px]">
 
-        <div className="flex items-center justify-between mb-4">
+        <div className="flex items-center justify-between mb-4">  
           <h1 className="text-[20px] font-jost font-medium">Продано</h1>
           <div className="flex items-center gap-2 border-[2px] border-[#E0E0E0] rounded-[12px] w-[158px] h-[32px] px-2">
             <p className="text-[12px] font-normal text-[#6F6D73]">Последний 7 дней</p>

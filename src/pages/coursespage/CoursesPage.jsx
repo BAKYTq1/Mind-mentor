@@ -22,13 +22,21 @@ import down1 from "../../assets/down1.svg"
 import smile from '../../assets/img/Smile_rating.svg'
 import left from "../../assets/left.svg"
 import right from "../../assets/right.svg"
+import img from "../../assets/img.png"
 
 const CoursesPage = () => {
     const [windowWidth, setWindowWidth] = useState(typeof window !== "undefined" ? window.innerWidth : 0)
     const [activeIndex, setActiveIndex] = useState(null)
     const [showMore, setShowMore] = useState(false)
     const [activeTag, setActiveTag] = useState("#АНАЛИЗЫ")
-    const swiperRef = useRef(null) // Ref для управления Swiper
+    const [favorites, setFavorites] = useState(() => {
+        if (typeof window !== "undefined") {
+            const saved = localStorage.getItem("favoriteCourseIds")
+            return saved ? JSON.parse(saved) : []
+        }
+        return []
+    })
+    const swiperRef = useRef(null)
 
     const logAction = (action) => {
         console.log(`[${new Date().toISOString()}] User action: ${action}`)
@@ -53,6 +61,23 @@ const CoursesPage = () => {
             logAction("Component unmounted")
         }
     }, [])
+
+    useEffect(() => {
+        localStorage.setItem("favoriteCourseIds", JSON.stringify(favorites))
+        logAction(`Favorite course IDs updated: ${favorites.length} items`)
+    }, [favorites])
+
+    const toggleFavorite = (courseId) => {
+        setFavorites((prev) => {
+            if (prev.includes(courseId)) {
+                logAction(`Course ${courseId} removed from favorites`)
+                return prev.filter((id) => id !== courseId)
+            } else {
+                logAction(`Course ${courseId} added to favorites`)
+                return [...prev, courseId]
+            }
+        })
+    }
 
     const handleShowMore = () => {
         setShowMore(true)
@@ -236,7 +261,7 @@ const CoursesPage = () => {
     ]
 
     return (
-        <div className="max-w-[1280px] m-auto px-4 py-8 bg-white  ">
+        <div className="max-w-[1280px] m-auto px-4 py-8 bg-white">
             <div className="mb-12 ml-[40px]">
                 <div className="max-w-[1180px] flex justify-between items-center mb-6">
                     <h2 className="text-3xl font-bold">Курсы</h2>
@@ -274,26 +299,26 @@ const CoursesPage = () => {
                     </Swiper>
                     <div className={'flex gap-4 text-[17px] relative top-[7px] ml-[940px]'}>
                         <div className={'flex gap-1 text-[rgba(111,109,115,1)]'}>
-                            <img src={down1} alt="" />
+                            <img src={down1} alt=""/>
                             <p>Сортировка</p>
                         </div>
                         <div className={'flex gap-1 text-[rgba(111,109,115,1)]'}>
-                            <img src={down1} alt="" />
+                            <img src={down1} alt=""/>
                             <p>Обзоры</p>
                         </div>
                     </div>
                 </div>
 
                 {windowWidth >= 768 ? (
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-y-7">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-7">
                         {courses.map((course) => (
-                            <div key={course.id}>{renderCourseCard(course, logAction)}</div>
+                            <div key={course.id}>{renderCourseCard(course, logAction, toggleFavorite, favorites)}</div>
                         ))}
                     </div>
                 ) : (
                     <div className="flex flex-col gap-1">
                         {visibleCourses.map((course) => (
-                            <div key={course.id}>{renderCourseCard(course, logAction)}</div>
+                            <div key={course.id}>{renderCourseCard(course, logAction, toggleFavorite, favorites)}</div>
                         ))}
                         {!showMore && courses.length > 3 && (
                             <div className="mt-4 text-center">
@@ -316,13 +341,13 @@ const CoursesPage = () => {
                             }`}
                             onClick={() => handleClick(index)}
                         >
-                        {num}
+                            {num}
                         </p>
                     ))}
                 </div>
                 <div className="flex relative right-[37px] top-[10px] flex-none">
-                    <img src={left} alt="Left arrow" className="max-w-7xl" />
-                    <img src={right} alt="Right arrow" className="max-w-7xl relative right-[45px]" />
+                    <img src={left} alt="Left arrow" className="max-w-7xl"/>
+                    <img src={right} alt="Right arrow" className="max-w-7xl relative right-[45px]"/>
                 </div>
             </div>
 
@@ -341,41 +366,55 @@ const CoursesPage = () => {
     )
 }
 
-const renderCourseCard = (course, logAction) => {
+const renderCourseCard = (course, logAction, toggleFavorite, favorites) => {
     const formatTitle = (title) => {
         const parts = title.split("UX/UI ")
         return (
             <>
                 {parts[0]}UX/UI
-                <br />
+                <br/>
                 {parts[1]}
             </>
         )
     }
+
+    const isFavorite = favorites.includes(course.id)
+
     return (
         <div
-            className="bg-white w-[378px] rounded-[25px] border rounded-4xl border-gray-100 h-[580px] shadow-lg "
-            style={{boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)"}}
+            className="bg-white w-[378px] rounded-[25px] border  border-gray-100 h-[560px] shadow-lg"
+            style={{ boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)" }}
         >
             <div className="relative">
-                <div className="aspect-[5/3] relative p[20px]">
+                <div className="aspect-[16/9] relative p-[10px]">
                     <img
                         src={course.image || "/placeholder.svg"}
                         alt={course.title}
-                        className="w-full h-full pt-2 pr-2 pb-2 pl-2 rounded-4xl object-cover"
+                        className="w-full h-full rounded-4xl object-cover"
                     />
                     <div className="absolute top-5 ml-5 pl-2 pr-2 bg-white rounded-[55px] px-1 flex items-center">
                         <span className="text-[19px] p-1 font-bold">{course.rating}</span>
                         <img src={smile} alt="Рейтинг" className="pt-[1px]"/>
                     </div>
-                    <div className="absolute top-2 right-2 bg-white rounded-md px-2 py-1"></div>
-                    <div className="absolute bottom-2 mb-3 mr-5 w-[43px] right-2 flex flex-col gap-6">
-                        <img src={courl2} alt=""/>
-                        <img src={courl3} alt=""/>
+                    <div className="absolute right-2 bg-white rounded-md px-2 py-1"></div>
+                    <div className="absolute w-[45px] bottom-2 mb-3 mr-5 w-[23px] right-1 flex flex-col gap-4">
+                        <img
+                            className="bg-black rounded-3xl p-3 hover:bg-[rgba(35,175,206,1)] transition-colors duration-300"
+                            src={courl2}
+                            alt="Course icon 1"
+                        />
+                        <img
+                            className={`rounded-3xl p-3 transition-colors duration-300 cursor-pointer ${
+                                isFavorite ? "bg-[rgba(35,175,206,1)]" : "bg-black"
+                            } hover:bg-[rgba(35,175,206,1)]`}
+                            src={courl3}
+                            alt="Course icon 2"
+                            onClick={() => toggleFavorite(course.id)}
+                        />
                     </div>
                 </div>
             </div>
-            <div className="p-4 h-[310px] mt-[10px] ml-5">
+            <div className="p-4 h-[240px] mt-[10px] ml-5">
                 <h3 className="font-bold text-lg mb-2">{formatTitle(course.title)}</h3>
                 <div className="flex items-center mb-2">
                     <img
