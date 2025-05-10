@@ -25,8 +25,9 @@ import Register from "./pages/Auth/Register.jsx";
 import Project from "./pages/project/Project.jsx";
 import Mentor from "./pages/mentor/Mentor.jsx";
 import SavedLayout from "./Layout/SavedLayout.jsx";
+import Projectdetail from "./pages/ProjectDetail/Projectdetail.jsx";
+import MentorDetail from "./pages/MentorDetail/MentorDetail.jsx";
 import ProjectDetails from "./components/projectDetails/ProjectDetails.jsx";
-
 
 function About() {
     return null;
@@ -182,6 +183,10 @@ export const myRouter = createBrowserRouter([
                 path: '/mentors',
                 element: <Mentor />
             },
+            {
+                path: 'mentors-detail',
+                element: <MentorDetail/>
+            },
 
 
         ],
@@ -283,6 +288,11 @@ export const myRouter = createBrowserRouter([
         {
             index: true,
             element: <FavoritePage/>
+        },
+
+        {
+            path: 'projects-detail',
+            element: <Projectdetail/>
         },
     ]
    }
