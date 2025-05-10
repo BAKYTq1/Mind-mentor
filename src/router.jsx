@@ -25,7 +25,7 @@ import Register from "./pages/Auth/Register.jsx";
 import Project from "./pages/project/Project.jsx";
 import Mentor from "./pages/mentor/Mentor.jsx";
 import SavedLayout from "./Layout/SavedLayout.jsx";
-import Projectdetail from "./pages/ProjectDetail/Projectdetail.jsx";
+// import Projectdetail from "./pages/ProjectDetail/Projectdetail.jsx";
 import MentorDetail from "./pages/MentorDetail/MentorDetail.jsx";
 import ProjectDetails from "./components/projectDetails/ProjectDetails.jsx";
 
@@ -69,7 +69,6 @@ export const myRouter = createBrowserRouter([
             {
                 path: '/projects',
                 element: <Project />
-                element: <Home/>
             },
             {
                 path: 'about',
@@ -152,14 +151,36 @@ export const myRouter = createBrowserRouter([
         element: <DataProjectAdmin/>
     },
     {
+        path: '/like1',
+        element: <FavoritePage/>
+    },
+    {
+        path: '/sign-in',
+        element: <SigneIn />
+    },
+    {
+        path: "register",
+        element: <Register />
+    },
+    {
+        path: '/mentors',
+        element: <Mentor />
+    },
+    {
+        path: 'mentors-detail',
+        element: <MentorDetail/>
+    },
+    {
         path: '/saved',
         element: <SavedLayout/>,
         children: [
             {
-                path: '/сохраненные',
-                element: <FavoritePage />
                 index: true,
                 element: <FavoritePage/>
+            },
+            {
+                path: 'сохраненные',
+                element: <FavoritePage />,
             },
         ]
     },
@@ -168,134 +189,110 @@ export const myRouter = createBrowserRouter([
         element: <ProjectDetails/>
     }
 ])
-            {
-                path: '/like1',
-                element: <FavoritePage/>
-
-                path: '/sign-in',
-                element: <SigneIn />
-            },
-            {
-                path: "register",
-                element: <Register />
-            },
-            {
-                path: '/mentors',
-                element: <Mentor />
-            },
-            {
-                path: 'mentors-detail',
-                element: <MentorDetail/>
-            },
 
 
-        ],
+  
+//     {
+//         path: 'adminka',
+//         element: <UserLayout />,
+//         children: [
 
-    },
-    {
-        path: 'adminka',
-        element: <UserLayout />,
-        children: [
+//         ]
+//     },
+//     {
+//         path: "details",
+//         element: <Korzina />
+//     },
+//     {
+//         path: "pokupka",
+//         element: <Pokupka />
+//     },
 
-        ]
-    },
-    {
-        path: "details",
-        element: <Korzina />
-    },
-    {
-        path: "pokupka",
-        element: <Pokupka />
-    },
+//     {
+//         path: 'course-detail',
+//         element: <CourseDetail />,
+//     },
+//     {
 
-    {
-        path: 'course-detail',
-        element: <CourseDetail />,
-    },
-    {
+//         path: 'new-project',
+//         element: <NewProject />
 
-        path: 'new-project',
-        element: <NewProject />
+//     },
+//     {
 
-    },
-    {
+//         path: 'data-project',
+//         element: <DataProjectAdmin />
 
-        path: 'data-project',
-        element: <DataProjectAdmin />
-
-    },
-    {
-        path: '/saved',
-        element: <SavedLayout />,
-        children: [
-            {
-                index: true,
-                element: <FavoritePage />
-            },
-        ]
-    }
-
-
-])
+//     },
+//     {
+//         path: '/saved',
+//         element: <SavedLayout />,
+//         children: [
+//             {
+//                 index: true,
+//                 element: <FavoritePage />
+//             },
+//         ]
+//     }
        
-      },
-      {
-         path:'adminka',
-         element: <UserLayout/>,
-         children: [
+
+// //       {
+// //          path:'adminka',
+// //          element: <UserLayout/>,
+// //          children: [
            
-         ]
-      },
-      {
-         path:"details",
-         element: <Korzina/>
-      },
-      {
-         path:"pokupka",
-         element: <Pokupka/>
-      },
+// //          ]
+// //       },
+// //       {
+// //          path:"details",
+// //          element: <Korzina/>
+// //       },
+// //       {
+// //          path:"pokupka",
+// //          element: <Pokupka/>
+// //       },
 
-      {
-         path:"details",
-         element: <Korzina/>
-      },
-      {
-         path:"pokupka",
-         element: <Pokupka/>
-      },
+// //       {
+// //          path:"details",
+// //          element: <Korzina/>
+// //       },
+// //       {
+// //          path:"pokupka",
+// //          element: <Pokupka/>
+// //       },
 
 
-     {
-         path: 'course-detail',
-         element: <CourseDetail/>,
-     },
-      {
+// //      {
+// //          path: 'course-detail',
+// //          element: <CourseDetail/>,
+// //      },
+// //       {
          
-            path: 'new-project',
-            element: <NewProject/>
+// //             path: 'new-project',
+// //             element: <NewProject/>
          
-      },
-      {
+// //       },
+// //       {
          
-         path: 'data-project',
-         element: <DataProjectAdmin/>
+// //          path: 'data-project',
+// //          element: <DataProjectAdmin/>
       
-   },
-   {
-    path:'/saved',
-    element:<SavedLayout/>,
-    children: [
-        {
-            index: true,
-            element: <FavoritePage/>
-        },
+// //    },
+// //    {
+// //     path:'/saved',
+// //     element:<SavedLayout/>,
+// //     children: [
+// //         {
+// //             index: true,
+// //             element: <FavoritePage/>
+// //         },
 
-        {
-            path: 'projects-detail',
-            element: <Projectdetail/>
-        },
-    ]
-   }
+// //         {
+// //             path: 'projects-detail',
+// //             element: <Projectdetail/>
+// //         },
+// //     ]
+// //    }
      
       
-])
+// ])
