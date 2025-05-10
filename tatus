@@ -1,0 +1,125 @@
+[33m4515181[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mchat[m[33m)[m chat
+[33m7b90631[m[33m ([m[1;32mbaha/chat[m[33m)[m chat
+[33mdcb384c[m[33m ([m[1;32mdevelopment[m[33m)[m added
+[33mb7f0dfb[m[33m ([m[1;31morigin/admin[m[33m, [m[1;32madmin[m[33m)[m gf
+[33mce51581[m Merge pull request #40 from BAKYTq1/dinara/kours
+[33m04cc8da[m[33m ([m[1;31morigin/dinara/kours[m[33m)[m df
+[33m3ed37b0[m[33m ([m[1;31morigin/dinara1[m[33m)[m 'df'
+[33m0ae2b39[m add
+[33m166601d[m add
+[33ma537072[m WIP: локальные изменения
+[33md680686[m Merge pull request #39 from BAKYTq1/naziik
+[33m820516d[m[33m ([m[1;31morigin/naziik[m[33m)[m Merge branch 'development' into naziik
+[33m66f144d[m dashboard
+[33m5d2e54c[m Update Courses1.jsx
+[33m381f22d[m Merge pull request #38 from BAKYTq1/backup-dev
+[33m26f66c2[m[33m ([m[1;31morigin/backup-dev[m[33m, [m[1;32mbackup-dev[m[33m)[m fg
+[33ma4cead3[m Merge branch 'development' of https://github.com/BAKYTq1/Mind-mentor into backup-dev
+[33m645d767[m dfgdfg
+[33md6de95a[m Merge pull request #35 from BAKYTq1/ProjectsAdminka
+[33mf9f3751[m[33m ([m[1;31morigin/ProjectsAdminka[m[33m)[m cfreate Projects
+[33m241db46[m Update index.jsx
+[33m575c2c4[m Update Hero2.jsx
+[33m2d8e7d7[m Update Hero.jsx
+[33m6eae2ab[m Update Card.jsx
+[33mb8752f2[m Update Project.jsx
+[33m9751149[m Update Mentor.jsx
+[33mf4c865a[m Update Mentory.jsx
+[33m45dc712[m Update Hero2.jsx
+[33m8e71a50[m Update Header.jsx
+[33mf210686[m Update Header.jsx
+[33m3db7771[m Update AdminCourse.jsx
+[33m281c4e9[m Update AdminCourse.jsx
+[33m53b7e7e[m Update Dashboard..jsx
+[33mbbd7814[m Update Courses1.jsx
+[33m7f20024[m Update AdminPage.jsx
+[33md2d5e8b[m Dinara
+[33md3a3cbd[m Update index.css
+[33mfe2ccc9[m Update router.jsx
+[33me3b825d[m Merge pull request #34 from BAKYTq1/Payments
+[33m79e7ddd[m Merge pull request #33 from BAKYTq1/User-new
+[33mc2b2d5a[m[33m ([m[1;31morigin/User-new[m[33m)[m Merge branch 'development' into User-new
+[33mceb3f9f[m[33m ([m[1;31morigin/Payments[m[33m)[m feat: add Payments component
+[33m46c48cf[m Update AdminCourse.jsx
+[33m9b29f0c[m Update Reviews.jsx
+[33m16b3ce6[m Update Hero2.jsx
+[33m086cf96[m Update Hero.jsx
+[33mdaa89bb[m Update Card.jsx
+[33mbf344b7[m Update Courses1.jsx
+[33m7b83f90[m Update Courses1.jsx
+[33m61dfb87[m Update index.css
+[33m25adc0f[m Update AdminCourse.jsx
+[33mb3cd8ec[m Update style.scss
+[33m4569889[m Merge branch 'development' into User-new
+[33md21c305[m Merge pull request #28 from BAKYTq1/nazik1
+[33m5164ab4[m[33m ([m[1;31morigin/nazik1[m[33m)[m Merge branch 'development' into nazik1
+[33md0f0b38[m Merge branch 'main' into nazik1
+[33m51b5d4e[m Merge pull request #27 from BAKYTq1/Dinara
+[33md6e6b96[m[33m ([m[1;31morigin/Dinara[m[33m)[m Merge branch 'main' into Dinara
+[33mefe5c2a[m peredelka
+[33ma213ee3[m add
+[33mfacb634[m Merge pull request #25 from BAKYTq1/nurbolot
+[33m8ac93c8[m[33m ([m[1;31morigin/nurbolot[m[33m)[m Merge branch 'development' into nurbolot
+[33m6962570[m Merge pull request #22 from BAKYTq1/AddedHeader
+[33m1cce244[m Merge pull request #24 from BAKYTq1/AddedHeader
+[33m216c3bf[m[33m ([m[1;31morigin/AddedHeader[m[33m)[m Merge branch 'main' into AddedHeader
+[33m4dc0455[m Merge pull request #23 from BAKYTq1/oiboi
+[33m0e622ac[m 12 commit
+[33mfea7828[m added User-data
+[33m28fc6a1[m added Header
+[33mc125cda[m Merge pull request #21 from BAKYTq1/Delete-users
+[33m1f4e828[m[33m ([m[1;31morigin/Delete-users[m[33m)[m Revosed Merge conflict, Delete User
+[33m5201822[m 'card'
+[33m8556818[m dfd
+[33m3d91418[m admin courses
+[33m68bb749[m admin courses
+[33m64ac16c[m Merge pull request #20 from BAKYTq1/adminka
+[33mf01a5bf[m[33m ([m[1;31morigin/adminka[m[33m)[m admin
+[33m2e08a90[m Merge pull request #19 from BAKYTq1/nurbolot
+[33m9243793[m Merge branch 'development' into nurbolot
+[33m53b6e2c[m admin courses
+[33m3c9cff8[m admin courses
+[33mbfbcd19[m Merge pull request #18 from BAKYTq1/bakyt/add
+[33m4bba70b[m[33m ([m[1;31morigin/bakyt/add[m[33m)[m asdf
+[33mafba04c[m Merge pull request #17 from BAKYTq1/baha
+[33md7a4f9d[m[33m ([m[1;31morigin/baha[m[33m)[m Merge branch 'development' into baha
+[33meb21d62[m baha
+[33m607c8b2[m Merge pull request #16 from BAKYTq1/Delete-users
+[33m15babc2[m fixed: Delete Users
+[33m1f2d9ac[m Merge pull request #15 from BAKYTq1/Razblock-user
+[33m901aa76[m[33m ([m[1;31morigin/Razblock-user[m[33m)[m added Razblock-user
+[33m69812f8[m Merge pull request #14 from BAKYTq1/Block-User
+[33m5c93332[m[33m ([m[1;31morigin/Block-User[m[33m)[m feat: Block Users
+[33m4a71741[m fixed: conflict
+[33m3adf34d[m Merge pull request #13 from BAKYTq1/User-new
+[33m29b4a5f[m Merge branch 'development' into User-new
+[33m40b4555[m Revosed merge conflict
+[33m825038c[m feat: New User
+[33m3d0c57e[m Merge pull request #12 from BAKYTq1/branch
+[33mb4c9a73[m Merge pull request #8 from BAKYTq1/branch
+[33m6046e97[m[33m ([m[1;31morigin/branch[m[33m)[m Merge branch 'main' into branch
+[33m7e6f535[m Merge pull request #11 from BAKYTq1/nazik
+[33m9ee984e[m[33m ([m[1;31morigin/nazik[m[33m)[m Merge branch 'main' into nazik
+[33mb0f643e[m ff
+[33m7b1b2fb[m Merge pull request #9 from BAKYTq1/branch
+[33m26f3cad[m df
+[33m40bac52[m mentory
+[33mb20595d[m Merge pull request #7 from BAKYTq1/bakyt/development
+[33mc1e9c27[m[33m ([m[1;31morigin/bakyt/development[m[33m)[m Merge branch 'development' into bakyt/development
+[33m88c415d[m Merge pull request #6 from BAKYTq1/bakyt/development
+[33m0e26472[m fgf
+[33m0fa0325[m Merge pull request #5 from BAKYTq1/nurbolot
+[33m8ee6e7d[m Merge branch 'development' into nurbolot
+[33m495ef56[m admin courses
+[33mbc93ca6[m Merge pull request #4 from BAKYTq1/Fatima-UserData
+[33ma8f8ec4[m[33m ([m[1;31morigin/Fatima-UserData[m[33m)[m user data
+[33mca29cd7[m Merge pull request #3 from BAKYTq1/Fatima-UserData
+[33md6dd86f[m Merge pull request #2 from BAKYTq1/bakyt/dev
+[33m847013d[m[33m ([m[1;31morigin/bakyt/dev[m[33m)[m Merge branch 'development' into bakyt/dev
+[33mbcd3be6[m Ползователи
+[33m5b45e42[m feat: user data
+[33m772e2a5[m Merge pull request #1 from BAKYTq1/Dinara
+[33m83ae33e[m add
+[33m2e8668b[m add
+[33me20c38e[m add
+[33m5471f46[m first project

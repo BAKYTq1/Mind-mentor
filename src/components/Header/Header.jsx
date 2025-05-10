@@ -14,7 +14,7 @@ import "swiper/css/pagination";
 export default function Header() {
     const [activeMenu, setActiveMenu] = useState("Главная");
     const [isOpen, setIsOpen] = useState(false);
-    const menuItems = ["Главная", "Курсы", "Менторы", "Проекты"];
+    const menuItems = ["Главная", "Курсы", "Менторы", "Проекты", "История"];
 
     const getPath = (item) => {
         switch (item) {
@@ -26,6 +26,8 @@ export default function Header() {
                 return "/mentors";
             case "Проекты":
                 return "/projects";
+            case "История":
+                return "/history";
             default:
                 return "/";
         }

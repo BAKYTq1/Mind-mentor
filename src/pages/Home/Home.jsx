@@ -19,9 +19,11 @@ import NewUser from '../../components/NewUser/index.jsx'
 import SpecialistsPanel from '../../components/Special/index.jsx'
 import Payments from '../../components/payments/Payments.jsx'
 import Korzina from '../../components/korzina/Korzina.jsx'
+// import CardCarousel from '../../components/cards/cards.jsx'
+import Podbor from '../../components/podbor/Podbor.jsx'
 
 function Home() {
-  return (
+  return (  
     <div>
         <Hero/>
         <Card/>
@@ -31,6 +33,7 @@ function Home() {
         <Project/>
         <Reviews/>
         <ContactForm/>
+        <Podbor/>
         {/* <Payments/> */}
         {/* <AdminPage/> */}
         {/* <Mentory/> */}
