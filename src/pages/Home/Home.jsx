@@ -21,6 +21,13 @@ import Payments from '../../components/payments/Payments.jsx'
 import Korzina from '../../components/korzina/Korzina.jsx'
 // import CardCarousel from '../../components/cards/cards.jsx'
 import Podbor from '../../components/podbor/Podbor.jsx'
+import Mentor2 from '../Mentor.jsx'
+import Modal from '../mentor-modal/Modal.jsx'
+import WatchPage from '../watchpage/WatchPage.jsx'
+import FavoritePage from '../FavoritePage.jsx'
+import CoursesPage from '../coursespage/CoursesPage.jsx'
+import MentorDetail from '../MentorDetail/MentorDetail.jsx'
+import Korzina from '../../components/korzina/Korzina.jsx'
 
 function Home() {
   return (  
@@ -53,6 +60,7 @@ function Home() {
         {/* <AdminPage/> */}
         {/* <UserData/> */}
         {/* <SpecialistsPanel/> */}
+        <MentorDetail/>
         {/* <Korzina/> */}
     </div>
   )
