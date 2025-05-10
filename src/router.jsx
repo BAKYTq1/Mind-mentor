@@ -101,6 +101,16 @@ export const myRouter = createBrowserRouter([
          element: <Pokupka/>
       },
 
+      {
+         path:"details",
+         element: <Korzina/>
+      },
+      {
+         path:"pokupka",
+         element: <Pokupka/>
+      },
+
+
      {
          path: 'course-detail',
          element: <CourseDetail/>,
