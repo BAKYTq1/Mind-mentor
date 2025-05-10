@@ -35,10 +35,39 @@ function About() {
 export const myRouter = createBrowserRouter([
     {
         path: '/',
-        element: <Layout/>,
+        element: <Layout />,
         children: [
             {
                 path: '/',
+                element: <Home />
+            },
+            {
+                path: 'about',
+                element: <About />
+            },
+            {
+                path: '*',
+                element: <Notfound />
+            },
+            {
+                path: 'user-data',
+                element: <UserData />
+            },
+            {
+                path: 'kours',
+                element: <CoursesPage />
+            },
+            {
+                path: 'History',
+                element: <HistoryPage />
+            },
+            {
+                path: '/смотреть',
+                element: <WatchPage />
+            },
+            {
+                path: '/projects',
+                element: <Project />
                 element: <Home/>
             },
             {
@@ -126,6 +155,8 @@ export const myRouter = createBrowserRouter([
         element: <SavedLayout/>,
         children: [
             {
+                path: '/сохраненные',
+                element: <FavoritePage />
                 index: true,
                 element: <FavoritePage/>
             },
@@ -141,19 +172,66 @@ export const myRouter = createBrowserRouter([
                 element: <FavoritePage/>
 
                 path: '/sign-in',
-                element: <SigneIn/>
+                element: <SigneIn />
             },
             {
-                path:"register",
-                element:<Register/>
-            }
-
+                path: "register",
+                element: <Register />
+            },
+            {
                 path: '/mentors',
-                element: <Mentor/>
+                element: <Mentor />
             },
 
 
         ],
+
+    },
+    {
+        path: 'adminka',
+        element: <UserLayout />,
+        children: [
+
+        ]
+    },
+    {
+        path: "details",
+        element: <Korzina />
+    },
+    {
+        path: "pokupka",
+        element: <Pokupka />
+    },
+
+    {
+        path: 'course-detail',
+        element: <CourseDetail />,
+    },
+    {
+
+        path: 'new-project',
+        element: <NewProject />
+
+    },
+    {
+
+        path: 'data-project',
+        element: <DataProjectAdmin />
+
+    },
+    {
+        path: '/saved',
+        element: <SavedLayout />,
+        children: [
+            {
+                index: true,
+                element: <FavoritePage />
+            },
+        ]
+    }
+
+
+])
        
       },
       {
