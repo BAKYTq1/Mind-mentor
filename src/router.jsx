@@ -137,6 +137,8 @@ export const myRouter = createBrowserRouter([
     }
 ])
             {
+                path: '/like1',
+                element: <FavoritePage/>
 
                 path: '/sign-in',
                 element: <SigneIn/>
