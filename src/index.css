@@ -2,9 +2,9 @@
 /* @tailwind base;
 @tailwind components; */
 /* @tailwind utilities; */
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
 
 /* body{
     font-family: Jost;
@@ -32,7 +32,7 @@ body{
     margin: 0 auto;
     background-color: black;
 }
-  
+
 .no-scrollbar::-webkit-scrollbar {
     display: none;
 }

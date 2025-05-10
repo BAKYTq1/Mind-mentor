@@ -10,7 +10,7 @@ import { FaAnglesLeft, FaAnglesRight } from "react-icons/fa6";
 import CourseDataModal from "../coursesModals/courseDataModal/CourseDataModal.jsx";
 import CourseDeleteModal from "../coursesModals/courseDeleteModal/CourseDeleteModal.jsx";
 import SpecialistsPanel from '../Special/index.jsx';
-import NewProject from '../NewProject/index.jsx';
+
 
 const ProjectsAdminka = () => {
     const [currentPage, setCurrentPage] = useState(1);
@@ -54,11 +54,7 @@ const ProjectsAdminka = () => {
         setSelectedCourse(course);
         setActiveMenu(null);
     };
-    const handleIzmenModal = (type, course) => {
-        setModalType(type);
-        setSelectedCourse(course);
-        setActiveMenu(null);
-    };
+   
 
     const handleDeleteCourse = (id) => {
         setCourses((prevCourses) => prevCourses.filter((course) => course.id !== id));
@@ -122,12 +118,13 @@ const ProjectsAdminka = () => {
                                         />
                                         {activeMenu === item.id && (
                                             <div className="absolute right-0 mt-[10px] w-[120px] bg-[#0F0F11] text-white rounded-[10px] p-[10px] z-10 shadow-lg">
-                                                <p
+                                                <a href='./data-project'
                                                     className="text-[14px] font-medium mb-2 cursor-pointer hover:underline"
-                                                    onClick={() => handleOpenModal('data', item)}
                                                 >
+                                                  
                                                     Данные
-                                                </p>
+                                                </a>
+                                            <br />
                                                 <a href='./new-project'
                                                     className="text-[14px] font-medium mb-2 cursor-pointer hover:underline"
                                                 >
@@ -190,13 +187,7 @@ const ProjectsAdminka = () => {
                     />
                 )}
 
-                {modalType === 'izmenit' && selectedCourse && (
-                    <NewProject
-                        course={selectedCourse}
-                        onClose={() => setModalType(null)}
-                        onConfirm={(id) => handleIzmenCourse(id)}
-                    />
-                )}
+               
 
                 {modalType === 'delete' && selectedCourse && (
                     <CourseDeleteModal
@@ -207,7 +198,6 @@ const ProjectsAdminka = () => {
                 )}
             </div>
 
-            {/* Оң жагы: Specialists Panel */}
             <SpecialistsPanel />
         </div>
     );

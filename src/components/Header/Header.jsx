@@ -209,6 +209,10 @@ export default function Header() {
                                 className={`px-4 py-1.5 rounded transition-colors duration-200 rounded-[10px] ${
                                     activeMenu === item ? "bg-black text-white" : "bg-transparent text-black hover:bg-gray-200"
                                 }`}
+                                className={`px-4 py-1.5  transition-colors duration-200 rounded-[10px] ${activeMenu === item
+                                        ? "bg-black text-white"
+                                        : "bg-transparent text-black hover:bg-gray-200"
+                                    }`}
                             >
                                 {item}
                             </button>
@@ -238,6 +242,18 @@ export default function Header() {
                         <img src={glaw3 || "/placeholder.svg"} alt="chat" className="w-[35px]" />
                         <span className="absolute top-1 right-1 bg-yellow-400 w-2 h-2 rounded-full" />
                     </div>
+                  <Link to={'/saved'}><div className="bg-black rounded-full w-10 h-10 flex items-center justify-center">
+                        <img src={glaw1} alt="calendar" className="w-[35px]" />
+                    </div></Link>  
+                    <div className="relative bg-black rounded-full w-10 h-10 flex items-center justify-center">
+                        <img src={glaw2} alt="bell" className="w-[35px]" />
+                        <span className="absolute top-1 right-1 bg-yellow-400 w-2 h-2 rounded-full" />
+                    </div>
+                    <Link to="/details">
+                        <div className="bg-black rounded-full w-10 h-10 flex items-center justify-center">
+                            <img src={glaw3} alt="calendar" className="w-[35px]" />
+                        </div>
+                    </Link>
 
                     <Link to="/adminka">
                         <img src={glaw4 || "/placeholder.svg"} alt="avatar" className="w-10 h-10 rounded-full" />
@@ -259,6 +275,10 @@ export default function Header() {
                                     className={`whitespace-nowrap px-4 py-2 rounded font-semibold transition-colors duration-200 ${
                                         activeMenu === item ? "bg-black text-white" : "bg-white text-black hover:bg-gray-100"
                                     }`}
+                                    className={`whitespace-nowrap px-4 py-2 rounded font-semibold transition-colors duration-200 ${activeMenu === item
+                                            ? "bg-black text-white"
+                                            : "bg-white text-black hover:bg-gray-100"
+                                        }`}
                                 >
                                     {item}
                                 </button>
