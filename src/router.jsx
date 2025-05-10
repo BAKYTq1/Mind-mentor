@@ -18,10 +18,15 @@ import HistoryPage from "./pages/history/HistoryPage.jsx";
 import WatchPage from "./pages/watchpage/WatchPage.jsx";
 import FavoritePage from "./pages/FavoritePage.jsx";
 import DataProjectAdmin from "./components/DataProjectAdmin";
+
+import SigneIn from "./pages/Auth/SigneIn.jsx";
+import Register from "./pages/Auth/Register.jsx";
+
 import Project from "./pages/project/Project.jsx";
 import Mentor from "./pages/mentor/Mentor.jsx";
 import SavedLayout from "./Layout/SavedLayout.jsx";
 import ProjectDetails from "./components/projectDetails/ProjectDetails.jsx";
+
 
 function About() {
     return null;
@@ -130,4 +135,77 @@ export const myRouter = createBrowserRouter([
         path: '/project-details',
         element: <ProjectDetails/>
     }
+])
+            {
+
+                path: '/sign-in',
+                element: <SigneIn/>
+            },
+            {
+                path:"register",
+                element:<Register/>
+            }
+
+                path: '/mentors',
+                element: <Mentor/>
+            },
+
+
+        ],
+       
+      },
+      {
+         path:'adminka',
+         element: <UserLayout/>,
+         children: [
+           
+         ]
+      },
+      {
+         path:"details",
+         element: <Korzina/>
+      },
+      {
+         path:"pokupka",
+         element: <Pokupka/>
+      },
+
+      {
+         path:"details",
+         element: <Korzina/>
+      },
+      {
+         path:"pokupka",
+         element: <Pokupka/>
+      },
+
+
+     {
+         path: 'course-detail',
+         element: <CourseDetail/>,
+     },
+      {
+         
+            path: 'new-project',
+            element: <NewProject/>
+         
+      },
+      {
+         
+         path: 'data-project',
+         element: <DataProjectAdmin/>
+      
+   },
+   {
+    path:'/saved',
+    element:<SavedLayout/>,
+    children: [
+        {
+            index: true,
+            element: <FavoritePage/>
+        },
+    ]
+   }
+     
+      
 ])
