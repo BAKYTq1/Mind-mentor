@@ -24,9 +24,9 @@ export default function Header() {
             case "Курсы":
                 return "/saved";
             case "Менторы":
-                return "/mentors";
+                return "/saved/mentors-detail";
             case "Проекты":
-                return "/projects";
+                return "/saved/projects-detail";
             default:
                 return "";
         }
@@ -35,9 +35,9 @@ export default function Header() {
     useEffect(() => {
         if (location.pathname === "/saved") {
             setActiveMenu("Курсы");
-        } else if (location.pathname === "/mentors") {
+        } else if (location.pathname === "/saved/mentors-detail") {
             setActiveMenu("Менторы");
-        } else if (location.pathname === "/projects") {
+        } else if (location.pathname === "/saved/projects-detail") {
             setActiveMenu("Проекты");
         } else {
             setActiveMenu("Главная");
@@ -55,7 +55,7 @@ export default function Header() {
                     >
                         {isOpen ? <X size={24} /> : <Menu size={24} />}
                     </button>
-                    <img src={md} alt="логотип" className="h-[120px] w-[170px]" />
+                    <Link to={'/'}><img src={md} alt="логотип" className="h-[120px] w-[170px]" /></Link>
                 </div>
 
                 <nav className="hidden lg:flex gap-10 text-[19px] font-bold">

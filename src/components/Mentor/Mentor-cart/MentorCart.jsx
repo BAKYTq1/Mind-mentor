@@ -3,6 +3,7 @@ import smile from '../../../assets/img/Smile_rating.svg';
 import { IoHeartSharp } from "react-icons/io5";
 import { SlControlPlay } from "react-icons/sl";
 import './style.scss';
+import { Link } from 'react-router-dom';
 
 const MentorCart = ({ mentor }) => {
   return (
@@ -50,7 +51,7 @@ const MentorCart = ({ mentor }) => {
         
         <div className='btn-price'>
         <p className="project-price">{mentor.price.toLocaleString()} <span>C</span> </p>
-          <button>Технологии</button>
+         <Link to={'/mentors-detail'}><button>Технологии</button></Link> 
         </div>
       </div>
     </div>
