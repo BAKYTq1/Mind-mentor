@@ -22,6 +22,7 @@ import Project from "./pages/project/Project.jsx";
 import Mentor from "./pages/mentor/Mentor.jsx";
 import SavedLayout from "./Layout/SavedLayout.jsx";
 import ProjectDetails from "./components/projectDetails/ProjectDetails.jsx";
+import ChooseSpecialization from "./components/chooseSpecialization/ChooseSpecialization.jsx";
 
 function About() {
     return null;
@@ -129,5 +130,11 @@ export const myRouter = createBrowserRouter([
     {
         path: '/project-details',
         element: <ProjectDetails/>
+    },
+
+
+    {
+        path: '/specialization',
+        element: <ChooseSpecialization/>
     }
 ])
