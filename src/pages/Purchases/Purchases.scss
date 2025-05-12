@@ -1,0 +1,257 @@
+.purchases {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 40px 10px; 
+    font-family: 'Jost', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.purchase-card {
+    background: #fff;
+    border-radius: 16px; /* Немного уменьшил для мобильных */
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px; 
+    max-width: 500px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px; 
+
+    .title {
+        color: #008ecf;
+        font-size: 20px; 
+        font-weight: 600;
+    }
+
+    .subtitle {
+        font-weight: 600;
+        font-size: 16px; 
+    }
+
+    .description {
+        font-size: 14px; 
+        line-height: 1.5;
+        color: #333;
+    }
+
+    .target-title {
+        font-weight: 600;
+        font-size: 14px; /* Добавил размер шрифта */
+    }
+
+    .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px; /* Уменьшил gap */
+
+        .tag {
+            padding: 5px 10px; /* Уменьшил padding */
+            border-radius: 999px;
+            background: #f5f5f5;
+            font-size: 12px; 
+            border: 1px solid #ddd;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.2s ease;
+            cursor: pointer;
+
+            &:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+                color: #fff;
+            }
+            &:active {
+                transform: translateY(0);
+            }
+            &:hover::after {
+                transform: scale(4);
+            }
+            &::after{
+                content: "";
+                position: absolute;
+                border-radius: 50%;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                pointer-events: none;
+                transform: scale(0);
+                transition: all 0.8s ease;
+                background: rgb(0, 0, 0);
+                z-index: -1;
+            }   
+
+            &.blue {
+                border-color: #008ecf;
+                color: #008ecf;
+                &::after {
+                    background: #008ecf;
+                }
+                &:hover {
+                    color: #fff;
+                }
+            }
+
+            &.orange {
+                border-color: #ffa500;
+                color: #ffa500;
+                &::after {
+                    background: #ffa500;
+                }
+                &:hover {
+                    color: #fff;
+                }
+            }
+
+            &.purple {
+                border-color: #a663cc;
+                color: #a663cc;
+                &::after {
+                    background: #a663cc;
+                }
+                &:hover {
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: column; /* Изменил на колонку для мобильных */
+        gap: 12px;
+        margin-top: 10px;
+
+        .feedback-btn,
+        .contact-btn {
+            font-family: 'Jost', sans-serif;
+            font-weight: 700;
+            font-size: 16px; 
+            line-height: 20px; /* Уменьшил line-height */
+            letter-spacing: 0px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            width: 100%; /* Сделал кнопки на всю ширину */
+            height: 52px; /* Уменьшил высоту */
+
+            &:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            }
+            &:active {
+                transform: translateY(0);
+            }
+            &:hover::after {
+                animation: ripple 0.5s linear;
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                background: rgba(255, 255, 255, 0.208);
+                border-radius: 50%;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                pointer-events: none;
+                transform: scale(0);
+            }
+        }
+        
+        @keyframes ripple {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+
+        .feedback-btn {
+            border-radius: 16px; /* Уменьшил радиус */
+            background: #FFFFFF;
+            color: #2D2D2D;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            
+            &::after {
+                background: rgba(0, 0, 0, 0.242);
+            }
+        }
+
+        .contact-btn {
+            gap: 8px;
+            border-radius: 16px; /* Уменьшил радиус */
+            padding: 16px;
+            background: #2D2D2D;
+            box-shadow: 0 10px 32px -4px rgba(24, 39, 75, 0.1), 
+                        0 6px 14px -6px rgba(24, 39, 75, 0.1);
+            color: #fff;
+            
+            &:hover {
+                background: #3D3D3D;
+            }
+        }
+    }
+}
+
+/* Медиазапросы для планшетов и десктопов */
+@media (min-width: 600px) {
+    .purchases {
+        padding: 80px 20px;
+    }
+
+    .purchase-card {
+        padding: 30px;
+        gap: 20px;
+        border-radius: 20px;
+
+        .title {
+            font-size: 22px;
+        }
+
+        .subtitle {
+            font-size: 18px;
+        }
+
+        .description {
+            font-size: 16px;
+        }
+
+        .tags {
+            gap: 10px;
+
+            .tag {
+                padding: 6px 12px;
+                font-size: 14px;
+            }
+        }
+
+        .buttons {
+            flex-direction: row; /* Возвращаем кнопки в ряд */
+            
+            .feedback-btn,
+            .contact-btn {
+                font-size: 20px;
+                line-height: 24px;
+                height: 64px;
+            }
+
+            .feedback-btn {
+                width: 185px;
+                border-radius: 24px;
+            }
+
+            .contact-btn {
+                width: 336px;
+                border-radius: 24px;
+            }
+        }
+    }
+}

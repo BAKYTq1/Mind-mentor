@@ -28,6 +28,8 @@ import SavedLayout from "./Layout/SavedLayout.jsx";
 // import Projectdetail from "./pages/ProjectDetail/Projectdetail.jsx";
 import MentorDetail from "./pages/MentorDetail/MentorDetail.jsx";
 import ProjectDetails from "./components/projectDetails/ProjectDetails.jsx";
+import Curriculum from "./pages/Сurriculum/Curriculum.jsx";
+import Purchases from "./pages/Purchases/Purchases.jsx";
 
 function About() {
     return null;
@@ -86,6 +88,14 @@ export const myRouter = createBrowserRouter([
                 path: 'course-detail',
                 element: <CourseDetail/>,
             },
+            {
+                path:"/curriculum",
+                element: <Curriculum/>
+            },
+            {
+                path:"/purchases",
+                element: <Purchases/>
+            }
         ]
     },
 
