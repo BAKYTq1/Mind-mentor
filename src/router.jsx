@@ -31,6 +31,7 @@ import ProjectDetails from "./components/projectDetails/ProjectDetails.jsx";
 import Curriculum from "./pages/Сurriculum/Curriculum.jsx";
 import Purchases from "./pages/Purchases/Purchases.jsx";
 import ChooseSpecialization from "./components/chooseSpecialization/ChooseSpecialization.jsx";
+import ProjectDetail from "./pages/ProjectDetail/Projectdetail.jsx";
 
 function About() {
     return null;
@@ -99,8 +100,9 @@ export const myRouter = createBrowserRouter([
             },
               {
                 path: 'project-detail',
-                element: <Projectdetail />
+                element: <ProjectDetail />
             },
+            {
                 path:"/curriculum",
                 element: <Curriculum/>
             },
@@ -169,7 +171,6 @@ export const myRouter = createBrowserRouter([
         element: <DataProjectAdmin/>
     },
     {
-        path: 'saved',
         path: '/like1',
         element: <FavoritePage/>
     },
@@ -274,14 +275,7 @@ export const myRouter = createBrowserRouter([
 //             },
 //         ]
 //     }
-    },
 
-
-    {
-        path: '/specialization',
-        element: <ChooseSpecialization/>
-    }
-])
 
 
   
