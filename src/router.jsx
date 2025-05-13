@@ -25,9 +25,12 @@ import Register from "./pages/Auth/Register.jsx";
 import Project from "./pages/project/Project.jsx";
 import Mentor from "./pages/mentor/Mentor.jsx";
 import SavedLayout from "./Layout/SavedLayout.jsx";
-import Projectdetail from "./pages/ProjectDetail/Projectdetail.jsx";
+// import Projectdetail from "./pages/ProjectDetail/Projectdetail.jsx";
 import MentorDetail from "./pages/MentorDetail/MentorDetail.jsx";
 import ProjectDetails from "./components/projectDetails/ProjectDetails.jsx";
+import Curriculum from "./pages/Сurriculum/Curriculum.jsx";
+import Purchases from "./pages/Purchases/Purchases.jsx";
+import ChooseSpecialization from "./components/chooseSpecialization/ChooseSpecialization.jsx";
 
 function About() {
     return null;
@@ -98,6 +101,13 @@ export const myRouter = createBrowserRouter([
                 path: 'project-detail',
                 element: <Projectdetail />
             },
+                path:"/curriculum",
+                element: <Curriculum/>
+            },
+            {
+                path:"/purchases",
+                element: <Purchases/>
+            }
         ]
     },
 
@@ -160,11 +170,36 @@ export const myRouter = createBrowserRouter([
     },
     {
         path: 'saved',
+        path: '/like1',
+        element: <FavoritePage/>
+    },
+    {
+        path: '/sign-in',
+        element: <SigneIn />
+    },
+    {
+        path: "register",
+        element: <Register />
+    },
+    {
+        path: '/mentors',
+        element: <Mentor />
+    },
+    {
+        path: 'mentors-detail',
+        element: <MentorDetail/>
+    },
+    {
+        path: '/saved',
         element: <SavedLayout/>,
         children: [
             {
                 index: true,
                 element: <FavoritePage/>
+            },
+            {
+                path: 'сохраненные',
+                element: <FavoritePage />,
             },
         ]
     },
@@ -239,7 +274,47 @@ export const myRouter = createBrowserRouter([
 //             },
 //         ]
 //     }
+    },
 
+
+    {
+        path: '/specialization',
+        element: <ChooseSpecialization/>
+    }
+])
+
+
+  
+//     {
+//         path: 'adminka',
+//         element: <UserLayout />,
+//         children: [
+
+//         ]
+//     },
+//     {
+//         path: "details",
+//         element: <Korzina />
+//     },
+//     {
+//         path: "pokupka",
+//         element: <Pokupka />
+//     },
+
+//     {
+//         path: 'course-detail',
+//         element: <CourseDetail />,
+//     },
+//     {
+
+//         path: 'new-project',
+//         element: <NewProject />
+
+//     },
+//     {
+
+//         path: 'data-project',
+//         element: <DataProjectAdmin />
 
 // ])
        
@@ -301,6 +376,76 @@ export const myRouter = createBrowserRouter([
 //         },
 //     ]
 //    }
+//     },
+//     {
+//         path: '/saved',
+//         element: <SavedLayout />,
+//         children: [
+//             {
+//                 index: true,
+//                 element: <FavoritePage />
+//             },
+//         ]
+//     }
+       
+
+// //       {
+// //          path:'adminka',
+// //          element: <UserLayout/>,
+// //          children: [
+           
+// //          ]
+// //       },
+// //       {
+// //          path:"details",
+// //          element: <Korzina/>
+// //       },
+// //       {
+// //          path:"pokupka",
+// //          element: <Pokupka/>
+// //       },
+
+// //       {
+// //          path:"details",
+// //          element: <Korzina/>
+// //       },
+// //       {
+// //          path:"pokupka",
+// //          element: <Pokupka/>
+// //       },
+
+
+// //      {
+// //          path: 'course-detail',
+// //          element: <CourseDetail/>,
+// //      },
+// //       {
+         
+// //             path: 'new-project',
+// //             element: <NewProject/>
+         
+// //       },
+// //       {
+         
+// //          path: 'data-project',
+// //          element: <DataProjectAdmin/>
+      
+// //    },
+// //    {
+// //     path:'/saved',
+// //     element:<SavedLayout/>,
+// //     children: [
+// //         {
+// //             index: true,
+// //             element: <FavoritePage/>
+// //         },
+
+// //         {
+// //             path: 'projects-detail',
+// //             element: <Projectdetail/>
+// //         },
+// //     ]
+// //    }
      
       
 // ])
