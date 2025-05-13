@@ -24,7 +24,7 @@ export default function Header() {
             case "Курсы":
                 return "/saved";
             case "Менторы":
-                return "/saved/mentors-detail";
+                return "/saved/mentor-detail";
             case "Проекты":
                 return "/saved/projects-detail";
             default:

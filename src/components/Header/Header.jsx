@@ -221,27 +221,27 @@ export default function Header() {
                 </nav>
 
                 <div className="flex items-center gap-3">
-                    <Link to="/like1">
+                    {/* <Link to="/like1">
                         <div className="bg-black rounded-full w-10 h-10 flex items-center justify-center">
                             <img src={glaw1 || "/placeholder.svg"} alt="calendar" className="w-[35px]" />
                         </div>
-                    </Link>
+                    </Link> */}
 
-                    <div
+                    {/* <div
                         className="relative bg-black rounded-full w-10 h-10 flex items-center justify-center cursor-pointer"
                         onClick={openPopup}
                     >
                         <img src={glaw2 || "/placeholder.svg"} alt="bell" className="w-[35px]" />
                         <span className="absolute top-1 right-1 bg-yellow-400 w-2 h-2 rounded-full" />
-                    </div>
+                    </div> */}
 
-                    <div
+                    {/* <div
                         className="relative bg-black rounded-full w-10 h-10 flex items-center justify-center cursor-pointer"
                         onClick={openPopup}
                     >
                         <img src={glaw3 || "/placeholder.svg"} alt="chat" className="w-[35px]" />
                         <span className="absolute top-1 right-1 bg-yellow-400 w-2 h-2 rounded-full" />
-                    </div>
+                    </div> */}
                   <Link to={'/saved'}><div className="bg-black rounded-full w-10 h-10 flex items-center justify-center">
                         <img src={glaw1} alt="calendar" className="w-[35px]" />
                     </div></Link>  

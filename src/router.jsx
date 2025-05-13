@@ -69,7 +69,6 @@ export const myRouter = createBrowserRouter([
             {
                 path: '/projects',
                 element: <Project />
-                element: <Home/>
             },
             {
                 path: 'about',
@@ -86,6 +85,18 @@ export const myRouter = createBrowserRouter([
             {
                 path: 'course-detail',
                 element: <CourseDetail/>,
+            },
+            {
+                path: '/mentors',
+                element: <Mentor/>
+            },
+              {
+                path: 'mentor-detail',
+                element: <MentorDetail />
+            },
+              {
+                path: 'project-detail',
+                element: <Projectdetail />
             },
         ]
     },
@@ -128,12 +139,8 @@ export const myRouter = createBrowserRouter([
         element: <Project/>
     },
     {
-        path: '/сохраненные',
+        path: 'сохраненные',
         element: <FavoritePage/>
-    },
-    {
-        path: '/mentors',
-        element: <Mentor/>
     },
     {
         path: "details",
@@ -152,12 +159,10 @@ export const myRouter = createBrowserRouter([
         element: <DataProjectAdmin/>
     },
     {
-        path: '/saved',
+        path: 'saved',
         element: <SavedLayout/>,
         children: [
             {
-                path: '/сохраненные',
-                element: <FavoritePage />
                 index: true,
                 element: <FavoritePage/>
             },
@@ -168,134 +173,134 @@ export const myRouter = createBrowserRouter([
         element: <ProjectDetails/>
     }
 ])
-            {
-                path: '/like1',
-                element: <FavoritePage/>
+//             {
+//                 path: '/like1',
+//                 element: <FavoritePage/>
 
-                path: '/sign-in',
-                element: <SigneIn />
-            },
-            {
-                path: "register",
-                element: <Register />
-            },
-            {
-                path: '/mentors',
-                element: <Mentor />
-            },
-            {
-                path: 'mentors-detail',
-                element: <MentorDetail/>
-            },
-
-
-        ],
-
-    },
-    {
-        path: 'adminka',
-        element: <UserLayout />,
-        children: [
-
-        ]
-    },
-    {
-        path: "details",
-        element: <Korzina />
-    },
-    {
-        path: "pokupka",
-        element: <Pokupka />
-    },
-
-    {
-        path: 'course-detail',
-        element: <CourseDetail />,
-    },
-    {
-
-        path: 'new-project',
-        element: <NewProject />
-
-    },
-    {
-
-        path: 'data-project',
-        element: <DataProjectAdmin />
-
-    },
-    {
-        path: '/saved',
-        element: <SavedLayout />,
-        children: [
-            {
-                index: true,
-                element: <FavoritePage />
-            },
-        ]
-    }
+//                 path: '/sign-in',
+//                 element: <SigneIn />
+//             },
+//             {
+//                 path: "register",
+//                 element: <Register />
+//             },
+//             {
+//                 path: '/mentors',
+//                 element: <Mentor />
+//             },
+//             {
+//                 path: 'mentors-detail',
+//                 element: <MentorDetail/>
+//             },
 
 
-])
+//         ],
+
+//     },
+//     {
+//         path: 'adminka',
+//         element: <UserLayout />,
+//         children: [
+
+//         ]
+//     },
+//     {
+//         path: "details",
+//         element: <Korzina />
+//     },
+//     {
+//         path: "pokupka",
+//         element: <Pokupka />
+//     },
+
+//     {
+//         path: 'course-detail',
+//         element: <CourseDetail />,
+//     },
+//     {
+
+//         path: 'new-project',
+//         element: <NewProject />
+
+//     },
+//     {
+
+//         path: 'data-project',
+//         element: <DataProjectAdmin />
+
+//     },
+//     {
+//         path: '/saved',
+//         element: <SavedLayout />,
+//         children: [
+//             {
+//                 index: true,
+//                 element: <FavoritePage />
+//             },
+//         ]
+//     }
+
+
+// ])
        
-      },
-      {
-         path:'adminka',
-         element: <UserLayout/>,
-         children: [
+//       },
+//       {
+//          path:'adminka',
+//          element: <UserLayout/>,
+//          children: [
            
-         ]
-      },
-      {
-         path:"details",
-         element: <Korzina/>
-      },
-      {
-         path:"pokupka",
-         element: <Pokupka/>
-      },
+//          ]
+//       },
+//       {
+//          path:"details",
+//          element: <Korzina/>
+//       },
+//       {
+//          path:"pokupka",
+//          element: <Pokupka/>
+//       },
 
-      {
-         path:"details",
-         element: <Korzina/>
-      },
-      {
-         path:"pokupka",
-         element: <Pokupka/>
-      },
+//       {
+//          path:"details",
+//          element: <Korzina/>
+//       },
+//       {
+//          path:"pokupka",
+//          element: <Pokupka/>
+//       },
 
 
-     {
-         path: 'course-detail',
-         element: <CourseDetail/>,
-     },
-      {
+//      {
+//          path: 'course-detail',
+//          element: <CourseDetail/>,
+//      },
+//       {
          
-            path: 'new-project',
-            element: <NewProject/>
+//             path: 'new-project',
+//             element: <NewProject/>
          
-      },
-      {
+//       },
+//       {
          
-         path: 'data-project',
-         element: <DataProjectAdmin/>
+//          path: 'data-project',
+//          element: <DataProjectAdmin/>
       
-   },
-   {
-    path:'/saved',
-    element:<SavedLayout/>,
-    children: [
-        {
-            index: true,
-            element: <FavoritePage/>
-        },
+//    },
+//    {
+//     path:'/saved',
+//     element:<SavedLayout/>,
+//     children: [
+//         {
+//             index: true,
+//             element: <FavoritePage/>
+//         },
 
-        {
-            path: 'projects-detail',
-            element: <Projectdetail/>
-        },
-    ]
-   }
+//         {
+//             path: 'projects-detail',
+//             element: <Projectdetail/>
+//         },
+//     ]
+//    }
      
       
-])
+// ])

@@ -44,8 +44,8 @@ function Project() {
   }
 
   return (
-    <div className="container mx-auto px-4">
-      <h1 className="text-2xl font-bold my-4">Проекты</h1>
+    <div className="container mx-auto ">
+      <h1 className="text-3xl font-bold my-8 mb-[60px]">Проекты</h1>
 
       {/* Свайпер для тегов */}
       <Swiper
@@ -66,7 +66,7 @@ function Project() {
         ))}
       </Swiper>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-6">
+      <div className="grid grid-cols-1 mt-[40px] sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-6">
         {currentProjects.map(project => (
           <ProjectCart key={project.id} project={project} />
         ))}
