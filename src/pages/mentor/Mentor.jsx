@@ -43,8 +43,8 @@ function Mentor() {
   }
 
   return (
-    <div className="container mx-auto px-4">
-      <h1 className="text-2xl font-bold my-4">Проекты</h1>
+    <div className="container mx-auto ">
+      <h1 className="text-3xl font-bold my-7 mb-[60px]">Менторы</h1>
 
       <Swiper
         modules={[Autoplay]}
@@ -64,12 +64,12 @@ function Mentor() {
         ))}
       </Swiper>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-6 gap-y-6 mb-6">
+      <div className="grid grid-cols-1 mt-[70px] sm:grid-cols-2 lg:grid-cols-3 gap-y-6 gap-y-6 mb-6">
         {currentProjects.map(mentor => (
           <MentorCart key={mentor.id} mentor={mentor} />
         ))}
       </div>
-      <div className="flex justify-between items-center mt-6">
+      <div className="flex justify-between items-center ">
         <div className="flex items-center gap-2">
           {Array.from({ length: totalPages }, (_, i) => (
             <button
