@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/autoplay';
+import { useNavigate } from 'react-router-dom';
 
 import input from "../../assets/input.svg";
 
@@ -26,6 +27,12 @@ const slides = [
 ];
 
 const Hero = () => {
+
+  const navigate = useNavigate();
+
+  const handleNavigate = () => {
+    navigate('/podbor');
+  };
   return (
     <div className="container mx-auto mt-[60px]">
       <Swiper
@@ -63,7 +70,10 @@ const Hero = () => {
                   src={input}
                   alt="Search Icon"
                 />
-                <button className="w-[158px] h-[64px] hero-btn text-white rounded-[24px] flex items-center justify-center transition duration-300 ml-[20px] z-1">
+                <button
+                  onClick={handleNavigate}
+                  className="w-[158px] h-[64px] hero-btn text-white rounded-[24px] flex items-center justify-center transition duration-300 ml-[20px] z-1"
+                >
                   Подобрать
                 </button>
               </div>
