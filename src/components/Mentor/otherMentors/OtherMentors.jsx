@@ -6,6 +6,7 @@ import MentorCart from '../Mentor-cart/MentorCart';
 import { mentors } from '../Data/Data'; 
 import { IoPlayOutline } from "react-icons/io5";
 import { RiPlayReverseLargeLine } from "react-icons/ri";
+import { useSelector, useDispatch } from 'react-redux';
 
 // import "swiper/css";
 // import "swiper/css/pagination";
@@ -13,8 +14,16 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import { fetchMentors } from '../../../redux/mentorApi/mentorApiSlice';
 
 const OtherMentors = () => {
+  const dispatch = useDispatch();
+  const { mentors } = useSelector((state) => state.mentor);
+
+  useEffect(() => {
+    dispatch(fetchMentors());
+  }, [dispatch]);
+  
   const swiperRef = useRef(null);
   const [isMobile, setIsMobile] = useState(window.innerWidth >= 640);
 
@@ -87,7 +96,7 @@ const OtherMentors = () => {
           <MentorCart mentor={mentor} />
         </SwiperSlide>
       ))}
-    </Swiper>
+    </Swiper> 
     
         ) : (
           <div className="mentor-grid">
