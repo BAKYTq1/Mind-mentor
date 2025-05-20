@@ -9,6 +9,7 @@ import { RiPlayReverseLargeLine } from "react-icons/ri";
 
 import "swiper/css";
 import "swiper/css/pagination";
+import { Link } from 'react-router-dom';
 
 const Project = () => {
   const swiperRef = useRef(null);
@@ -36,7 +37,7 @@ const Project = () => {
       <div className='container projects-header'>
         <h1>Проекты</h1>
         <div className="projects-controls">
-          <h4 className=''>Посмотреть все <IoPlayOutline /></h4>
+         <Link to={'projects'}><h4 className=''>Посмотреть все <IoPlayOutline /></h4></Link>
           {isMobile && (
             <>
               <button onClick={handlePrev} aria-label="Previous slide">

@@ -41,8 +41,10 @@ import Podbor from '../../components/podbor/Podbor.jsx'
 import MentorDetail from '../MentorDetail/MentorDetail.jsx'
 import ProjectDetails from '../../components/projectDetails/ProjectDetails.jsx'
 import ProjectDetail from '../ProjectDetail/Projectdetail.jsx'
+import CourseDetail from '../../components/courseDetail/CourseDetail.jsx'
 
 function Home() {
+  
   return (  
     <div>
         <Hero/>
@@ -73,9 +75,8 @@ function Home() {
         {/* <AdminPage/> */}
         {/* <UserData/> */}
         {/* <SpecialistsPanel/> */}
-        <MentorDetail/>
-        <ProjectDetail/>
         {/* <Korzina/> */}
+        <CourseDetail/>
     </div>
   )
 }

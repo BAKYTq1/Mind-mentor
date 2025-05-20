@@ -2,6 +2,7 @@ import React from 'react';
 import { IoHeartSharp } from "react-icons/io5";
 import smile from '../../../assets/img/Smile_rating.svg';
 import './style.scss';
+import { Link } from 'react-router-dom';
 
 const ProjectCart = ({ project }) => {
   return (
@@ -31,7 +32,7 @@ const ProjectCart = ({ project }) => {
         </div>
         <div className="project-footer">
           <p className="project-price">{project.price.toLocaleString()} <span>C</span> </p>
-          <button className="project-btn">Подробнee</button>
+          <Link to={'project-detail'}><button className="project-btn">Подробнee</button></Link>
         </div>
     </div>
   );

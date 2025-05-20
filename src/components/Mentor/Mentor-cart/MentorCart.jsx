@@ -50,6 +50,8 @@ const MentorCart = ({ mentor }) => {
         </p>
 
         <div className='btn-price'>
+        <p className="project-price">{mentor.price.toLocaleString()} <span>C</span> </p>
+         <Link to={'/mentor-detail'}><button>Технологии</button></Link> 
           <p className="project-price">
             0 <span>C</span>
           </p>
