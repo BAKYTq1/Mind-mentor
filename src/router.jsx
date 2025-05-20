@@ -32,6 +32,8 @@ import Curriculum from "./pages/Сurriculum/Curriculum.jsx";
 import Purchases from "./pages/Purchases/Purchases.jsx";
 import ChooseSpecialization from "./components/chooseSpecialization/ChooseSpecialization.jsx";
 import ProjectDetail from "./pages/ProjectDetail/Projectdetail.jsx";
+import Savedmentor from "./pages/savedMentor/Savedmentor.jsx";
+import Savedproject from "./pages/savedproject/SavedProject.jsx";
 
 function About() {
     return null;
@@ -201,6 +203,14 @@ export const myRouter = createBrowserRouter([
             {
                 path: 'сохраненные',
                 element: <FavoritePage />,
+            },
+            {
+                path: 'saved-mentor',
+                element: <Savedmentor />,
+            },
+            {
+                path: 'saved-project',
+                element: <Savedproject />,
             },
         ]
     },

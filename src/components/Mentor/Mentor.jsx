@@ -13,6 +13,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import { Link } from 'react-router-dom';
 
 const Mentor = () => {
   const swiperRef = useRef(null);
@@ -40,7 +41,7 @@ const Mentor = () => {
       <div className='container item-mentor'>
         <h1>Менторы</h1>
         <div className="mentor-controls">
-          <h4>Посмотреть все <IoPlayOutline /></h4>
+        <Link to={'mentors'}><h4>Посмотреть все <IoPlayOutline /></h4></Link>
           {isMobile && (
             <>
               <button onClick={handlePrev} aria-label="Previous slide">
