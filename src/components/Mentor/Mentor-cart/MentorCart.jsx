@@ -10,48 +10,52 @@ const MentorCart = ({ mentor }) => {
     <div className='mentor-cart'>
       <div className='mentor-logo'>
         <button className='mentor-rating'>
-          4.5 <img src={smile} alt="Рейтинг" className="pt-[1px]"/>
+          {(mentor.reviewsCount || 0)} <img src={smile} alt="Рейтинг" className="pt-[1px]" />
         </button>
 
         <div className="images-container">
           <img
-              src={mentor.img}
-              alt={`Ментор ${mentor.name}`}
-              className="mentor-img"
-              loading="lazy"
+            src={ 'https://via.placeholder.com/150'}
+            alt={`Ментор ${mentor.firstName} ${mentor.secondName}`}
+            className="mentor-img"
+            loading="lazy"
           />
         </div>
 
         <div className="mentor-btn">
           <button aria-label="Просмотреть">
-            <SlControlPlay/>
+            <SlControlPlay />
           </button>
           <button aria-label="Добавить в избранное">
-            <IoHeartSharp/>
+            <IoHeartSharp />
           </button>
         </div>
       </div>
 
       <div className='item-m-cart'>
-        <h3>{mentor.name}</h3>
-        <p>{mentor.students.toLocaleString()} студентов {mentor.language}</p>
-        
+        <h3>{mentor.firstName} {mentor.secondName}</h3>
+        <p> отзывов • рейтинг {mentor.avgRating }</p>
+
         <div className='opyt'>
-          <div><h4>Опыт {mentor.experience}</h4></div>
-          <div><h4>Работает в {mentor.company}</h4></div>
+          <div><h4>Опыт {mentor.workExperience}</h4></div>
+          <div><h4>Работает в ID {mentor.mentorId}</h4></div>
         </div>
-        
+
         <div className='spec'>
-          <h4>{mentor.specialty}</h4>
+          <h4>{mentor.specializationName}</h4>
         </div>
-        
+
         <p className='mentor-textp'>
-          {mentor.description}
+          Описание недоступно
         </p>
-        
+
         <div className='btn-price'>
-        <p className="project-price">{mentor.price.toLocaleString()} <span>C</span> </p>
-         <Link to={'/mentors-detail'}><button>Технологии</button></Link> 
+          <p className="project-price">
+            0 <span>C</span>
+          </p>
+          <Link to={`/mentors-detail/${mentor.mentorId}`} className='btn'>
+            <button>Технологии</button>
+          </Link>
         </div>
       </div>
     </div>
