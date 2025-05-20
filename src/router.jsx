@@ -18,6 +18,8 @@ import HistoryPage from "./pages/history/HistoryPage.jsx";
 import WatchPage from "./pages/watchpage/WatchPage.jsx";
 import FavoritePage from "./pages/FavoritePage.jsx";
 import DataProjectAdmin from "./components/DataProjectAdmin";
+import Podbor from "./components/podbor/Podbor.jsx";
+import Hero from "./components/hero/Hero.jsx";
 
 import SigneIn from "./pages/Auth/SigneIn.jsx";
 import Register from "./pages/Auth/Register.jsx";
@@ -429,6 +431,17 @@ export const myRouter = createBrowserRouter([
 // //          path: 'data-project',
 // //          element: <DataProjectAdmin/>
       
+   },
+   {
+        path:'Podbor',
+        element: <Podbor/>
+   },
+  
+   {
+        path:'hero',
+        element: <Hero/>
+   },
+  
 // //    },
 // //    {
 // //     path:'/saved',
@@ -445,6 +458,4 @@ export const myRouter = createBrowserRouter([
 // //         },
 // //     ]
 // //    }
-     
-      
 // ])

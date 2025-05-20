@@ -53,7 +53,7 @@ function Home() {
         <Project/>
         <Reviews/>
         <ContactForm/>
-        <Podbor/>
+        {/* <Podbor/> */}
         {/* <Payments/> */}
         {/* <AdminPage/> */}
         {/* <Mentory/> */}
