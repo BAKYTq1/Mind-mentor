@@ -18,6 +18,8 @@ import HistoryPage from "./pages/history/HistoryPage.jsx";
 import WatchPage from "./pages/watchpage/WatchPage.jsx";
 import FavoritePage from "./pages/FavoritePage.jsx";
 import DataProjectAdmin from "./components/DataProjectAdmin";
+import Podbor from "./components/podbor/Podbor.jsx";
+import Hero from "./components/hero/Hero.jsx";
 
 import SigneIn from "./pages/Auth/SigneIn.jsx";
 import Register from "./pages/Auth/Register.jsx";
@@ -34,6 +36,7 @@ import ChooseSpecialization from "./components/chooseSpecialization/ChooseSpecia
 import ProjectDetail from "./pages/ProjectDetail/Projectdetail.jsx";
 import Savedmentor from "./pages/savedMentor/Savedmentor.jsx";
 import Savedproject from "./pages/savedproject/SavedProject.jsx";
+import MentorCreate from "./pages/Mentor-Create/MentorCreate.jsx";
 
 function About() {
     return null;
@@ -189,8 +192,12 @@ export const myRouter = createBrowserRouter([
         element: <Mentor />
     },
     {
-        path: 'mentors-detail',
+        path: 'mentors-detail/:mentorId',
         element: <MentorDetail/>
+    },
+    {
+        path:"mentor-create",
+        element: <MentorCreate/>
     },
     {
         path: '/saved',
@@ -434,6 +441,17 @@ export const myRouter = createBrowserRouter([
 // //          path: 'data-project',
 // //          element: <DataProjectAdmin/>
       
+   },
+   {
+        path:'Podbor',
+        element: <Podbor/>
+   },
+  
+   {
+        path:'hero',
+        element: <Hero/>
+   },
+  
 // //    },
 // //    {
 // //     path:'/saved',
@@ -450,6 +468,4 @@ export const myRouter = createBrowserRouter([
 // //         },
 // //     ]
 // //    }
-     
-      
 // ])

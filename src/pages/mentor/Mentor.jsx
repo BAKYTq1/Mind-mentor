@@ -1,14 +1,25 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay } from 'swiper/modules'
+import { useDispatch, useSelector } from 'react-redux'
 import 'swiper/css'
 import MentorCart from '../../components/Mentor/Mentor-cart/MentorCart'
+import { fetchMentors } from '../../redux/mentorApi/mentorApiSlice'
+import Loading from '../../shared/Loading/Loading'
 
 function Mentor() {
   const [currentPage, setCurrentPage] = useState(1)
   const [windowWidth, setWindowWidth] = useState(1024)
+  const [filter, setFilter] = useState('')
+
   const itemsPerPage = 12
   const swiperRef = useRef(null)
+  const dispatch = useDispatch()
+  const { mentors, loading, error } = useSelector(state => state.mentor)
+
+  useEffect(() => {
+    dispatch(fetchMentors(filter))
+  }, [dispatch, filter])
 
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth)
@@ -42,6 +53,9 @@ function Mentor() {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
+  if (loading) { return <div className='flex justify-center items-center h-screen'><Loading/></div> }
+  if (error) { return <div>Error: {error}</div> }
+
   return (
     <div className="container mx-auto ">
       <h1 className="text-3xl font-bold my-7 mb-[60px]">Менторы</h1>
@@ -57,15 +71,18 @@ function Mentor() {
       >
         {tags.map((tag, index) => (
           <SwiperSlide key={index}>
-            <div className="w-full px-5 py-3 rounded-[16px] text-[18px] font-semibold whitespace-nowrap text-center uppercase bg-white text-black shadow-md">
-              {tag}
+            <div 
+            onClick={()=> setFilter(tag)}
+            className="w-full px-5 py-3 rounded-[16px] text-[18px] font-semibold whitespace-nowrap text-center uppercase bg-white text-black shadow-md cursor-pointer hover:bg-[#2D2D2D] hover:text-white transition-all duration-300">
+              {tag} 
             </div>
           </SwiperSlide>
         ))}
       </Swiper>
 
       <div className="grid grid-cols-1 mt-[70px] sm:grid-cols-2 lg:grid-cols-3 gap-y-6 gap-y-6 mb-6">
-        {currentProjects.map(mentor => (
+        
+        {mentors.map(mentor => (
           <MentorCart key={mentor.id} mentor={mentor} />
         ))}
       </div>
