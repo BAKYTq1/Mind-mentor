@@ -21,7 +21,7 @@ const HistoryPage = () => {
     }
 
     return (
-        <div className="w-full max-w-screen-xl mx-auto px-4 py-6">
+        <div className="container w-full max-w-screen-xl mx-auto ">
             <div className="flex justify-between items-start mb-6">
                 <div>
                     <h2 className="text-2xl font-bold">Ваши заказы</h2>

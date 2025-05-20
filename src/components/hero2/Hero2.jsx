@@ -2,7 +2,8 @@ import React from 'react';
 
 const Hero2 = () => {
   return (
-    <div className="container  mt-[60px]">
+    <div className="container 
+     mt-[60px]">
       <h2 className="text-[32px] font-bold mb-[40px] text-[#333] mt-[60px]">О наших сервисах</h2>
 
       <div className="flex gap-[20px] justify-center  mt-[30px]">

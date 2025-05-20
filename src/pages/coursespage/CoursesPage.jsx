@@ -23,6 +23,8 @@ import smile from '../../assets/img/Smile_rating.svg'
 import left from "../../assets/left.svg"
 import right from "../../assets/right.svg"
 import img from "../../assets/img.png"
+import like11 from "../../assets/like11.svg"
+import x11 from "../../assets/x11.svg"
 
 const CoursesPage = () => {
     const [windowWidth, setWindowWidth] = useState(typeof window !== "undefined" ? window.innerWidth : 0)
@@ -36,6 +38,7 @@ const CoursesPage = () => {
         }
         return []
     })
+    const [isModalOpen, setIsModalOpen] = useState(false)
     const swiperRef = useRef(null)
 
     const logAction = (action) => {
@@ -96,6 +99,16 @@ const CoursesPage = () => {
             swiperRef.current.autoplay.start()
             logAction("Autoplay started on mouse leave")
         }
+    }
+
+    const openModal = () => {
+        setIsModalOpen(true)
+        logAction("Modal opened")
+    }
+
+    const closeModal = () => {
+        setIsModalOpen(false)
+        logAction("Modal closed")
     }
 
     const courses = [
@@ -261,7 +274,7 @@ const CoursesPage = () => {
     ]
 
     return (
-        <div className="max-w-[1280px] m-auto px-4 py-8 bg-white">
+        <div className="max-w-[1280px] m-auto px-4 py-8 bg-white overflow-hidden">
             <div className="mb-12 ml-[40px]">
                 <div className="max-w-[1180px] flex justify-between items-center mb-6">
                     <h2 className="text-3xl font-bold">Курсы</h2>
@@ -270,7 +283,7 @@ const CoursesPage = () => {
                     <Swiper
                         modules={[Autoplay]}
                         spaceBetween={8}
-                        slidesPerView={windowWidth < 768 ? 1.5 : 5.5}
+                        slidesPerView={windowWidth < 422 ? 1 : windowWidth < 768 ? 1.5 : 5.5}
                         loop={true}
                         autoplay={{ delay: 1400, disableOnInteraction: false }}
                         onSwiper={(swiper) => (swiperRef.current = swiper)}
@@ -312,13 +325,13 @@ const CoursesPage = () => {
                 {windowWidth >= 768 ? (
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-7">
                         {courses.map((course) => (
-                            <div key={course.id}>{renderCourseCard(course, logAction, toggleFavorite, favorites)}</div>
+                            <div key={course.id}>{renderCourseCard(course, logAction, toggleFavorite, favorites, openModal)}</div>
                         ))}
                     </div>
                 ) : (
                     <div className="flex flex-col gap-1">
                         {visibleCourses.map((course) => (
-                            <div key={course.id}>{renderCourseCard(course, logAction, toggleFavorite, favorites)}</div>
+                            <div key={course.id}>{renderCourseCard(course, logAction, toggleFavorite, favorites, openModal)}</div>
                         ))}
                         {!showMore && courses.length > 3 && (
                             <div className="mt-4 text-center">
@@ -362,11 +375,70 @@ const CoursesPage = () => {
                     Показать ещё
                 </button>
             </div>
+
+            {isModalOpen && (
+                <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+                    <div className="bg-white rounded-2xl p-6 w-[380px] relative shadow-lg">
+                        <img className="absolute top-8 right-7 text-xl font-bold text-black hover:text-gray-600" src={x11} alt=""
+                             onClick={closeModal}
+                        />
+                        <h3 className="text-[16px] font-bold mb-5 pt-3 text-black">Учебный план</h3>
+                        <div className="space-y-3">
+                            <div className={"flex ml-3"}><h1>1.</h1> Подготовка</div>
+                            <div className="flex mt-6 justify-between items-center">
+                                <p className="text-[16px] text-black">
+                                    <span className=" mr-2">01</span> Как продать курс
+                                </p>
+                                <p className="text-[14px] text-gray-500">2:00 мин</p>
+                            </div>
+                            <div className="flex mt-8 justify-between items-center">
+                                <p className="text-[16px] text-black">
+                                    <span className=" mr-2">02</span> Сканы материалы
+                                </p>
+                                <p className="text-[14px] text-gray-500">2:00 мин</p>
+                            </div>
+                            <div className={"flex ml-3 mt-8"}><h1>2.</h1>Основы Figma</div>
+                            <div className="flex mt-5 justify-between items-center">
+                                <p className="text-[16px] text-black">
+                                    <span className=" mr-2">03</span> Об обновлении Figma
+                                </p>
+                                <p className="text-[14px] text-gray-500">2:00 мин</p>
+                            </div>
+                            <div className="flex mt-8 justify-between items-center">
+                                <p className="text-[16px] text-black">
+                                    <span className="mr-2">04</span> Какие размеры у сайта
+                                </p>
+                                <p className="text-[14px] text-gray-500">2:00 мин</p>
+                            </div>
+                            <div className="flex mt-8 justify-between items-center">
+                                <p className="text-[16px] text-black">
+                                    <span className=" mr-2">05</span> Создать фрейм сайта
+                                </p>
+                                <p className="text-[14px] text-gray-500">2:00 мин</p>
+                            </div>
+                        </div>
+                        <div className="flex mt-8 justify-between items-center mt-6">
+                            <button
+                                className="bg-black pl-[75px] pr-[80px] text-white px-10 py-4 rounded-[20px] font-semibold text-[16px] hover:bg-gray-800 transition-colors"
+                                onClick={() => logAction("Buy Now button clicked")}
+                            >
+                                Купить сейчас
+                            </button>
+                            <button
+                                className="p-2 rounded-full hover:bg-gray-100 transition-colors"
+                                onClick={() => logAction("Heart icon clicked")}
+                            >
+                                <img className="text-[20px] bg-black  relative left-2 text-white bg-black rounded-[100px] p-4 " src={like11} alt=""/>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     )
 }
 
-const renderCourseCard = (course, logAction, toggleFavorite, favorites) => {
+const renderCourseCard = (course, logAction, toggleFavorite, favorites, openModal) => {
     const formatTitle = (title) => {
         const parts = title.split("UX/UI ")
         return (
@@ -382,7 +454,7 @@ const renderCourseCard = (course, logAction, toggleFavorite, favorites) => {
 
     return (
         <div
-            className="bg-white w-[378px] rounded-[25px] border  border-gray-100 h-[560px] shadow-lg"
+            className="bg-white w-full max-w-[378px] rounded-[25px] border border-gray-100 min-h-[400px] shadow-lg overflow-auto"
             style={{ boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)" }}
         >
             <div className="relative">
@@ -399,9 +471,10 @@ const renderCourseCard = (course, logAction, toggleFavorite, favorites) => {
                     <div className="absolute right-2 bg-white rounded-md px-2 py-1"></div>
                     <div className="absolute w-[45px] bottom-2 mb-3 mr-5 w-[23px] right-1 flex flex-col gap-4">
                         <img
-                            className="bg-black rounded-3xl p-3 hover:bg-[rgba(35,175,206,1)] transition-colors duration-300"
+                            className="bg-black rounded-3xl p-3 hover:bg-[rgba(35,175,206,1)] transition-colors duration-300 cursor-pointer"
                             src={courl2}
                             alt="Course icon 1"
+                            onClick={openModal}
                         />
                         <img
                             className={`rounded-3xl p-3 transition-colors duration-300 cursor-pointer ${
@@ -414,7 +487,7 @@ const renderCourseCard = (course, logAction, toggleFavorite, favorites) => {
                     </div>
                 </div>
             </div>
-            <div className="p-4 h-[240px] mt-[10px] ml-5">
+            <div className="p-4 h-auto">
                 <h3 className="font-bold text-lg mb-2">{formatTitle(course.title)}</h3>
                 <div className="flex items-center mb-2">
                     <img

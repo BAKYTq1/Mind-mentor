@@ -1,0 +1,36 @@
+.project-tags-detail {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 16px;
+  
+    .tag {
+      padding: 10px 20px;
+      border-radius: 16px;
+      background-color: #fff;
+      font-family: Jost;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 22px;
+      letter-spacing: 0px;
+    }
+  
+    .tag:nth-child(1) {
+      border: 1px solid #000000;
+    }
+  
+    .tag:nth-child(2) {
+        border: 1px solid #FFD02C;
+    }
+  
+    .tag:nth-child(3) {
+        border: 1px solid #23AFCE;
+    }
+  
+    .tag-more {
+      background-color: white;
+      color: #23AFCE;
+    }
+  }
+  

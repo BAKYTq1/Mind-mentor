@@ -198,7 +198,6 @@ const ProjectsAdminka = () => {
                 )}
             </div>
 
-            {/* Оң жагы: Specialists Panel */}
             <SpecialistsPanel />
         </div>
     );
