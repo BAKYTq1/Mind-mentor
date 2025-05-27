@@ -37,6 +37,7 @@ import ProjectDetail from "./pages/ProjectDetail/Projectdetail.jsx";
 import Savedmentor from "./pages/savedMentor/Savedmentor.jsx";
 import Savedproject from "./pages/savedproject/SavedProject.jsx";
 import MentorCreate from "./pages/Mentor-Create/MentorCreate.jsx";
+import RegisterAdmin from "./pages/Auth/RegisterAdmin.jsx";
 
 function About() {
     return null;
@@ -224,7 +225,17 @@ export const myRouter = createBrowserRouter([
     {
         path: '/project-details',
         element: <ProjectDetails/>
-    }
+    },
+    {
+        path: '/register-admin',
+        element: <RegisterAdmin/>
+    },
+     {
+        path:'Podbor',
+        element: <Podbor/>
+   },
+    
+
 ])
 //             {
 //                 path: '/like1',
@@ -441,16 +452,16 @@ export const myRouter = createBrowserRouter([
 // //          path: 'data-project',
 // //          element: <DataProjectAdmin/>
       
-   },
-   {
-        path:'Podbor',
-        element: <Podbor/>
-   },
+//    },
+//    {
+//         path:'Podbor',
+//         element: <Podbor/>
+//    },
   
-   {
-        path:'hero',
-        element: <Hero/>
-   },
+//    {
+//         path:'hero',
+//         element: <Hero/>
+//    },
   
 // //    },
 // //    {
