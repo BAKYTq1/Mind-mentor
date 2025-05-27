@@ -10,6 +10,7 @@ import { FaAnglesLeft, FaAnglesRight } from "react-icons/fa6";
 import CourseDataModal from "../coursesModals/courseDataModal/CourseDataModal.jsx";
 import CourseDeleteModal from "../coursesModals/courseDeleteModal/CourseDeleteModal.jsx";
 import SpecialistsPanel from '../Special/index.jsx';
+import { Link } from 'react-router-dom';
 
 
 const ProjectsAdminka = () => {
@@ -68,11 +69,15 @@ const ProjectsAdminka = () => {
                 <div className="w-full pr-[20px]">
                     <h3 className="text-[20px] font-[500]">Курсы</h3>
                     <div className="flex justify-between mt-[12px] mb-[12px]">
-                        <p className="text-[rgb(111,109,115)] font-[500] text-[16px]">Все курсы</p>
+                        <p className="text-[rgb(111,109,115)] font-[500] text-[16px]">Все проекты </p>
                         <div className="flex gap-[12px] items-center">
                             <CgSortAz className="text-[30px]" />
                             <FaListAlt className="text-[20px]" />
+                            <Link to="/new-project">
                             <IoMdAddCircle className="text-[24px]" />
+                            </Link>
+                            
+                            
                         </div>
                     </div>
 
