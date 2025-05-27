@@ -255,7 +255,7 @@ export default function Header() {
                         </div>
                     </Link>
 
-                    <Link to="/adminka">
+                    <Link to="/register-admin">
                         <img src={glaw4 || "/placeholder.svg"} alt="avatar" className="w-10 h-10 rounded-full" />
                     </Link>
                 </div>

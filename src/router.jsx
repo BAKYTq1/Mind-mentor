@@ -38,6 +38,7 @@ import Savedmentor from "./pages/savedMentor/Savedmentor.jsx";
 import Savedproject from "./pages/savedproject/SavedProject.jsx";
 import MentorCreate from "./pages/Mentor-Create/MentorCreate.jsx";
 import Team from "./components/Team/Team.jsx";
+import RegisterAdmin from "./pages/Auth/RegisterAdmin.jsx";
 
 function About() {
     return null;
@@ -230,6 +231,14 @@ export const myRouter = createBrowserRouter([
         path: '/team',
         element: <Team/>
     }
+        path: '/register-admin',
+        element: <RegisterAdmin/>
+    },
+     {
+        path:'Podbor',
+        element: <Podbor/>
+   },
+    
 ])
 //             {
 //                 path: '/like1',
