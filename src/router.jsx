@@ -32,7 +32,8 @@ import Curriculum from "./pages/Сurriculum/Curriculum.jsx";
 import Purchases from "./pages/Purchases/Purchases.jsx";
 import ChooseSpecialization from "./components/chooseSpecialization/ChooseSpecialization.jsx";
 import ProjectDetail from "./pages/ProjectDetail/Projectdetail.jsx";
-import MentorCreate from "./pages/Mentor-Create/MentorCreate.jsx";
+import MentorCreate from "./components/Mentor-Create/MentorCreate.jsx";
+import ChangeMentorInfo from "./pages/ChangeMentorInfo/ChangeMentorInfo.jsx";
 
 function About() {
     return null;
@@ -110,6 +111,10 @@ export const myRouter = createBrowserRouter([
             {
                 path:"/purchases",
                 element: <Purchases/>
+            },
+            {
+                path:"/ChangeInfoMentor",
+                element: <ChangeMentorInfo/>
             }
         ]
     },

@@ -7,18 +7,9 @@ export const fetchMentors = createAsyncThunk(
   'mentor/fetchMentor',
   async (filter, { rejectWithValue }) => {
     try {
-      let url = "/admin/mentors/filter";
-
-      if (filter === "#FRONTEND") {
-        url += "?specializations=Frontend Development&sortAsc=true";
-      } else if (filter === "#BACKEND") {
-        url += "?specializations=Backend Development&sortAsc=true";
-      } else if (filter === "#АНАЛИЗЫ") {
-        url += "?specializations=Data Science&sortAsc=true";
-      } else if (filter === "#DEVOPS") {
-        url += "?specializations=DevOps&sortAsc=true";
-      } else if (filter === "#UIUX" || filter === "#UI/UX") {
-        url += "?specializations=UI/UX Design&sortAsc=true";
+      let url = `/mentors/admin/filter?blocked=false&specializations=${filter}&sortAsc=true`;
+      if (filter === '') {
+        url = '/mentors/admin/filter?blocked=false';
       }
 
       const response = await axiosInstance.get(url);
@@ -34,6 +25,7 @@ export const fetchMentors = createAsyncThunk(
     }
   }
 );
+
 
 
 
