@@ -5,7 +5,7 @@ export const searchMentor = createAsyncThunk(
   "mentor/searchMentor",
   async (searchTerm, { rejectWithValue }) => {
     try {
-      const response = await axiosInstance.get(`/mentors/admin/search?query=${searchTerm}`, );
+      const response = await axiosInstance.get(`/api/mentors/admin/search?query=${searchTerm}`, );
       return response.data;
     } catch (error) {
       console.error("Ошибка поиска наставника:", error);

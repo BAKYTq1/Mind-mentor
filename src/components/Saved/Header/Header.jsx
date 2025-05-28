@@ -24,9 +24,9 @@ export default function Header() {
             case "Курсы":
                 return "/saved";
             case "Менторы":
-                return "/saved/mentor-detail";
+                return "/saved/saved-mentor";
             case "Проекты":
-                return "/saved/projects-detail";
+                return "/saved/saved-project";
             default:
                 return "";
         }
@@ -35,9 +35,9 @@ export default function Header() {
     useEffect(() => {
         if (location.pathname === "/saved") {
             setActiveMenu("Курсы");
-        } else if (location.pathname === "/saved/mentors-detail") {
+        } else if (location.pathname === "/saved/saved-mentor") {
             setActiveMenu("Менторы");
-        } else if (location.pathname === "/saved/projects-detail") {
+        } else if (location.pathname === "/saved/saved-project") {
             setActiveMenu("Проекты");
         } else {
             setActiveMenu("Главная");

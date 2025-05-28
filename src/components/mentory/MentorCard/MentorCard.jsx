@@ -21,6 +21,7 @@ const MentorCard = ({
   blocked = false,
   isBlocked = false,
   onBlockChange,
+  onSuccess,
 }) => {
   if (!mentor || Object.keys(mentor).length === 0) {
     return <div className="mt-3">Нет данных о менторе</div>;
@@ -44,11 +45,13 @@ const MentorCard = ({
       if (localBlocked) {
         await dispatch(UnlockMentor(mentorId)).unwrap();
         toast.success("Ментор разблокирован");
-        onBlockChange && onBlockChange(false); // уведомляем родительский компонент
+        // onBlockChange && onBlockChange(false); // уведомляем родительский компонент
+        onSuccess && onSuccess(); // обновляем список менторов
       } else {
         await dispatch(PatchBlockMentor(mentorId)).unwrap();
         toast.success("Ментор заблокирован");
-        onBlockChange && onBlockChange(true); // уведомляем родительский компонент
+        // onBlockChange && onBlockChange(true); // уведомляем родительский компонент
+        onSuccess && onSuccess(); // обновляем список менторов
       }
       setLocalBlocked((prev) => !prev);
       toggleMenu(null);

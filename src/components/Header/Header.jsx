@@ -209,10 +209,7 @@ export default function Header() {
                                 className={`px-4 py-1.5 rounded transition-colors duration-200 rounded-[10px] ${
                                     activeMenu === item ? "bg-black text-white" : "bg-transparent text-black hover:bg-gray-200"
                                 }`}
-                                className={`px-4 py-1.5  transition-colors duration-200 rounded-[10px] ${activeMenu === item
-                                        ? "bg-black text-white"
-                                        : "bg-transparent text-black hover:bg-gray-200"
-                                    }`}
+                                
                             >
                                 {item}
                             </button>
@@ -255,7 +252,7 @@ export default function Header() {
                         </div>
                     </Link>
 
-                    <Link to="/adminka">
+                    <Link to="/register-admin">
                         <img src={glaw4 || "/placeholder.svg"} alt="avatar" className="w-10 h-10 rounded-full" />
                     </Link>
                 </div>
@@ -275,10 +272,7 @@ export default function Header() {
                                     className={`whitespace-nowrap px-4 py-2 rounded font-semibold transition-colors duration-200 ${
                                         activeMenu === item ? "bg-black text-white" : "bg-white text-black hover:bg-gray-100"
                                     }`}
-                                    className={`whitespace-nowrap px-4 py-2 rounded font-semibold transition-colors duration-200 ${activeMenu === item
-                                            ? "bg-black text-white"
-                                            : "bg-white text-black hover:bg-gray-100"
-                                        }`}
+                                    
                                 >
                                     {item}
                                 </button>

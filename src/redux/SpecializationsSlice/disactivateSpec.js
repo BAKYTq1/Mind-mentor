@@ -6,7 +6,7 @@ export const deactivateSpecialization = createAsyncThunk(
   async (item, { rejectWithValue }) => {
     try {
       const response = await axiosInstance.patch(
-        `/mentors/admin/specializations/deactivate`,
+        `/api/mentors/admin/specializations/deactivate`,
         null,
         {
           params: {

@@ -6,7 +6,7 @@ export const UnlockMentor = createAsyncThunk(
   "mentor/UnlockMentor",
   async (id, { rejectWithValue }) => {
     try {
-      const response = await axiosInstance.patch(`/mentors/admin/${id}/unlock`);
+      const response = await axiosInstance.patch(`/api/mentors/admin/${id}/unlock`);
       return response.data;
     } catch (err) {
       return rejectWithValue(err.response?.data?.message || err.message);

@@ -6,7 +6,7 @@ export const GetMentorCount = createAsyncThunk(
   "mentor/GetMentorCount",
   async (_, { rejectWithValue }) => {
     try {
-      const response = await axiosInstance.get("/mentors/admin/count-total");
+      const response = await axiosInstance.get("/api/mentors/admin/count-total");
       return response.data;
     } catch (error) {
       console.error("Ошибка получения количества менторов:", error);
@@ -20,7 +20,7 @@ export const GetActiveMentorCount = createAsyncThunk(
   "mentor/GetActiveMentorCount",
   async (_, { rejectWithValue }) => {
     try {
-      const response = await axiosInstance.get("/mentors/admin/statistics");
+      const response = await axiosInstance.get("/api/mentors/admin/statistics");
       return response.data;
     } catch (error) {
       console.error("Ошибка получения количества активных менторов:", error);

@@ -7,7 +7,7 @@ export const fetchMentorById = createAsyncThunk(
   'mentor/fetchMentorById',
   async (mentorId, { rejectWithValue }) => {
     try {
-      const response = await axiosInstance.get(`/mentors/admin/${mentorId}/profile`);
+      const response = await axiosInstance.get(`/api/mentors/admin/${mentorId}/profile`);
 
       // Проверка на наличие ошибки в ответе
       if (response.data?.error) {

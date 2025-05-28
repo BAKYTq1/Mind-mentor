@@ -10,7 +10,7 @@ export const PatchBlockMentor = createAsyncThunk(
       }
 
       const response = await axiosInstance.patch(
-        `/mentors/admin/${id}/block`
+        `/api/mentors/admin/${id}/block`
       );
       return response.data;
     } catch (err) {

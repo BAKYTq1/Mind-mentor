@@ -14,7 +14,7 @@ import { GetMentorCount, GetActiveMentorCount } from '../../redux/mentorApi/Ment
 import MentorCard from './MentorCard/MentorCard';
 import { fetchMentorsByBlocked } from '../../redux/mentorApi/MentorByBlocked';
 import { toast } from 'react-toastify';
-import LoadingDots from '../../shared/TextLoader/TextLoader';
+
 
 const Mentory = () => {
   const dispatch = useDispatch();
@@ -23,7 +23,6 @@ const Mentory = () => {
   const [mentorCreateModal, setMentorCreateModal] = useState(false);
   const [specCreateModal, setSpecCreateModal] = useState(false);
   const [mentorFilter, setMentorFilter] = useState("");
-  const [countBlock, setCountBlock] = useState(0);
 
   const {
     mentors, loading, error,
@@ -131,8 +130,8 @@ const Mentory = () => {
             <div>
               <div className="text-[16px] font-medium">Все менторы</div>
               <div className="text-[32px] font-bold">
-                {countLoading ? <LoadingDots /> : count}
-                <span className="text-[18px] font-medium">{countLoading ? null : " чел"}</span>
+                {countLoading ? count : count}
+                <span className="text-[18px] font-medium"> чел</span>
               </div>
             </div>
             <div>
@@ -166,15 +165,15 @@ const Mentory = () => {
           <div className="flex gap-[40px] justify-between">
             <div>
               <p className="text-[16px] font-medium text-[#6F6D73]">Новые менторы</p>
-              <h1 className="text-[42px] font-bold">{countLoading ? 0 : activeCount?.newMentors}<span className="text-[18px]"> чел</span></h1>
+              <h1 className="text-[42px] font-bold">{countLoading ? activeCount?.newMentors : activeCount?.newMentors}<span className="text-[18px]"> чел</span></h1>
             </div>
             <div>
               <p className="text-[16px] font-medium text-[#6F6D73]">Удалили аккаунт</p>
-              <h1 className="text-[42px] font-bold text-[#E93535]">{countLoading ? 0 : activeCount?.deletedMentors}<span className="text-[18px] text-black"> чел</span></h1>
+              <h1 className="text-[42px] font-bold text-[#E93535]">{countLoading ? activeCount?.deletedMentors : activeCount?.deletedMentors}<span className="text-[18px] text-black"> чел</span></h1>
             </div>
             <div>
               <p className="text-[16px] font-medium text-[#6F6D73]">Блокированы</p>
-              <h1 className="text-[42px] font-bold">{countLoading ? 0 : activeCount?.blockedMentors + countBlock}<span className="text-[18px]"> чел</span></h1>
+              <h1 className="text-[42px] font-bold">{countLoading ?  activeCount?.blockedMentors : activeCount?.blockedMentors}<span className="text-[18px]"> чел</span></h1>
             </div>
           </div>
         </div>
@@ -206,7 +205,7 @@ const Mentory = () => {
                   toggleMenu={(idx) => toggleMenu(idx, isMentorBlocked(mentor.mentorId))}
                   handleAction={handleAction}
                   isBlocked={isMentorBlocked(mentor.mentorId)}
-                  onBlockChange={(isBlocked) => setCountBlock(prev => isBlocked ? prev + 1 : prev - 1)}
+                  onSuccess={() => {refreshData(); setMentorCreateModal(false);}}
                 />
               ))
             ) : (
@@ -220,7 +219,7 @@ const Mentory = () => {
                     toggleMenu={(idx) => toggleMenu(idx, true)}
                     handleAction={handleAction}
                     blocked={true}
-                    onBlockChange={(isBlocked) => setCountBlock(prev => isBlocked ? prev + 1 : prev - 1)}
+                    onSuccess={() => {refreshData(); setMentorCreateModal(false);} }
 
                   />
                 ))}
@@ -232,7 +231,7 @@ const Mentory = () => {
                     activeMenuIndex={activeMenuIndex}
                     toggleMenu={(idx) => toggleMenu(idx, false)}
                     handleAction={handleAction}
-                    onBlockChange={(isBlocked) => setCountBlock(prev => isBlocked ? prev + 1 : prev - 1)}
+                    onSuccess={() => {refreshData(); setMentorCreateModal(false);}}
                   />
                 ))}
               </>

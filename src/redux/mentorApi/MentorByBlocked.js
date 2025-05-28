@@ -5,9 +5,9 @@ export const fetchMentorsByBlocked = createAsyncThunk(
     "mentor/fetchMentorsByBlocked",
     async (filter, { rejectWithValue }) => {
         try {
-            let url = `/mentors/admin/filter?blocked=true&sortAsc=true`;
+            let url = `/api/mentors/admin/filter?blocked=true&sortAsc=true`;
             if (filter === "") {
-                url = "/mentors/admin/filter?blocked=true&sortAsc=true";
+                url = "/api/mentors/admin/filter?blocked=true&sortAsc=true";
             }
 
             const response = await axiosInstance.get(url);

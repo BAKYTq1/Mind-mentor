@@ -1,20 +1,31 @@
 import axios from 'axios';
 
-// Подставь актуальный токен сюда
-const token = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NDg0MTY0MDIsImV4cCI6MTc0ODQzMDgwMn0.jMmUsxpcelCOKKr4s0N5orgPKcIArWI3OtY6gatnn8o";
+// Создаём экземпляр axios
 const axiosInstance = axios.create({
-  baseURL: 'http://ec2-13-61-24-129.eu-north-1.compute.amazonaws.com/api',
+  baseURL: "http://ec2-13-61-24-129.eu-north-1.compute.amazonaws.com",
+  headers: {
+    "Content-Type": "application/json",
+    Accept: "*/*",
+  },
 });
 
-// Добавляем токен в заголовки каждого запроса
-axiosInstance.interceptors.request.use(
-  (config) => {
-    if (token) {
-      config.headers['Authorization'] = `Bearer ${token}`;
-    }
+// Интерцептор: добавляем токен к каждому запросу, кроме sign-in
+axiosInstance.interceptors.request.use((config) => {
+  // Если это запрос на авторизацию — не добавляем токен
+  if (config.url?.endsWith("/authentication/sign-in")) {
     return config;
-  },
-  (error) => Promise.reject(error)
-);
+  }
+
+  // Берём токен из localStorage
+  const token = localStorage.getItem("token");
+
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+
+  return config;
+}, (error) => {
+  return Promise.reject(error);
+});
 
 export default axiosInstance;

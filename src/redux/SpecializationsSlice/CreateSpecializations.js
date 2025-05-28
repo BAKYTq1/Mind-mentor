@@ -6,7 +6,7 @@ export const createSpecializations = createAsyncThunk(
   async (name, { rejectWithValue }) => {
     try {
       const response = await axiosInstance.post(
-        `/mentors/admin/specializations/create`,
+        `/api/mentors/admin/specializations/create`,
         null,
         {
           params: {

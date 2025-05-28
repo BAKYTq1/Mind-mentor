@@ -41,8 +41,12 @@ import Podbor from '../../components/podbor/Podbor.jsx'
 import MentorDetail from '../MentorDetail/MentorDetail.jsx'
 import ProjectDetails from '../../components/projectDetails/ProjectDetails.jsx'
 import ProjectDetail from '../ProjectDetail/Projectdetail.jsx'
+import CourseDetail from '../../components/courseDetail/CourseDetail.jsx'
+import RegisterAdmin from '../Auth/RegisterAdmin.jsx'
+import UsersList from '../Userlist.jsx'
 
 function Home() {
+  
   return (  
     <div>
         <Hero/>
@@ -53,7 +57,7 @@ function Home() {
         <Project/>
         <Reviews/>
         <ContactForm/>
-        <Podbor/>
+        {/* <Podbor/> */}
         {/* <Payments/> */}
         {/* <AdminPage/> */}
         {/* <Mentory/> */}
@@ -73,9 +77,10 @@ function Home() {
         {/* <AdminPage/> */}
         {/* <UserData/> */}
         {/* <SpecialistsPanel/> */}
-        <MentorDetail/>
-        <ProjectDetail/>
         {/* <Korzina/> */}
+        {/* <CourseDetail/>
+        <RegisterAdmin/> */}
+        <UsersList/>
     </div>
   )
 }
