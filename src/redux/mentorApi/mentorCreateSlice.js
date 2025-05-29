@@ -11,7 +11,7 @@ export const createMentor = createAsyncThunk(
   'mentor/createMentor',
   async (mentorData, { rejectWithValue }) => {
     try {
-      const response = await axiosInstance.post('/admin/mentors/mentor/create', mentorData);
+      const response = await axiosInstance.post('/api/mentors/admin/mentor/create', mentorData);
       return response.data;
     } catch (error) {
       const message = error.response?.data?.message || 'Ошибка при создании ментора';

@@ -1,4 +1,8 @@
-import axios from "axios";
+import axios from 'axios';
+
+
+
+
 
 const axiosInstance = axios.create({
   baseURL: "http://ec2-13-61-24-129.eu-north-1.compute.amazonaws.com",
@@ -8,20 +12,15 @@ const axiosInstance = axios.create({
   },
 });
 
-axiosInstance.interceptors.request.use(
-  (config) => {
-    // Эгер логин API'сиң болсо, туура URLди жаз
-    if (config.url?.endsWith("/authentication/sign-in")) {
-      return config;
-    }
-    
-    const token = localStorage.getItem("token");
-    if (token) {
-      config.headers.Authorization = `Bearer ${token}`;
-    }
+axiosInstance.interceptors.request.use((config) => {
+  if (config.url?.endsWith("/authentication/sign-ip")) {
     return config;
-  },
-  (error) => Promise.reject(error)
-);
+  }
+  const token = localStorage.getItem("token");
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+  return config;
+});
 
 export default axiosInstance;
