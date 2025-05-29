@@ -1,5 +1,8 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from 'react';
+// import axios from 'axios';
+// import axiosInstance from '../../api/axiosInstance';
+import { useDispatch } from 'react-redux';
+import { createProject } from '../../redux/Project/Project.js';
 
 const initialMembers = [
     { avatar: '/avatar.png', name: '', speciality: '', experience: '' },
@@ -8,7 +11,9 @@ const initialMembers = [
     { avatar: '/avatar.png', name: '', speciality: '', experience: '' },
 ];
 
+
 function Team() {
+    const dispatch = useDispatch();
     const [members, setMembers] = useState(initialMembers);
 
     const handleImageChange = (e, index) => {
@@ -27,34 +32,51 @@ function Team() {
         setMembers(updatedMembers);
     };
 
-    const handleCreate = async () => {
-        try {
-            const projectId = localStorage.getItem('projectId');
+   const handleCreate = async () => {
+  try {
+    const storedProject = localStorage.getItem("newProjectData");
+    if (!storedProject) {
+      alert("Проекттин маалыматы табылган жок!");
+      return;
+    }
 
-            if (!projectId) {
-                alert('Project ID табылган жок!');
-                return;
-            }
+    const projectData = JSON.parse(storedProject);
 
-            const specializationName = members
-                .map(member => member.speciality)
-                .filter(spec => spec.trim() !== '');
+    const projectFakeTeams = members
+      .filter((member) => member.name.trim() && member.speciality.trim())
+      .map((member) => {
+        const [firstName, ...rest] = member.name.trim().split(" ");
+        const secondName = rest.join(" ");
+        return {
+          avatarUrl: member.avatar,
+          firstName,
+          secondName,
+          specializationsName: member.speciality,
+          experience: parseInt(member.experience) || 0,
+        };
+      });
 
-            const payload = {
-                projectId: parseInt(projectId),
-                specializationName,
-            };
-
-            const API_URL = import.meta.env.VITE_API_URL;
-            const response = await axios.post(`${API_URL}/specializations`, payload);
-
-            console.log('Успешно жиберилди:', response.data);
-            alert('Команда ийгиликтүү сакталды!');
-        } catch (error) {
-            console.error('Ката болду:', error);
-            alert('Ката чыкты, кайра аракет кылып көрүңүз.');
-        }
+    const payload = {
+      ...projectData,
+      projectFakeTeams,
     };
+
+    const resultAction = await dispatch(createProject(payload));
+
+    if (createProject.fulfilled.match(resultAction)) {
+      console.log("Проект сакталды:", resultAction.payload);
+      alert("Проект ийгиликтүү сакталды!");
+      localStorage.removeItem("newProjectData");
+    } else {
+      console.error("Ката:", resultAction.payload);
+      alert("Ката чыкты: " + resultAction.payload);
+    }
+
+  } catch (error) {
+    console.error("Туура эмес:", error);
+    alert("Ката чыкты, кайра аракет кылып көрүңүз.");
+  }
+};
 
     return (
         <div className="min-h-screen w-full bg-[#0F0F10] text-white font-sans px-10 py-8">
@@ -63,7 +85,7 @@ function Team() {
                     <h1 className="text-4xl font-bold">Команда</h1>
                     <div className="flex gap-4">
                         <button className="w-[253px] h-[46px] rounded-2xl bg-white text-black px-6 py-2 font-semibold">Назад</button>
-                        <button onClick={handleCreate} className="w-[253px] h-[46px] rounded-2xl bg-[#00B2FF] text-white px-6 py-2 font-semibold">Создать</button>
+                        <button onClick={handleCreate}  className="w-[253px] h-[46px] rounded-2xl bg-[#00B2FF] text-white px-6 py-2 font-semibold">Создать</button>
                     </div>
                 </div>
 

@@ -1,46 +1,41 @@
-// src/features/projects/projectSlice.js
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
-import axiosInstance from '../../api/axiosInstance';
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import axiosInstance from "../../api/axiosInstance";
 
-// Async thunk: POST запрос жөнөтүү
+// Проект түзүү
 export const createProject = createAsyncThunk(
-  'projects/createProject',
-  async (formData, { rejectWithValue }) => {
+  "project/createProject",
+  async (projectData, { rejectWithValue }) => {
     try {
-      const response = await axiosInstance.post(
-        '/api/projects/admin/create',
-        formData,
-      );
+      const response = await axiosInstance.post("/api/projects/admin/create", projectData);
       return response.data;
-    } catch (err) {
-      // Ката болсо rejectWithValue менен өткөрүп бер
-      return rejectWithValue(err.response.data || err.message);
+    } catch (error) {
+      return rejectWithValue(error.response?.data?.message || "Server error");
     }
   }
 );
 
 const projectSlice = createSlice({
-  name: 'projects',
+  name: "project",
   initialState: {
-    project: null,
     loading: false,
     error: null,
+    success: false,
   },
   reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(createProject.pending, (state) => {
         state.loading = true;
+        state.success = false;
         state.error = null;
       })
-      .addCase(createProject.fulfilled, (state, action) => {
+      .addCase(createProject.fulfilled, (state) => {
         state.loading = false;
-        state.project = action.payload;
+        state.success = true;
       })
       .addCase(createProject.rejected, (state, action) => {
         state.loading = false;
-        state.error = action.payload || 'Ошибка создания проекта';
+        state.error = action.payload;
       });
   },
 });

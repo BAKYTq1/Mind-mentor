@@ -1,12 +1,9 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { createProject } from "../../redux/Project/Project";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 
-export default function NewProject() {
+export default function EditProject() {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
+  const { id } = useParams();
 
   const [formData, setFormData] = useState({
     cover: null,
@@ -18,7 +15,7 @@ export default function NewProject() {
     language: "Русский",
   });
 
-    const [coverPreview, setCoverPreview] = useState(null);
+  const [coverPreview, setCoverPreview] = useState(null);
 
   const handleCoverChange = (e) => {
     const file = e.target.files[0];
@@ -28,30 +25,58 @@ export default function NewProject() {
     }
   };
 
-const handleNext = () => {
-  const dataToSave = {
-    projectName: formData.name,
-    projectDescription: formData.description,
-    projectImageUrl: "", // учурда сүрөт жок, же кийин толтурулат
-    requiredSpecialists: formData.specialists.join(', '),
-    projectPrice: parseFloat(formData.price),
-    language: formData.language,
-    requirements: formData.requirements,
-  };
+  useEffect(() => {
+    const fetchProject = async () => {
+  try {
+    const token = localStorage.getItem("token"); // Токенди ал
+    const res = await fetch(`/api/projects/admin/search/${id}`, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`, // Авторизация кош
+        "Content-Type": "application/json",
+      },
+    });
 
-  localStorage.setItem("newProjectData", JSON.stringify(dataToSave));
-  navigate("/Team");
-};
+    if (!res.ok) throw new Error("Ошибка при загрузке проекта");
+
+    const data = await res.json();
+
+    setFormData({
+      cover: null,
+      name: data.projectName || "",
+      description: data.projectDescription || "",
+      requirements: data.requirements || "",
+      specialists: data.requiredSpecialists
+        ? data.requiredSpecialists.split(", ")
+        : [""],
+      price: data.projectPrice || "",
+      language: data.language || "Русский",
+    });
+
+    if (data.projectImageUrl) {
+      setCoverPreview(data.projectImageUrl);
+    }
+  } catch (error) {
+    console.error("Проектти жүктөөдө ката:", error);
+  }
+};    if (id) fetchProject();
+  }, [id]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
 
   const handleSpecialistChange = (index, value) => {
-    const updated = [...formData.specialists];
-    updated[index] = value;
-    setFormData((prev) => ({ ...prev, specialists: updated }));
+    const newSpecialists = [...formData.specialists];
+    newSpecialists[index] = value;
+    setFormData((prev) => ({
+      ...prev,
+      specialists: newSpecialists,
+    }));
   };
 
   const addSpecialist = () => {
@@ -61,10 +86,44 @@ const handleNext = () => {
     }));
   };
 
+const handleNext = async () => {
+  const token = localStorage.getItem("token");
+
+  const updatedData = {
+    projectName: formData.name,
+    projectDescription: formData.description,
+    projectImageUrl: coverPreview || "",
+    requiredSpecialists: formData.specialists.join(", "),
+    projectPrice: parseFloat(formData.price),
+    language: formData.language,
+    requirements: formData.requirements,
+  };
+
+  try {
+    const response = await fetch(`/api/projects/admin/requests/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`, // Мына бул токен өтө маанилүү
+      },
+      body: JSON.stringify(updatedData),
+    });
+
+    if (response.ok) {
+      alert("Проект ийгиликтүү жаңыртылды!");
+      navigate("/ProjectsAdminka");
+    } else {
+      alert("Жаңыртууда ката кетти");
+    }
+  } catch (err) {
+    console.error("PUT ката:", err);
+    alert("Сервер менен байланышта ката кетти");
+  }
+};
   return (
     <div className="min-h-screen w-[1440px] h-[1174px] m-[auto] bg-[#0F0F10] text-white font-sans p-10">
       <div className="ml-[80px]">
-        <h1 className="text-[64px] font-bold  mb-[50px] ">Новый проект</h1>
+        <h1 className="text-[64px] font-bold mb-[50px]">Новый проект</h1>
         <div className="flex flex-col lg:flex-row gap-[150px]">
           {/* Обложка */}
           <div className="w-full max-w-sm">
@@ -72,7 +131,11 @@ const handleNext = () => {
 
             <div className="h-[140px] bg-[#D9D9D9] rounded-lg border-2 border-dashed border-cyan-400 flex items-center justify-center mb-4 overflow-hidden">
               {coverPreview ? (
-                <img src={coverPreview} alt="Preview" className="h-full object-cover" />
+                <img
+                  src={coverPreview}
+                  alt="Preview"
+                  className="h-full object-cover"
+                />
               ) : (
                 <img src="/upload-icon.svg" alt="Upload" className="w-8 h-8" />
               )}
@@ -93,14 +156,21 @@ const handleNext = () => {
 
             <div className="bg-[#1A1A1A] rounded-lg p-2 flex items-center gap-3">
               <div className="bg-[#00BFD8] p-2 rounded-md">
-                <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24">
+                <svg
+                  className="w-6 h-6 text-white"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
                   <path d="M..." stroke="currentColor" />
                 </svg>
               </div>
               <div className="flex-1">
                 <p className="text-sm">Cover.img</p>
                 <div className="w-full h-2 bg-gray-600 rounded">
-                  <div className="h-2 bg-[#00BFD8] rounded" style={{ width: "45%" }}></div>
+                  <div
+                    className="h-2 bg-[#00BFD8] rounded"
+                    style={{ width: "45%" }}
+                  ></div>
                 </div>
               </div>
               <button className="text-white text-xl ml-2">×</button>
@@ -190,18 +260,19 @@ const handleNext = () => {
             </div>
 
             <div className="flex w-[703px] justify-between pt-4">
-              <button className="bg-white w-[340px] h-[46px] text-black py-2 px-8 rounded-[16px]">
+              <button
+                onClick={() => navigate("/ProjectsAdminka")} // Отмена кнопкасы кайтып кетет
+                className="bg-white w-[340px] h-[46px] text-black py-2 px-8 rounded-[16px]"
+              >
                 Отмена
               </button>
-              {/* <Link to="/Team"> */}
+
               <button
-                  onClick={handleNext}
+                onClick={handleNext}
                 className="bg-[#00BFD8] w-[340px] h-[46px] text-white py-2 px-8 rounded-[16px] hover:bg-cyan-600"
               >
                 Дальше
               </button>
-              {/* </Link> */}
-
             </div>
           </div>
         </div>

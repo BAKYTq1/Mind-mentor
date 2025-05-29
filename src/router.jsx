@@ -39,6 +39,8 @@ import Savedproject from "./pages/savedproject/SavedProject.jsx";
 import MentorCreate from "./pages/Mentor-Create/MentorCreate.jsx";
 import Team from "./components/Team/Team.jsx";
 import RegisterAdmin from "./pages/Auth/RegisterAdmin.jsx";
+import ProjectsAdminka from "./components/ProjectsAdminka/index.jsx";
+import EditProject from "./components/EditProject/EditProject.jsx";
 
 function About() {
     return null;
@@ -105,10 +107,7 @@ export const myRouter = createBrowserRouter([
                 path: 'mentor-detail',
                 element: <MentorDetail />
             },
-              {
-                path: 'project-detail',
-                element: <ProjectDetail />
-            },
+          
             {
                 path:"/curriculum",
                 element: <Curriculum/>
@@ -123,8 +122,17 @@ export const myRouter = createBrowserRouter([
     {
         path: 'adminka',
         element: <UserLayout/>,
-        children: []
+        children: [
+        ]
     },
+        {
+                path: '/adminka/AdminProjectDetail/:projectId',
+                element: <ProjectDetail />
+            },
+            {
+                path: 'EditProject/:id',
+                element: <EditProject/>
+            },
     {
         path: 'profile',
         element: <Profile/>,
@@ -230,7 +238,8 @@ export const myRouter = createBrowserRouter([
     {
         path: '/team',
         element: <Team/>
-    }
+    },
+    {
         path: '/register-admin',
         element: <RegisterAdmin/>
     },
