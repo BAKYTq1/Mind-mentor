@@ -15,7 +15,8 @@ function Mentor() {
   const itemsPerPage = 12
   const swiperRef = useRef(null)
   const dispatch = useDispatch()
-  const { mentors, loading, error } = useSelector(state => state.mentor)
+  const { mentors, error, loading } = useSelector(state => state.mentor)
+
 
   useEffect(() => {
     dispatch(fetchMentors(filter))
@@ -29,8 +30,17 @@ function Mentor() {
   }, [])
 
   const tags = [
-    "#АНАЛИЗЫ", "#FRONTEND", "#BACKEND", "#DESIGN", "#DEVOPS",
-    "#ТЕСТЕР", "#ДЕВЕЛОПЕР", "#АНАЛИЗ", "#СЕКЬЮРИТИ", "#UIUX",
+    { tagfilter: "#АНАЛИЗЫ", filter: "АНАЛИЗ" },
+    { tagfilter: "#FRONTEND", filter: "Frontend Development" },
+    { tagfilter: "#BACKEND", filter: "Backend Development" },
+    { tagfilter: "#DESIGN", filter: "UI/UX Design" },
+    { tagfilter: "#DEVOPS", filter: "DevOps" },
+    { tagfilter: "#ТЕСТЕР", filter: "QA" },
+    { tagfilter: "#ДЕВЕЛОПЕР", filter: "Developer" },
+    { tagfilter: "#АНАЛИЗ", filter: "Data Science" },
+    { tagfilter: "#СЕКЬЮРИТИ", filter: "Security" },
+    { tagfilter: "#UIUX", filter: "UI/UX Design" },
+    { tagfilter: "#ALL", filter: "" }
   ]
   const allProjects = Array.from({ length: 30 }, (_, i) => ({
     id: i + 1,
@@ -44,7 +54,7 @@ function Mentor() {
     description: 'Вы узнаете в этом курсе, как создавать сайты с нуля. Научитесь работать с программами Figma, After Effects.',
     price: 2000
   }))
-  
+
   const totalPages = Math.ceil(allProjects.length / itemsPerPage)
   const currentProjects = allProjects.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
 
@@ -53,7 +63,6 @@ function Mentor() {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
-  if (loading) { return <div className='flex justify-center items-center h-screen'><Loading/></div> }
   if (error) { return <div>Error: {error}</div> }
 
   return (
@@ -71,35 +80,52 @@ function Mentor() {
       >
         {tags.map((tag, index) => (
           <SwiperSlide key={index}>
-            <div 
-            onClick={()=> setFilter(tag)}
-            className="w-full px-5 py-3 rounded-[16px] text-[18px] font-semibold whitespace-nowrap text-center uppercase bg-white text-black shadow-md cursor-pointer hover:bg-[#2D2D2D] hover:text-white transition-all duration-300">
-              {tag} 
+            <div
+              onClick={() => setFilter(tag.filter)}
+              className="w-full px-5 py-3 rounded-[16px] text-[18px] font-semibold whitespace-nowrap text-center uppercase bg-white text-black shadow-md cursor-pointer hover:bg-[#2D2D2D] hover:text-white transition-all duration-300">
+              {tag.tagfilter}
             </div>
           </SwiperSlide>
         ))}
       </Swiper>
 
-      <div className="grid grid-cols-1 mt-[70px] sm:grid-cols-2 lg:grid-cols-3 gap-y-6 gap-y-6 mb-6">
-        
-        {mentors.map(mentor => (
-          <MentorCart key={mentor.id} mentor={mentor} />
-        ))}
-      </div>
+      {
+        loading ? (
+          <div className="flex justify-center items-center h-screen">
+            <Loading />
+          </div>
+        ) : (
+          <>
+            {mentors.length === 0 ? (
+              <div className="flex justify-center items-center h-300px">
+                <h1 className="text-3xl font-bold">Нет менторов</h1>
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-6 mt-[70px] mb-6 items-center">
+                {mentors.map((mentor) => (
+                  <MentorCart key={mentor.id} mentor={mentor} />
+                ))}
+              </div>
+            )}
+          </>
+        )
+      }
+
+
+
       <div className="flex justify-between items-center ">
         <div className="flex items-center gap-2">
           {Array.from({ length: totalPages }, (_, i) => (
             <button
               key={i}
               onClick={() => handlePageClick(i + 1)}
-              className={`px-[10px] py-2 rounded-[32px] w-[62px] h-[42px] rounded-[8px] text-lg font-semibold transition-all ${
-                i + 1 === currentPage ? 'bg-[#FAFAFA] text-black' : 'bg-white text-black'
-              } hover:bg-[#2D2D2D] hover:text-white`}
+              className={`px-[10px] py-2 rounded-[32px] w-[62px] h-[42px] rounded-[8px] text-lg font-semibold transition-all ${i + 1 === currentPage ? 'bg-[#FAFAFA] text-black' : 'bg-white text-black'
+                } hover:bg-[#2D2D2D] hover:text-white`}
             >
               {i + 1}
             </button>
           ))}
- <button
+          <button
             onClick={() => handlePageClick(Math.max(1, currentPage - 1))}
             disabled={currentPage === 1}
             className="px-3 py-1  rounded-[32px] w-[62px] h-[42px] bg-[#2D2D2D] text-white shadow-lg  "
@@ -113,7 +139,7 @@ function Mentor() {
           >
             →
           </button>
-          
+
         </div>
         <div>
           <button className="w-[380px] h-[64px] bg-[#2D2D2D] text-white rounded-full font-semibold ">
