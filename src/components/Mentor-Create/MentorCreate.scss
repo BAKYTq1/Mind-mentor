@@ -1,0 +1,164 @@
+.mentor-create {
+    display: flex;
+    width: 100%;
+    max-width: 600px;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: transparent;
+
+    form {
+        background: #f4f5f9;
+        padding: 1.5rem;
+        border-radius: 1.5rem;
+        width: 100%;
+        max-width: 510px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+
+        h2 {
+            text-align: center;
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 0.3rem;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 0.8rem;
+            border-radius: 0.8rem;
+            border: none;
+            background: #eeeeee;
+            font-size: 0.95rem;
+            outline: none;
+        }
+
+        .row {
+            display: flex;
+            gap: 0.8rem;
+
+            >div {
+                flex: 1;
+            }
+        }
+
+        .password-field {
+            position: relative;
+
+            input {
+                padding-right: 2.5rem;
+            }
+
+            span {
+                position: absolute;
+                right: 0.8rem;
+                top: 50%;
+                transform: translateY(-50%);
+                cursor: pointer;
+                color: #888;
+                font-size: 0.9rem;
+            }
+        }
+
+        .error {
+            color: red;
+            font-size: 0.8rem;
+            margin-top: -0.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .success {
+            color: green;
+            font-size: 0.9rem;
+            text-align: center;
+            margin-top: 0.8rem;
+        }
+
+        button {
+            width: 100%;
+            padding: 0.9rem;
+            margin-top: 0.8rem;
+            font-weight: 600;
+            font-size: 1rem;
+            border-radius: 0.8rem;
+            border: none;
+            cursor: pointer;
+            background-color: #16b6d6;
+            color: #fff;
+            transition: background 0.3s;
+
+            &:disabled {
+                background-color: #ccc;
+                cursor: not-allowed;
+            }
+        }
+
+        .button-row {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1rem;
+
+            button {
+                width: 48%;
+                background-color: #000;
+                font-size: 0.95rem;
+
+                &.create {
+                    background-color: #16b6d6;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 480px) {
+        form {
+            padding: 1rem;
+            border-radius: 1rem;
+
+            h2 {
+                font-size: 1.4rem;
+                margin-bottom: 1rem;
+            }
+
+            .row {
+                flex-direction: column;
+                gap: 0;
+            }
+
+            input,
+            select,
+            button {
+                padding: 0.75rem;
+                font-size: 0.9rem;
+            }
+
+            .button-row {
+                flex-direction: column;
+
+                button {
+                    width: 100%;
+                    margin-top: 0.5rem;
+                }
+            }
+        }
+    }
+}
+
+.form-control {
+    margin-bottom: 0.8rem !important;
+    border-radius: 0.8rem !important;
+    border: none !important;
+    background: #eeeeee !important;
+    font-size: 0.95rem!important;
+    outline: none!important;
+    width: 95% !important;
+    height: 40px !important;
+}
