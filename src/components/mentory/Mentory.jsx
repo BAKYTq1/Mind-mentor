@@ -116,7 +116,7 @@ const Mentory = () => {
   if (error || itemsError) {
     return (
       <div className="w-full h-full flex items-center justify-center text-red-500">
-        {error ? `Произошла ошибка: ${error}` : `Ошибка при загрузке специальностей: ${itemsError}`}
+        {error ? `Произошла ошибка: ${error.message}` : `Ошибка при загрузке специальностей: ${itemsError}`}
       </div>
     );
   }

@@ -122,7 +122,7 @@ const totalPages = Math.ceil(filteredAllUsers.length / USERS_PER_PAGE);
   };
 
   if (loading || activeloading || staticloading) return <div>Загрузка...</div>;
-  if (error || activeError || staticerror) return <div>Ошибка: {error}</div>;
+  if (error || activeError || staticerror) return <div>Ошибка: {error.message}</div>;
 
   return (
     <div className="container">

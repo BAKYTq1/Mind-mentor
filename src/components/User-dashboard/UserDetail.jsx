@@ -46,7 +46,7 @@ const UserDetailModal = ({ userId, setShowModal }) => {
         </div>
 
         {loading && <p className="status-text">Загрузка...</p>}
-        {error && <p className="status-text error">{error}</p>}
+        {error && <p className="status-text error">{error.message}</p>}
 
         {activeTab === 'main' && data && (
           <div>

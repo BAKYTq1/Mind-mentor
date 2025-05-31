@@ -7,7 +7,7 @@ export const fetchSpecializations = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const response = await axiosInstance.get("/api/mentors/admin/specializations");
-      return response.data;
+      return response.data; 
     } catch (error) {
       console.error("Ошибка получения специализаций:", error);
       return rejectWithValue(error.response?.data || error.message);

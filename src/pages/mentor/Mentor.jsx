@@ -63,7 +63,7 @@ function Mentor() {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
-  if (error) { return <div>Error: {error}</div> }
+  if (error) { return <div>Error: {error.message}</div> }
 
   return (
     <div className="container mx-auto ">

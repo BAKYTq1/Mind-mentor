@@ -51,7 +51,7 @@ function Team() {
             console.log('Успешно жиберилди:', response.data);
             alert('Команда ийгиликтүү сакталды!');
         } catch (error) {
-            console.error('Ката болду:', error);
+            console.error('Ката болду:', error.message);
             alert('Ката чыкты, кайра аракет кылып көрүңүз.');
         }
     };

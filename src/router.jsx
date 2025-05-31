@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 import Layout from "./Layout/Layout";
 import UserLayout from "./Layout/UserLayout";
 import SavedLayout from "./Layout/SavedLayout";
@@ -34,12 +34,13 @@ import Curriculum from "./pages/Сurriculum/Curriculum.jsx";
 import Purchases from "./pages/Purchases/Purchases.jsx";
 import ChooseSpecialization from "./components/chooseSpecialization/ChooseSpecialization.jsx";
 import ProjectDetail from "./pages/ProjectDetail/Projectdetail.jsx";
-import MentorCreate from "./components/Mentor-Create/MentorCreate.jsx";
 import ChangeMentorInfo from "./pages/ChangeMentorInfo/ChangeMentorInfo.jsx";
 import Savedmentor from "./pages/savedMentor/Savedmentor.jsx";
 import Savedproject from "./pages/savedproject/SavedProject.jsx";
 import Team from "./components/Team/Team.jsx";
 import RegisterAdmin from "./pages/Auth/RegisterAdmin.jsx";
+import MentorProfile from "./pages/MentorProfile/MentorProfile.jsx";
+import ProfileMentor from "./components/MentorProfileComponent/ProfileMentor.jsx";
 
 function About() {
     return null;
@@ -64,7 +65,6 @@ export const myRouter = createBrowserRouter([
             { path: 'project-detail', element: <ProjectDetail /> },
             { path: '/curriculum', element: <Curriculum /> },
             { path: '/purchases', element: <Purchases /> },
-            { path: '/ChangeInfoMentor', element: <ChangeMentorInfo /> },
             { path: 'new-project', element: <NewProject /> },
             { path: 'data-project', element: <DataProjectAdmin /> },
             { path: 'details', element: <Korzina /> },
@@ -73,7 +73,7 @@ export const myRouter = createBrowserRouter([
             { path: '/team', element: <Team /> },
         ]
     },
-
+    
     {
         path: 'adminka',
         element: <UserLayout />,
@@ -88,9 +88,18 @@ export const myRouter = createBrowserRouter([
     { path: '/sign-in', element: <SigneIn /> },
     { path: 'register', element: <Register /> },
     { path: 'mentors-detail/:mentorId', element: <MentorDetail /> },
-    { path: 'mentor-create', element: <MentorCreate /> },
     { path: '/project-details', element: <ProjectDetails /> },
     { path: '/register-admin', element: <RegisterAdmin /> },
+    {
+        path: '/mentorProfile',
+        element: <MentorProfile />,
+        children: [
+            { index: true, element: <Navigate to="profile" replace /> },
+            { path: 'profile', element: <ProfileMentor /> },
+            
+        ]
+    },
+    { path: 'ChangeInfoMentor', element: <ChangeMentorInfo /> },
 
     {
         path: '/saved',

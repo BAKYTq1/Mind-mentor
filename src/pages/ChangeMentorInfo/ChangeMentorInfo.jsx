@@ -3,8 +3,10 @@ import './ChangeMentorInfo.scss'
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { BsCaretRight } from "react-icons/bs";
 import { FaPencil } from "react-icons/fa6";
+import { useNavigate } from 'react-router-dom';
 
 function ChangeMentorInfo() {
+  const navigate = useNavigate();
   const [videoPreview, setVideoPreview] = useState(null);
   const [aboutText, setAboutText] = useState('');
   const [selectedCompanies, setSelectedCompanies] = useState([]);
@@ -49,7 +51,7 @@ function ChangeMentorInfo() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Здесь можно добавить логику сохранения данных
+
     console.log({
       ...formData,
       aboutText,
@@ -63,7 +65,7 @@ function ChangeMentorInfo() {
     <div className='change-mentor-info'>
       <div className='change-mentor-info-header'>
         <div className='header-left'>
-          <FaArrowLeftLong className='arrow-left' />
+          <FaArrowLeftLong className='arrow-left' onClick={() => navigate(-1)} />
           <h3>Редактирование профиля</h3>
         </div>
         <button className='save-button' onClick={handleSubmit}>
@@ -77,8 +79,8 @@ function ChangeMentorInfo() {
           <div className='profile-photo'>
             <label>Фото профиля</label>
             <div className='profile-photo-upload'>
-              <div 
-                style={{ backgroundImage: 'url(https://via.placeholder.com/150)' }} 
+              <div
+                style={{ backgroundImage: 'url(https://via.placeholder.com/150)' }}
                 className='photo-placeholder'
               />
               <button type="button" className='upload-button'>
@@ -89,10 +91,10 @@ function ChangeMentorInfo() {
           <div className='form-inputs'>
             <div className='form-input'>
               <label>Имя</label>
-              <input 
-                type="text" 
+              <input
+                type="text"
                 name="firstName"
-                placeholder="Напишите здесь" 
+                placeholder="Напишите здесь"
                 value={formData.firstName}
                 onChange={handleInputChange}
                 required
@@ -100,10 +102,10 @@ function ChangeMentorInfo() {
             </div>
             <div className='form-input'>
               <label>Фамилия</label>
-              <input 
-                type="text" 
+              <input
+                type="text"
                 name="lastName"
-                placeholder="Напишите здесь" 
+                placeholder="Напишите здесь"
                 value={formData.lastName}
                 onChange={handleInputChange}
                 required
@@ -111,10 +113,10 @@ function ChangeMentorInfo() {
             </div>
             <div className='form-input'>
               <label>Опыт работы</label>
-              <input 
-                type="text" 
+              <input
+                type="text"
                 name="experience"
-                placeholder="Напишите здесь" 
+                placeholder="Напишите здесь"
                 value={formData.experience}
                 onChange={handleInputChange}
               />
@@ -146,12 +148,12 @@ function ChangeMentorInfo() {
           />
           <div className='company-tags'>
             {companyList.map((company) => (
-              <small 
-                style={{ 
+              <small
+                style={{
                   border: `1px solid ${company.color}`,
                   backgroundColor: selectedCompanies.some(c => c.id === company.id) ? `${company.color}20` : '#FAFAFA',
                   color: selectedCompanies.some(c => c.id === company.id) ? company.color : '#2D2D2D'
-                }} 
+                }}
                 key={company.id}
                 onClick={() => handleCompanyClick(company)}
                 className='company-tag'
@@ -166,8 +168,8 @@ function ChangeMentorInfo() {
             {videoPreview ? (
               <div className='video-wrapper'>
                 <video src={videoPreview} controls className="video-element" />
-                <button 
-                  type="button" 
+                <button
+                  type="button"
                   className='remove-video'
                   onClick={() => setVideoPreview(null)}
                 >
