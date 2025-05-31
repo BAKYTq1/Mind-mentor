@@ -32,7 +32,7 @@ function Course() {
     return (
         <div className='course'>
 
-            <div className='navSlidebar'>
+            {/* <div className='navSlidebar'>
                 <div className='into'>
 
 
@@ -121,9 +121,9 @@ function Course() {
                     <img className='img' src={icon6copy} alt="" />
                     <p>Отзывы</p>
                 </div>
-            </div>
+            </div> */}
 
-            {showMyCourses && (
+            {/* {showMyCourses && ( */}
                 <div className='myPanel'>
 
 
@@ -174,7 +174,7 @@ function Course() {
 
                 </div>
 
-            )}
+            {/* )} */}
         </div>
     );
 }
