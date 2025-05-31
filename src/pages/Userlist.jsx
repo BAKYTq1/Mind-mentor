@@ -13,7 +13,7 @@ const UsersList = () => {
   }, [dispatch]);
 
   if (loading) return <div>Загрузка...</div>;
-  if (error) return <div>Ошибка: {error}</div>;
+  if (error) return <div>Ошибка: {error.message}</div>;
 
   return (
     <div>

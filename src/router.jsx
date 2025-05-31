@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 import Layout from "./Layout/Layout";
 import UserLayout from "./Layout/UserLayout";
 import SavedLayout from "./Layout/SavedLayout";
@@ -34,12 +34,13 @@ import Curriculum from "./pages/Сurriculum/Curriculum.jsx";
 import Purchases from "./pages/Purchases/Purchases.jsx";
 import ChooseSpecialization from "./components/chooseSpecialization/ChooseSpecialization.jsx";
 import ProjectDetail from "./pages/ProjectDetail/Projectdetail.jsx";
-import MentorCreate from "./components/Mentor-Create/MentorCreate.jsx";
 import ChangeMentorInfo from "./pages/ChangeMentorInfo/ChangeMentorInfo.jsx";
 import Savedmentor from "./pages/savedMentor/Savedmentor.jsx";
 import Savedproject from "./pages/savedproject/SavedProject.jsx";
 import Team from "./components/Team/Team.jsx";
 import RegisterAdmin from "./pages/Auth/RegisterAdmin.jsx";
+import MentorProfile from "./pages/MentorProfile/MentorProfile.jsx";
+import ProfileMentor from "./components/MentorProfileComponent/ProfileMentor.jsx";
 
 import Technology from "./components/technology/Technology.jsx";
 import FormTechnology from "./components/formTechnology/FormTechnology.jsx";
@@ -76,7 +77,6 @@ export const myRouter = createBrowserRouter([
             { path: 'project-detail', element: <ProjectDetail /> },
             { path: '/curriculum', element: <Curriculum /> },
             { path: '/purchases', element: <Purchases /> },
-            { path: '/ChangeInfoMentor', element: <ChangeMentorInfo /> },
             { path: 'new-project', element: <NewProject /> },
             { path: 'data-project', element: <DataProjectAdmin /> },
             { path: 'details', element: <Korzina /> },
@@ -87,12 +87,34 @@ export const myRouter = createBrowserRouter([
         ]
     },
 
+    
+    {
+        path: 'adminka',
+        element: <UserLayout />,
+        children: []
+    },
 
-  {
-    path: "adminka",
-    element: <UserLayout />,
-    children: [],
-  },
+    {
+        path: '/mentorProfile',
+        element: <MentorProfile />,
+        children: [
+            { index: true, element: <Navigate to="profile" replace /> },
+            { path: 'profile', element: <ProfileMentor /> },
+            { path: 'course', element: <Course /> },
+            { path: "technology", element: <Technology /> },
+            
+        ]
+    },
+    { path: 'ChangeInfoMentor', element: <ChangeMentorInfo /> },
+    { path: '/detail', element: <Detail /> },
+    { path: '/newcourse', element: <NewCourse /> },
+    { path: '/datacourse', element: <DataCourse /> },
+    { path: '/videolesson', element: <VideoLesson /> },
+
+
+
+
+
 
 
   { path: "profile", element: <Profile /> },
@@ -103,19 +125,13 @@ export const myRouter = createBrowserRouter([
   { path: "/sign-in", element: <SigneIn /> },
   { path: "register", element: <Register /> },
   { path: "mentors-detail/:mentorId", element: <MentorDetail /> },
-  { path: "mentor-create", element: <MentorCreate /> },
+  // { path: "mentor-create", element: <MentorCreate /> },
   { path: "/project-details", element: <ProjectDetails /> },
   { path: "/register-admin", element: <RegisterAdmin /> },
-  { path: "/technology", element: <Technology /> },
   { path: "/form", element: <FormTechnology /> },
-
-    { path: '/course', element: <Course /> },
-    { path: '/detail', element: <Detail /> },
-    { path: '/newcourse', element: <NewCourse /> },
-    { path: '/datacourse', element: <DataCourse /> },
-    { path: '/videolesson', element: <VideoLesson /> },
-
-
+  
+  
+  
   {
     path: "/saved",
     element: <SavedLayout />,
