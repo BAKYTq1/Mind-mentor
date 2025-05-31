@@ -40,68 +40,71 @@ import Savedmentor from "./pages/savedMentor/Savedmentor.jsx";
 import Savedproject from "./pages/savedproject/SavedProject.jsx";
 import Team from "./components/Team/Team.jsx";
 import RegisterAdmin from "./pages/Auth/RegisterAdmin.jsx";
-
+import Technology from "./components/technology/Technology.jsx";
+import FormTechnology from "./components/formTechnology/FormTechnology.jsx";
 function About() {
     return null;
 }
 
 export const myRouter = createBrowserRouter([
-    {
-        path: '/',
-        element: <Layout />,
-        children: [
-            { path: '/', element: <Home /> },
-            { path: 'about', element: <About /> },
-            { path: '*', element: <Notfound /> },
-            { path: 'user-data', element: <UserData /> },
-            { path: 'kours', element: <CoursesPage /> },
-            { path: 'History', element: <HistoryPage /> },
-            { path: '/смотреть', element: <WatchPage /> },
-            { path: '/projects', element: <Project /> },
-            { path: 'course-detail', element: <CourseDetail /> },
-            { path: '/mentors', element: <Mentor /> },
-            { path: 'mentor-detail', element: <MentorDetail /> },
-            { path: 'project-detail', element: <ProjectDetail /> },
-            { path: '/curriculum', element: <Curriculum /> },
-            { path: '/purchases', element: <Purchases /> },
-            { path: '/ChangeInfoMentor', element: <ChangeMentorInfo /> },
-            { path: 'new-project', element: <NewProject /> },
-            { path: 'data-project', element: <DataProjectAdmin /> },
-            { path: 'details', element: <Korzina /> },
-            { path: 'pokupka', element: <Pokupka /> },
-            { path: 'Podbor', element: <Podbor /> },
-            { path: '/team', element: <Team /> },
-        ]
-    },
+  {
+    path: "/",
+    element: <Layout />,
+    children: [
+      { path: "/", element: <Home /> },
+      { path: "about", element: <About /> },
+      { path: "*", element: <Notfound /> },
+      { path: "user-data", element: <UserData /> },
+      { path: "kours", element: <CoursesPage /> },
+      { path: "History", element: <HistoryPage /> },
+      { path: "/смотреть", element: <WatchPage /> },
+      { path: "/projects", element: <Project /> },
+      { path: "course-detail", element: <CourseDetail /> },
+      { path: "/mentors", element: <Mentor /> },
+      { path: "mentor-detail", element: <MentorDetail /> },
+      { path: "project-detail", element: <ProjectDetail /> },
+      { path: "/curriculum", element: <Curriculum /> },
+      { path: "/purchases", element: <Purchases /> },
+      { path: "/ChangeInfoMentor", element: <ChangeMentorInfo /> },
+      { path: "new-project", element: <NewProject /> },
+      { path: "data-project", element: <DataProjectAdmin /> },
+      { path: "details", element: <Korzina /> },
+      { path: "pokupka", element: <Pokupka /> },
+      { path: "Podbor", element: <Podbor /> },
+      { path: "/team", element: <Team /> },
+    ],
+  },
 
-    {
-        path: 'adminka',
-        element: <UserLayout />,
-        children: []
-    },
+  {
+    path: "adminka",
+    element: <UserLayout />,
+    children: [],
+  },
 
-    { path: 'profile', element: <Profile /> },
-    { path: '/user-profile', element: <UserProfile /> },
-    { path: '/user-password', element: <UserPassword /> },
-    { path: '/payment-method', element: <PaymentMethod /> },
-    { path: '/like1', element: <FavoritePage /> },
-    { path: '/sign-in', element: <SigneIn /> },
-    { path: 'register', element: <Register /> },
-    { path: 'mentors-detail/:mentorId', element: <MentorDetail /> },
-    { path: 'mentor-create', element: <MentorCreate /> },
-    { path: '/project-details', element: <ProjectDetails /> },
-    { path: '/register-admin', element: <RegisterAdmin /> },
+  { path: "profile", element: <Profile /> },
+  { path: "/user-profile", element: <UserProfile /> },
+  { path: "/user-password", element: <UserPassword /> },
+  { path: "/payment-method", element: <PaymentMethod /> },
+  { path: "/like1", element: <FavoritePage /> },
+  { path: "/sign-in", element: <SigneIn /> },
+  { path: "register", element: <Register /> },
+  { path: "mentors-detail/:mentorId", element: <MentorDetail /> },
+  { path: "mentor-create", element: <MentorCreate /> },
+  { path: "/project-details", element: <ProjectDetails /> },
+  { path: "/register-admin", element: <RegisterAdmin /> },
+  { path: "/technology", element: <Technology /> },
+  { path: "/form", element: <FormTechnology /> },
 
-    {
-        path: '/saved',
-        element: <SavedLayout />,
-        children: [
-            { index: true, element: <FavoritePage /> },
-            { path: 'сохраненные', element: <FavoritePage /> },
-            { path: 'saved-mentor', element: <Savedmentor /> },
-            { path: 'saved-project', element: <Savedproject /> },
-        ]
-    },
+  {
+    path: "/saved",
+    element: <SavedLayout />,
+    children: [
+      { index: true, element: <FavoritePage /> },
+      { path: "сохраненные", element: <FavoritePage /> },
+      { path: "saved-mentor", element: <Savedmentor /> },
+      { path: "saved-project", element: <Savedproject /> },
+    ],
+  },
 ]);
 
 export default myRouter;
