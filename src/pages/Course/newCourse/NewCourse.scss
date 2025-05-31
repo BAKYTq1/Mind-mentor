@@ -1,0 +1,295 @@
+.newcourse {
+    margin: 0 auto;
+    width: 1280px;
+    height: 1024px;
+    padding: 0 50px;
+
+
+
+    .new {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .h {
+            display: flex;
+            gap: 20px;
+
+            p {
+                /* Title/32 Bold */
+                color: rgb(0, 0, 0);
+                font-family: Jost;
+                font-size: 32px;
+                font-weight: 700;
+                line-height: 40px;
+                letter-spacing: 0px;
+
+            }
+
+
+            img {
+                width: 40px;
+                height: 40px;
+
+            }
+        }
+
+        .hBtn {
+            border-radius: 20px;
+
+            /* 1 */
+            box-shadow: 0px 10px 32px -4px rgba(24, 39, 75, 0.1), 0px 6px 14px -6px rgba(24, 39, 75, 0.12);
+            /* Brand/Green */
+            background: rgb(255, 208, 44);
+            width: 214px;
+            height: 54px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 36px;
+            /* Subtitle/16 Bold */
+            color: rgb(0, 0, 0);
+            font-family: Mulish;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 120%;
+            letter-spacing: 0px;
+            text-align: center;
+            padding-left: 80px;
+
+            img {
+                object-fit: cover;
+                width: 44px;
+                height: 44px;
+            }
+        }
+    }
+
+    .newdata {
+        padding-top: 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+
+        .category {
+            display: flex;
+            gap: 20px;
+
+            button {
+                width: 380px;
+                height: 54px;
+                border-radius: 20px;
+
+                /* Secondary/Write */
+                background: rgb(250, 250, 250);
+                /* Subtitle/18 Bold */
+                color: rgb(0, 0, 0);
+                font-family: Jost;
+                font-size: 18px;
+                font-weight: 700;
+                line-height: 22px;
+                letter-spacing: 0px;
+                text-align: center;
+            }
+        }
+
+        .name-price {
+            display: flex;
+            gap: 20px;
+
+
+            .name {
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+
+
+                h3 {
+                    /* Subtitle/18 Bold */
+                    color: rgb(0, 0, 0);
+                    font-family: Jost;
+                    font-size: 18px;
+                    font-weight: 700;
+                    line-height: 22px;
+                    letter-spacing: 0px;
+                }
+
+                input {
+                    width: 580px;
+                    height: 62px;
+                    box-sizing: border-box;
+                    /* Text/Gray */
+                    border: 1px solid rgb(207, 207, 207);
+                    border-radius: 16px;
+
+                    /* Secondary/Write */
+                    background: rgb(250, 250, 250);
+                    padding: 0 20px;
+                    border: none;
+                    outline: none;
+                    font-size: 18px;
+                    font-weight: 500;
+                    color: rgb(111, 109, 115);
+
+
+
+                    &::placeholder {
+                        /* Subtitle/18 Medium */
+                        color: rgb(111, 109, 115);
+                        font-family: Jost;
+                        font-size: 18px;
+                        font-weight: 500;
+                        line-height: 22px;
+                        letter-spacing: 0px;
+
+                    }
+                }
+            }
+
+            .price {
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+
+
+                h3 {
+                    /* Subtitle/18 Bold */
+                    color: rgb(0, 0, 0);
+                    font-family: Jost;
+                    font-size: 18px;
+                    font-weight: 700;
+                    line-height: 22px;
+                    letter-spacing: 0px;
+                }
+
+                input {
+                    width: 580px;
+                    height: 62px;
+                    box-sizing: border-box;
+                    /* Text/Gray */
+                    border: 1px solid rgb(207, 207, 207);
+                    border-radius: 16px;
+
+                    /* Secondary/Write */
+                    background: rgb(250, 250, 250);
+                    padding: 20px 20px;
+                    border: none;
+                    outline: none;
+                    font-size: 18px;
+                    font-weight: 500;
+                    color: rgb(111, 109, 115);
+
+
+
+                    &::placeholder {
+                        /* Subtitle/18 Medium */
+                        color: rgb(111, 109, 115);
+                        font-family: Jost;
+                        font-size: 18px;
+                        font-weight: 500;
+                        line-height: 22px;
+                        letter-spacing: 0px;
+
+                    }
+                }
+            }
+        }
+
+
+        .description {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+
+
+            h3 {
+                /* Subtitle/18 Bold */
+                color: rgb(0, 0, 0);
+                font-family: Jost;
+                font-size: 18px;
+                font-weight: 700;
+                line-height: 22px;
+                letter-spacing: 0px;
+            }
+
+            textarea {
+                box-sizing: border-box;
+                /* Text/Gray */
+                border: 1px solid rgb(207, 207, 207);
+                border-radius: 12px;
+
+                /* Secondary/Write */
+                background: rgb(250, 250, 250);
+                width: 1180px;
+                height: 128px;
+                color: rgb(111, 109, 115);
+
+                font-size: 18px;
+                font-weight: 500;
+                padding: 20px 20px;
+                border: none;
+                outline: none;
+                resize: none;
+
+
+                &::placeholder {
+                    /* Subtitle/18 Medium */
+                    color: rgb(111, 109, 115);
+                    font-family: Jost;
+                    font-size: 18px;
+                    font-weight: 500;
+                    line-height: 22px;
+                    letter-spacing: 0px;
+                }
+            }
+        }
+
+        .for-specials {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+
+
+            h3 {
+                /* Subtitle/18 Bold */
+                color: rgb(0, 0, 0);
+                font-family: Jost;
+                font-size: 18px;
+                font-weight: 700;
+                line-height: 22px;
+                letter-spacing: 0px;
+            }
+
+
+            input {
+                width: 1180px;
+                height: 62px;
+                box-sizing: border-box;
+                /* Text/Gray */
+                border: 1px solid rgb(207, 207, 207);
+                border-radius: 16px;
+
+                /* Secondary/Write */
+                background: rgb(250, 250, 250);
+                color: rgb(111, 109, 115);
+                font-family: Jost;
+                font-size: 18px;
+                font-weight: 500;
+                padding: 0 20px;
+                border: none;
+                outline: none;
+
+                &::placeholder {
+                    /* Subtitle/18 Medium */
+                    color: rgb(111, 109, 115);
+                    font-family: Jost;
+                    font-size: 18px;
+                    font-weight: 500;
+                    line-height: 22px;
+                    letter-spacing: 0px;
+                }
+            }
+        }
+    }
+}

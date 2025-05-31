@@ -38,6 +38,12 @@ import Savedmentor from "./pages/savedMentor/Savedmentor.jsx";
 import Savedproject from "./pages/savedproject/SavedProject.jsx";
 import MentorCreate from "./pages/Mentor-Create/MentorCreate.jsx";
 
+import Course from "./pages/Course/myCourse/Course.jsx"
+import Detail from './pages/Course/courseDetail/Detail.jsx'
+import NewCourse from "./pages/Course/newCourse/NewCourse.jsx"
+import DataCourse from "./pages/Course/datacourse/DataCourse.jsx"
+import VideoLesson from "./pages/Course/videolesson/VideoLesson.jsx";
+
 function About() {
     return null;
 }
@@ -114,7 +120,28 @@ export const myRouter = createBrowserRouter([
             {
                 path:"/purchases",
                 element: <Purchases/>
+            },
+            {
+                path:"course",
+                element: <Course/>
+            },
+            {
+                path:"detail",
+                element: <Detail/>
+            },
+             {
+                path:"newcourse",
+                element: <NewCourse/>
+            },
+            {
+                path:"/datacourse",
+                element: <DataCourse/>
+            },
+             {
+                path:"videolesson",
+                element: <VideoLesson/>
             }
+        
         ]
     },
 
@@ -439,18 +466,18 @@ export const myRouter = createBrowserRouter([
 // //       {
          
 // //          path: 'data-project',
-// //          element: <DataProjectAdmin/>
+// //          element: <DataProjectAdmin/> 
       
-   },
-   {
-        path:'Podbor',
-        element: <Podbor/>
-   },
+//    },
+//    {
+//         path:'Podbor',
+//         element: <Podbor/>
+//    },
   
-   {
-        path:'hero',
-        element: <Hero/>
-   },
+//    {
+//         path:'hero',
+//         element: <Hero/>
+//    },
   
 // //    },
 // //    {
