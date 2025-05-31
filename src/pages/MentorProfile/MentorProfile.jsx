@@ -10,8 +10,8 @@ import { FaChalkboardTeacher, FaUserAlt, FaRegThumbsUp } from 'react-icons/fa';
 const navItems = [
   { to: 'students', label: 'Студенты ', Icon: MdMenuBook },
   { to: 'requests', label: 'Запросы', Icon: HiMiniBellAlert },
-  { to: 'courses', label: 'Мои курсы', Icon: TbDeviceTvOld },
-  { to: 'technologies', label: 'Мои технологии', Icon: FaChalkboardTeacher },
+  { to: 'course', label: 'Мои курсы', Icon: TbDeviceTvOld },
+  { to: 'technology', label: 'Мои технологии', Icon: FaChalkboardTeacher },
   { to: 'profile', label: 'Профиль', Icon: FaUserAlt },
   { to: 'reviews', label: 'Отзывы', Icon: FaRegThumbsUp },
 ];
