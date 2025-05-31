@@ -42,55 +42,55 @@ function NewCourse() {
     };
 
 
-
     const handleSubmit = async () => {
-        if (!validateForm()) return;
+  if (!validateForm()) return;
 
-        const token = localStorage.getItem('token'); // токенди туура алабыз
+  const token = localStorage.getItem('token');
 
-        if (!token) {
-            alert('Вы не авторизованы. Пожалуйста, войдите в систему.');
-            return;
-        }
+  if (!token) {
+    alert('Вы не авторизованы. Пожалуйста, войдите в систему.');
+    return;
+  }
 
-        try {
-            const payload = {
-                ...form,
-                price: Number(form.price),
-            };
-
-            console.log("Payload:", payload);
-            console.log("Token:", token);
-
-            const response = await axios.post(
-                'http://ec2-13-61-24-129.eu-north-1.compute.amazonaws.com/api/courses/management/create/base/step1',
-                payload,
-                {
-                    headers: {
-                        Authorization: `Bearer ${token}`,
-                    },
-                }
-            );
-
-            console.log('Response data:', response.data);
-
-            const categoryId = response.data.categoryId;  // <-- Здесь распаковываем courseId
-            if (!categoryId) {
-                alert('Ошибка: categoryId не получен от сервера');
-                return;
-            }
-
-            localStorage.setItem('courseId', courseId);
-            navigate('/datacourse');
-        } catch (error) {
-            if (error.response?.status === 401) {
-                alert('Ошибка 401: Не авторизован. Пожалуйста, войдите в систему.');
-            } else {
-                console.error('Ката:', error.response?.data || error.message);
-                alert('Ошибка при создании курса. Попробуйте еще раз.');
-            }
-        }
+  try {
+    const payload = {
+      ...form,
+      price: Number(form.price),
     };
+
+    console.log("Payload:", payload);
+    console.log("Token:", token);
+
+    const response = await axios.post(
+      'http://ec2-13-61-24-129.eu-north-1.compute.amazonaws.com/api/courses/management/create/base/step1',
+      payload,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+
+    console.log('Full response:', response);
+    console.log('Response data:', response.data);
+
+    if (response.data === "Step 1 successfully created") {
+
+      localStorage.setItem('courseId', 'someDefaultCourseId'); 
+      navigate('/datacourse');
+    } else {
+      alert('Ошибка: courseId не получен от сервера');
+    }
+  } catch (error) {
+    if (error.response?.status === 401) {
+      alert('Ошибка 401: Не авторизован. Пожалуйста, войдите в систему.');
+    } else {
+      console.error('Ката:', error.response?.data || error.message);
+      alert('Ошибка при создании курса. Попробуйте еще раз.');
+    }
+  }
+};
+
 
     return (
         <div className='newcourse'>
