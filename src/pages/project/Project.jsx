@@ -21,6 +21,7 @@ function Project() {
     "#АНАЛИЗЫ", "#FRONTEND", "#BACKEND", "#DESIGN", "#DEVOPS",
     "#ТЕСТЕР", "#ДЕВЕЛОПЕР", "#АНАЛИЗ", "#СЕКЬЮРИТИ", "#UIUX",
   ]
+  
 
   const allProjects = Array.from({ length: 30 }, (_, i) => ({
     id: i + 1,
