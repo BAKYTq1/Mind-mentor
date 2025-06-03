@@ -24,6 +24,9 @@ const Project = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+
+
+  
   const handlePrev = () => {
     if (swiperRef.current) swiperRef.current.slidePrev();
   };
